@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+        <color name="colorPrimary">#002953</color>
+        <color name="colorPrimaryDark">#002953</color>
+        <!--    <color name="colorAccent">#03DAC5</color>-->
+        <color name="colorAccent">#ffffff</color>
+        <color name="color_white">#ffffff</color>
+        <color name="colorWhite">#ffffff</color>
+        <color name="color_white_opacity">#60ffffff</color>
+        <color name="colour_neutral_white">#ffffff</color>
+        <color name="colorLightPink">#fff5da</color>
+        <color name="color_tangerine">#ff6700</color>
+        <color name="color_tangerine_opacity">#60ff6700</color>
+        <color name="colour_secondary_tangerine">#ff6700</color>
+        <color name="progressBackground">#dee3f0</color>
+        <color name="colorProgressBarEndColor">#2c89d1</color>
+        <color name="colour_rag_green">#00b500</color>
+
+        <color name="colour_neutral_bleu_grey">#e5eaf7</color>
+        <color name="color_gray">#666666</color>
+        <color name="color_gray_dark">#333333</color>
+        <color name="colour_rag_red">#b40000</color>
+        <color name="color_brownish_grey">#666666</color>
+        <color name="color_text_gray2">#676767</color>
+        <color name="colorBlack">#000000</color>
+        <color name="color_black_transperent">#BF000000</color>
+        <color name="colorline">#2e567f</color>
+        <color name="color_text_gray">#999999</color>
+        <color name="brownish_grey">#666666</color>
+        <color name="very_dark_color">#172b4d</color>
+        <color name="viridian_dark_gray">#00846f</color>
+        <color name="cyan">#d9fff9</color>
+        <color name="vivid_blue">#2680eb</color>
+        <color name="grey">#808d9c</color>
+        <color name="light_grey">#8092a6</color>
+
+        <color name="card_line2">#ffc033</color>
+        <color name="card_line3">#007ff3</color>
+        <color name="colorLine">#dfdfdf</color>
+        <color name="bluey_grey">#8895ab</color>
+
+        <color name="colour_primary_tangerine_2">#ff6700</color>
+        <color name="blacky">#000000</color>
+        <color name="card_line">#3dbbb0</color>
+        <color name="card_font">#172b4d</color>
+        <color name="top_menu">#002953</color>
+        <color name="aqua_blue">#04c4de</color>
+        <color name="bright_orange">#ff6700</color>
+
+        <color name="bluey_grey_two">#99a9ba</color>
+
+        <color name="pale_grey">#e5eaf7</color>
+        <color name="shimmer_color">#8d8a9b</color>
+
+        <color name="toolbar_blue">#002953</color>
+        <color name="purple">#a500b2</color>
+        <color name="red">#b40000</color>
+
+
+        <color name="bgcolor_main">#002953</color>
+        <color name="orange">#ff6700</color>
+        <color name="navy_blue">#002953</color>
+        <color name="grey_blue_color">#99a9ba</color>
+        <color name="tab_filter_separatin">#cecece</color>
+        <color name="view_faint_blue_color">#e5eaf7</color>
+        <color name="color_orange">#FF6700</color>
+        <color name="blue_grey_two">#8b95a6</color>
+        <color name="filter_horizontal_view">#17707070</color>
+        <color name="disable_rb">#666666</color>
+        <color name="blood_red_color">#b50c0c</color>
+        <color name="color_switch_on_off_card">#26a052</color>
+        <color name="color_primary_tangerine">#ff8700</color>
+        <color name="marine_blue">#002a53</color>
+        <color name="mapmyindia_plugins_navy">#263d57</color>
+        <color name="bg_blue_dark">#040B37</color>
+
+        <color name="mapmyindia_demo_white">#FFFFFF</color>
+        <color name="mapmyindia_demo_black">#000000</color>
+
+        <!--    <color name="grey">#d3d3d3</color>-->
+        <color name="skyblue">#e5eaf7</color>
+        <color name="locc">#ec672c</color>
+
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="home"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_rewards"
+        android:checked="false"
+        android:color="@color/color_gray"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="My Rewards"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_scan"
+        android:title=""
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_offers"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="offers"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_account"
+        android:icon="@drawable/ic_launcher_background"
+        android:title="account"
+        app:showAsAction="always"/>
+
+</menu>
