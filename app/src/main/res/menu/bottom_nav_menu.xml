@@ -4,16 +4,16 @@
 
     <item
         android:id="@+id/action_home"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="home"
+        android:icon="@drawable/matches"
+        android:title="Matches"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/action_rewards"
         android:checked="false"
         android:color="@color/color_gray"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="My Rewards"
+        android:icon="@drawable/search"
+        android:title="Search"
         app:showAsAction="always"/>
 
     <item
@@ -23,14 +23,14 @@
 
     <item
         android:id="@+id/action_offers"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="offers"
+        android:icon="@drawable/inbox"
+        android:title="Inbox"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/action_account"
-        android:icon="@drawable/ic_launcher_background"
-        android:title="account"
+        android:icon="@drawable/chat"
+        android:title="Chat"
         app:showAsAction="always"/>
 
 </menu>

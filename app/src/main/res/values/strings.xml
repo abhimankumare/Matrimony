@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Matrimony</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="terms">Terms &amp; Condition</string>
+    <string name="help">Help &amp; Support</string>
+
+
+    <string-array name="list_items">
+        <item>Home</item>
+        <item>User Account</item>
+        <item>Messages</item>
+        <item>Settings</item>
+        <item>About Us</item>
+    </string-array>
 </resources>
