@@ -1,0 +1,2 @@
+com/example/matrimony/BuildConfig.java
+ com.example.matrimony.BuildConfig

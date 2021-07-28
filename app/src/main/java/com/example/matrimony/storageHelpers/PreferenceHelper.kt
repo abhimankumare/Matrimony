@@ -1,4 +1,4 @@
-package com.example.hatch_i.storageHelpers
+package com.example.poultry_i.storageHelpers
 
 import android.content.Context
 import android.content.SharedPreferences

@@ -1,4 +1,4 @@
-package com.example.hatch_i.common
+package com.example.poultry_i.common
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -15,7 +15,7 @@ import android.renderscript.ScriptIntrinsicBlur
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-import com.example.hatch_i.storageHelpers.PreferenceHelper
+import com.example.poultry_i.storageHelpers.PreferenceHelper
 import com.example.matrimony.R
 import com.google.android.material.snackbar.Snackbar
 import java.io.IOException

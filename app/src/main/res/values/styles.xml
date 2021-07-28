@@ -95,4 +95,9 @@
         <item name="fontFamily">@font/robotoregular</item>
     </style>
 
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/margin20</item>
+        <item name="android:fontFamily">@font/robotoregular</item>
+    </style>
+
 </resources>

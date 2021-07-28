@@ -69,6 +69,7 @@
     <dimen name="margin48">48dp</dimen>
     <dimen name="margin28">28dp</dimen>
     <dimen name="margin345">345dp</dimen>
+    <dimen name="margin450">450dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="margin26">26dp</dimen>
 
