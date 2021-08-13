@@ -12,7 +12,7 @@
 9-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:6:5-66
 10
 11    <application
-11-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:8:5-27:19
+11-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:8:5-36:19
 12        android:allowBackup="true"
 12-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:9:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -28,30 +28,44 @@
 18-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:13:9-35
 19        android:theme="@style/NoActionBar" >
 19-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:14:9-43
-20        <activity android:name="com.example.matrimony.activity.LoginActivity" />
-20-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:15:9-69
-20-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:15:19-57
-21        <activity android:name="com.example.matrimony.activity.SplashActivity" >
-21-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:16:9-22:20
-21-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:16:19-58
-22            <intent-filter>
-22-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:17:13-21:29
-23                <action android:name="android.intent.action.MAIN" />
-23-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:18:17-69
-23-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:18:25-66
-24
-25                <category android:name="android.intent.category.LAUNCHER" />
-25-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:20:17-77
-25-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:20:27-74
-26            </intent-filter>
-27        </activity>
-28        <activity
-28-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:23:9-26:20
-29            android:name="com.example.matrimony.activity.MainActivity"
-29-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:24:13-50
-30            android:screenOrientation="portrait" >
-30-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:25:13-49
-31        </activity>
-32    </application>
-33
-34</manifest>
+20        <activity android:name="com.example.matrimony.activity.RegisterActivity" />
+20-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:15:9-72
+20-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:15:19-60
+21        <activity android:name="com.example.matrimony.activity.LoginActivity" />
+21-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:16:9-60
+21-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:16:19-57
+22        <activity android:name="com.example.matrimony.activity.SplashActivity" >
+22-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:17:9-23:20
+22-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:17:19-58
+23            <intent-filter>
+23-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:18:13-22:29
+24                <action android:name="android.intent.action.MAIN" />
+24-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:19:17-69
+24-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:19:25-66
+25
+26                <category android:name="android.intent.category.LAUNCHER" />
+26-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:21:17-77
+26-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:21:27-74
+27            </intent-filter>
+28        </activity>
+29        <activity
+29-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:24:9-26:61
+30            android:name="com.example.matrimony.activity.MainActivity"
+30-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:25:13-50
+31            android:screenOrientation="portrait" />
+31-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:26:13-49
+32        <activity
+32-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:27:9-29:61
+33            android:name="com.example.matrimony.activity.ShowDetails"
+33-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:28:13-49
+34            android:screenOrientation="portrait" />
+34-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:29:13-49
+35        <activity
+35-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:31:9-33:61
+36            android:name="com.example.matrimony.activity.MenDetailsShow"
+36-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:32:13-52
+37            android:screenOrientation="portrait" />
+37-->D:\best\Freelance\Matrimony\app\src\main\AndroidManifest.xml:33:13-49
+38    </application>
+39
+40</manifest>

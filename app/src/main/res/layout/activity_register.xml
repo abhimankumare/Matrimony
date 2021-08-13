@@ -1,0 +1,947 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#F7F7F7"
+    android:orientation="vertical"
+    tools:context=".activity.RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner_view"
+                app:elevation="@dimen/margin4"
+                app:titleTextAppearance="@style/Toolbar.TitleText"
+                app:titleTextColor="@color/white"
+                tools:ignore="MissingConstraints" />
+
+            <!--//Details-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_selection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin15"
+                android:padding="@dimen/margin5">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <!--//Details-->
+
+<!--//Personal Details-->
+            <LinearLayout
+                android:id="@+id/ll_personal_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fullName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="328dp"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="16dp"
+                    android:hint="@string/enter_your_full_name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints">
+
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text_login"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/gender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/gender"
+                    android:textColor="#FF8025"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fullName" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/radioMale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/male"
+                        android:textSize="18sp">
+
+                    </com.google.android.material.radiobutton.MaterialRadioButton>
+
+                    <com.google.android.material.radiobutton.MaterialRadioButton
+                        android:id="@+id/radioFemale"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="@string/female"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints">
+
+                    </com.google.android.material.radiobutton.MaterialRadioButton>
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/DOB"
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                    android:layout_width="328dp"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="30dp"
+                    android:hint="@string/enter_your_date_of_birth"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints">
+
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text_DOB"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray"
+                        android:visibility="visible" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/SelectSectorSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="328dp"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="30dp"
+                    android:hint="@string/select_your_height">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/customerHeightTextView"
+                        android:layout_width="318dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray"
+                        tools:ignore="KeyboardInaccessibleWidget" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/customerCountrySpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="328dp"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="30dp"
+                    android:hint="@string/select_your_country">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/customerCountryTextView"
+                        android:layout_width="318dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray"
+                        tools:ignore="KeyboardInaccessibleWidget" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/customerStateSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="328dp"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="30dp"
+                    android:hint="@string/select_your_state">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/customerStateTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray"
+                        tools:ignore="KeyboardInaccessibleWidget" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/customerCitySpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="328dp"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="30dp"
+                    android:hint="@string/select_your_state">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/customerCityTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray"
+                        tools:ignore="KeyboardInaccessibleWidget" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/PIfullname"
+
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
+                    android:layout_width="328dp"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="30dp"
+                    android:hint="@string/email_id_phone_number"
+                    tools:ignore="MissingConstraints">
+
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_text_PIfullName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="328dp"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="30dp"
+                    android:hint="@string/enter_password"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/grey">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="328dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:hint="@string/comment_box"
+                    app:counterMaxLength="4"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/card_line">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/text_background"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray"
+                        app:counterMaxLength="4" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/IMFname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="14dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/indicates_mandatory_fields"
+                    android:textColor="#000000"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/saveButton"
+                    android:layout_width="328dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="@dimen/margin15"
+                    android:background="@drawable/bkg_button_gradient"
+                    android:shadowColor="#000000"
+                    android:text="@string/save"
+                    android:textColor="#FFFFFF"
+                    app:cornerRadius="20dp"
+                    app:elevation="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:rippleColor="#FF8025"
+                    app:shapeAppearanceOverlay="@style/TextAppearance.Compat.Notification"
+                    app:strokeColor="#000000" />
+
+            </LinearLayout>
+
+<!--            //Personal Details-->
+
+<!--            //Carrer Details-->
+            <LinearLayout
+                android:id="@+id/ll_career_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin10"
+                android:orientation="vertical"
+                android:padding="@dimen/margin6"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:padding="@dimen/margin6"
+                    android:shadowColor="@color/color_gray"
+                    android:text="@string/education"
+                    android:textColor="@color/color_gray"
+                    android:textSize="@dimen/margin20"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/SelectSectorSpinnerLayout1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="328dp"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:hint="@string/select_highest_education"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/educationTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray"
+                        tools:ignore="KeyboardInaccessibleWidget" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/Work_experience"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:fontFamily="@font/robotoregular"
+                    android:padding="@dimen/margin6"
+                    android:shadowColor="@color/color_gray"
+                    android:text="@string/work_experience"
+                    android:textColor="@color/color_gray"
+                    android:textSize="@dimen/margin20"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/selectSectorSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="328dp"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:hint="@string/select_sector"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/selectSectorTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray"
+                        tools:ignore="KeyboardInaccessibleWidget" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/SelectOccupationSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="328dp"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:hint="@string/select_occupation"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/SelectOccupationTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray"
+                        tools:ignore="KeyboardInaccessibleWidget" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/SelectIncomeSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="328dp"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:hint="@string/select_income"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/SelectIncomeTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray"
+                        tools:ignore="KeyboardInaccessibleWidget" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/save_car_details"
+                    android:layout_width="328dp"
+                    android:layout_height="@dimen/margin50"
+                    android:layout_marginStart="@dimen/margin16"
+                    android:layout_marginLeft="@dimen/margin16"
+                    android:layout_marginTop="@dimen/margin15"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="30dp"
+                    android:shadowColor="#000000"
+                    android:text="@string/next"
+                    android:textColor="#FFFFFF"
+                    app:backgroundTint="#FF8025"
+                    app:cornerRadius="20dp"
+                    app:elevation="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/SelectIncomeSpinnerLayout"
+                    app:rippleColor="#FF8025"
+                    app:shapeAppearanceOverlay="@style/TextAppearance.Compat.Notification"
+                    app:strokeColor="#000000" />
+
+
+            </LinearLayout>
+            <!--            //Carrer Details-->
+
+            <!--            //Social Details-->
+              <LinearLayout
+                android:id="@+id/ll_social_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin15"
+                android:orientation="vertical"
+                android:padding="@dimen/margin10"
+                android:visibility="gone">
+                  
+                  
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/FathersStatusSpinnerLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin56"
+                android:hint="@string/select_marital_status"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/maritalStatusTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_background"
+                    android:clickable="true"
+                    android:fontFamily="@font/robotoregular"
+                    android:shadowColor="@color/color_gray"
+                    tools:ignore="KeyboardInaccessibleWidget" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/MothersStatusSpinnerLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_height="@dimen/margin56"
+                android:hint="@string/select_mother_tongue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/motherTonugeTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_background"
+                    android:clickable="true"
+                    android:fontFamily="@font/robotoregular"
+                    android:shadowColor="@color/color_gray"
+                    tools:ignore="KeyboardInaccessibleWidget" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/SelectReligionSpinnerLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_height="@dimen/margin56"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/margin10"
+                android:hint="@string/select_religion"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/religionTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_background"
+                    android:clickable="true"
+                    android:fontFamily="@font/robotoregular"
+                    android:shadowColor="@color/color_gray"
+                    tools:ignore="KeyboardInaccessibleWidget" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/SelectCastSpinnerLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_height="@dimen/margin56"
+                android:hint="@string/select_cast"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/castTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_background"
+                    android:clickable="true"
+                    android:fontFamily="@font/robotoregular"
+                    android:shadowColor="@color/color_gray"
+                    tools:ignore="KeyboardInaccessibleWidget" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:id="@+id/materialCheckBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cast_no_bar_i_am_open_to_marry_people_of_all_castes"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
+
+            </com.google.android.material.checkbox.MaterialCheckBox>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/SelectHoroscopeSpinnerLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_height="@dimen/margin56"       
+                android:hint="@string/select_horoscope_optional"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/horoscopeTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_background"
+                    android:clickable="true"
+                    android:fontFamily="@font/robotoregular"
+                    android:shadowColor="@color/color_gray"
+                    tools:ignore="KeyboardInaccessibleWidget" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ManglikSpinnerLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/margin10"
+                android:layout_height="@dimen/margin56"
+                android:hint="@string/manglik_optional"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/ManglikTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_background"
+                    android:clickable="true"
+                    android:fontFamily="@font/robotoregular"
+                    android:shadowColor="@color/color_gray"
+                    tools:ignore="KeyboardInaccessibleWidget" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+                  <Button
+                      android:id="@+id/social_save"
+                      android:layout_width="match_parent"
+                      android:layout_height="@dimen/margin56"
+                      android:layout_marginTop="@dimen/margin10"
+                      android:shadowColor="#000000"
+                      android:text="@string/next"
+                      android:textColor="#FFFFFF"
+                      app:backgroundTint="#FF8025"
+                      app:cornerRadius="20dp"
+                      app:elevation="2dp"
+                      app:layout_constraintBottom_toBottomOf="parent"
+                      app:layout_constraintEnd_toEndOf="parent"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toTopOf="parent"
+                      app:rippleColor="#FF8025"
+                      app:shapeAppearanceOverlay="@style/TextAppearance.Compat.Notification"
+                      app:strokeColor="#000000" />
+              </LinearLayout>
+            <!--            //Social Details-->
+        <!--            //Family Details-->
+             <LinearLayout
+                android:id="@+id/ll_family_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin15"
+                android:orientation="vertical"
+                android:padding="@dimen/margin10"
+                android:visibility="gone">
+
+                 <com.google.android.material.textfield.TextInputLayout
+                     android:id="@+id/StatusSpinnerLayout"
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                     android:layout_width="match_parent"
+                     android:layout_height="56dp"
+
+                     android:hint="@string/father_s_status"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintHorizontal_bias="0.5"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent">
+
+                     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                         android:id="@+id/fatherStatusTextView"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:background="@drawable/text_background"
+                         android:clickable="true"
+                         android:fontFamily="@font/robotoregular"
+                         android:shadowColor="@color/color_gray"
+                         tools:ignore="KeyboardInaccessibleWidget" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+                 <com.google.android.material.textfield.TextInputLayout
+                     android:id="@+id/MoSpinnerLayout"
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                     android:layout_width="match_parent"
+                     android:layout_height="56dp"
+                     android:layout_marginTop="@dimen/margin10"
+                     android:hint="@string/mother_s_status"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintHorizontal_bias="0.5"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent">
+
+                     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                         android:id="@+id/motherStatusTextView"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:background="@drawable/text_background"
+                         android:clickable="true"
+                         android:fontFamily="@font/robotoregular"
+                         android:shadowColor="@color/color_gray"
+                         tools:ignore="KeyboardInaccessibleWidget" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+                 <TextView
+                     android:id="@+id/BrothersSisters"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="@dimen/margin10"
+                     android:text="@string/brothers_sisters"
+                     android:textColor="#000000"
+                     android:textSize="@dimen/margin15"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent" />
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:weightSum="1"
+                     android:orientation="horizontal">
+
+                 <com.google.android.material.textfield.TextInputLayout
+                     android:id="@+id/BrothersSpinnerLayout"
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                     android:layout_width="0dp"
+                     android:layout_weight="0.5"
+                     android:layout_height="56dp"
+                     android:layout_marginRight="@dimen/margin4"
+                     android:layout_marginTop="@dimen/margin10"
+                     android:hint="@string/no_of_brothers"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent">
+
+                     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                         android:id="@+id/brotherTextView"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:background="@drawable/text_background"
+                         android:clickable="true"
+                         android:fontFamily="@font/robotoregular"
+                         android:shadowColor="@color/color_gray"
+                         tools:ignore="KeyboardInaccessibleWidget" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+                 <com.google.android.material.textfield.TextInputLayout
+                     android:id="@+id/No.ofMarriedSpinnerLayout"
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                     android:layout_width="0dp"
+                     android:layout_weight="0.5"
+                     android:layout_height="56dp"
+                     android:layout_marginLeft="@dimen/margin4"
+                     android:layout_marginTop="@dimen/margin10"
+                     android:hint="@string/no_of_married"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent">
+
+                     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                         android:id="@+id/brotherMarriedTextView"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:background="@drawable/text_background"
+                         android:clickable="true"
+                         android:fontFamily="@font/robotoregular"
+                         android:shadowColor="@color/color_gray"
+                         tools:ignore="KeyboardInaccessibleWidget" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+                 </LinearLayout>
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:weightSum="1"
+                     android:orientation="horizontal">
+                 <com.google.android.material.textfield.TextInputLayout
+                     android:id="@+id/SistersSpinnerLayout"
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                     android:layout_width="0dp"
+                     android:layout_weight="0.5"
+                     android:layout_height="56dp"
+                     android:layout_marginRight="@dimen/margin4"
+                     android:layout_marginTop="@dimen/margin10"
+                     android:hint="@string/no_of_sisters"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent">
+
+                     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                         android:id="@+id/sisterTextView"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:background="@drawable/text_background"
+                         android:clickable="true"
+                         android:fontFamily="@font/robotoregular"
+                         android:shadowColor="@color/color_gray"
+                         tools:ignore="KeyboardInaccessibleWidget" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+                 <com.google.android.material.textfield.TextInputLayout
+                     android:id="@+id/MarriedSpinnerLayout"
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                     android:layout_width="0dp"
+                     android:layout_weight="0.5"
+                     android:layout_height="56dp"
+                     android:layout_marginLeft="@dimen/margin4"
+                     android:layout_marginTop="@dimen/margin10"
+                     android:hint="@string/no_of_married"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent">
+
+                     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                         android:id="@+id/sisterMarriedTextView"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:background="@drawable/text_background"
+                         android:clickable="true"
+                         android:fontFamily="@font/robotoregular"
+                         android:shadowColor="@color/color_gray"
+                         tools:ignore="KeyboardInaccessibleWidget" />
+                 </com.google.android.material.textfield.TextInputLayout>
+
+                 </LinearLayout>
+                 <Button
+                     android:id="@+id/save_family_details"
+                     android:layout_width="match_parent"
+                     android:layout_height="@dimen/margin56"
+                     android:shadowColor="#000000"
+                     android:layout_marginTop="@dimen/margin10"
+                     android:text="@string/next"
+                     android:textColor="#FFFFFF"
+                     app:backgroundTint="#FF8025"
+                     app:cornerRadius="20dp"
+                     app:elevation="2dp"
+                     app:layout_constraintBottom_toBottomOf="parent"
+                     app:layout_constraintEnd_toEndOf="parent"
+                     app:layout_constraintStart_toStartOf="parent"
+                     app:layout_constraintTop_toTopOf="parent"
+                     app:rippleColor="#FF8025"
+                     app:shapeAppearanceOverlay="@style/TextAppearance.Compat.Notification"
+                     app:strokeColor="#000000" />
+             </LinearLayout>
+
+            <!--            //Family Details-->
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

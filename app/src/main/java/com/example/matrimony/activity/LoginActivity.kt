@@ -14,6 +14,8 @@ import com.example.matrimony.R
 lateinit var toolbar: Toolbar
 
 lateinit var loginButton: Button
+lateinit var registerButton: Button
+
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,10 +26,22 @@ class LoginActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         getSupportActionBar()!!.setTitle("Login");
         loginButton = findViewById(R.id.loginButton)
+        registerButton = findViewById(R.id.registerButton)
 
         loginButton.setOnClickListener(View.OnClickListener {
             try {
                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(intent)
+                finish()
+            } catch (err: Exception) {
+                err.printStackTrace()
+            }
+        })
+
+        registerButton.setOnClickListener(View.OnClickListener {
+            try {
+                val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(intent)
                 finish()

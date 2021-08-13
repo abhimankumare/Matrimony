@@ -1,5 +1,6 @@
 package com.example.matrimony.activity
 
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
@@ -16,8 +17,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.matrimony.R
+import com.example.matrimony.fragment.ChatFragment
+import com.example.matrimony.fragment.HomeFragment
+import com.example.matrimony.fragment.SearchFragment
 import com.example.poultry_i.common.Utils.BlurBuilder.blur
-import com.example.poultry_i.fragment.HomeFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import java.util.*
 
@@ -29,6 +33,8 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
     lateinit var navView: NavigationView
     lateinit var imageView: ImageView
     var actionBarDrawerToggle: ActionBarDrawerToggle? = null
+    private lateinit var bottomNavigationView: BottomNavigationView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +49,7 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         drawerLayout.addDrawerListener(actionBarDrawerToggle!!)
         actionBarDrawerToggle!!.syncState()
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        bottomNavigationView = findViewById(R.id.bottom_navigation_view)
         assert(navView != null)
         navView.setNavigationItemSelectedListener(this@MainActivity)
         val headerView: View = navView.getHeaderView(0)
@@ -51,6 +58,8 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         val bitmap = BitmapFactory.decodeResource(resources, R.drawable.hamburgerdr)
         val blurredBitmap = blur(this@MainActivity, bitmap)
         imageView.setBackgroundDrawable(BitmapDrawable(resources, blurredBitmap))
+        addFragment(HomeFragment(), false, HomeFragment::class.java.simpleName)
+        initClickListeners()
 
     }
 
@@ -90,12 +99,15 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_home -> {
-                addFragment(
-                    HomeFragment(),
-                    true,
-                    HomeFragment::class.java.simpleName
-                )
+            R.id.nav_view_profile -> {
+//                addFragment(
+//                    HomeFragment(),
+//                    true,
+//                    HomeFragment::class.java.simpleName
+//                )
+                val intent = Intent(this@MainActivity, ShowDetails::class.java)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(intent)
                 drawerLayout.closeDrawer(GravityCompat.START)
                 return true
             }
@@ -119,6 +131,40 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         }
         return actionBarDrawerToggle!!.onOptionsItemSelected(item)
     }
+
+
+    private fun initClickListeners() {
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+
+
+                R.id.action_chat -> {
+                    bottomNavigationView.getMenu().getItem(0)
+                        .setIcon(R.drawable.chat);
+                    addFragment(
+                        ChatFragment(),
+                        true,
+                        ChatFragment::class.java.simpleName
+                    )
+                }
+
+
+                R.id.action_search -> {
+                    bottomNavigationView.getMenu().getItem(0)
+                        .setIcon(R.drawable.chat);
+                    addFragment(
+                        SearchFragment(),
+                        true,
+                        SearchFragment::class.java.simpleName
+                    )
+                }
+            }
+            true
+        }
+
+
+    }
+
 
     override fun onBackPressed() {
         if (supportFragmentManager.backStackEntryCount > 0) {

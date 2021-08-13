@@ -28,7 +28,6 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="266dp"
-        android:shadowColor="#000000"
         android:text="@string/login"
         android:textStyle="bold"
         android:fontFamily="@font/robotoregular"
@@ -103,8 +102,8 @@
         <!--this is the actual edit text which takes the input-->
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_text_login"
-            android:fontFamily="@font/robotoregular"
             android:layout_width="match_parent"
+            android:fontFamily="@font/robotoregular"
             android:background="@color/white"
             android:shadowColor="@color/color_gray"
             android:layout_height="wrap_content"/>

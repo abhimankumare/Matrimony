@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/action_home"
+        android:id="@+id/action_matches"
         android:icon="@drawable/matches"
         android:title="Matches"
         app:showAsAction="always"/>
 
     <item
-        android:id="@+id/action_rewards"
+        android:id="@+id/action_search"
         android:checked="false"
         android:color="@color/color_gray"
         android:icon="@drawable/search"
@@ -22,13 +22,13 @@
         app:showAsAction="always"/>
 
     <item
-        android:id="@+id/action_offers"
+        android:id="@+id/action_inbox"
         android:icon="@drawable/inbox"
         android:title="Inbox"
         app:showAsAction="always"/>
 
     <item
-        android:id="@+id/action_account"
+        android:id="@+id/action_chat"
         android:icon="@drawable/chat"
         android:title="Chat"
         app:showAsAction="always"/>
