@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_matrimonyid.xml.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_matrimonyid.xml"
+    },
+    {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon9.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\icon9.png"
     },
@@ -16,12 +20,12 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_component_1015___1.png"
     },
     {
-        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_personal_details.xml.flat",
-        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_personal_details.xml"
-    },
-    {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_back_button_.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_back_button_.png"
+    },
+    {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_personal_details.xml.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_personal_details.xml"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_hamburger.png.flat",
@@ -50,6 +54,10 @@
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_faq.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\faq.png"
+    },
+    {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_regularsearch.xml.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_regularsearch.xml"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_launcher_background.png.flat",
@@ -270,10 +278,6 @@
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_back_button_.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_back_button_.png"
-    },
-    {
-        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment__search_id.xml.flat",
-        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment__search_id.xml"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_component_1023___1.png.flat",
@@ -744,10 +748,6 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_cricket.xml.flat",
-        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_cricket.xml"
-    },
-    {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_selection_control___checkbox___on___enabled.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_selection_control___checkbox___on___enabled.png"
     },
@@ -1010,10 +1010,6 @@
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_selection_control___checkbox___on___enabled.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_selection_control___checkbox___on___enabled.png"
-    },
-    {
-        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_football.xml.flat",
-        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_football.xml"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_selection_control___checkbox___on___enabled.xml.flat",

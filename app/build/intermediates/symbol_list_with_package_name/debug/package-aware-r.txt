@@ -2535,7 +2535,6 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
-id search0
 id search1
 id search2
 id search3
@@ -2555,7 +2554,6 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
-id searchid
 id selectSectorSpinnerLayout
 id selectSectorTextView
 id select_dialog_listview
@@ -2853,14 +2851,13 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
-layout fragment__search_id
 layout fragment_chat
-layout fragment_cricket
 layout fragment_family_detais
-layout fragment_football
 layout fragment_home
+layout fragment_matrimonyid
 layout fragment_personal_details
 layout fragment_preference
+layout fragment_regularsearch
 layout fragment_search
 layout hamburger_menu_layout
 layout layout_custome_dash_board_toolbar
@@ -3976,6 +3973,7 @@ style rubik
 style rubikmedium
 style rubikregular
 style rubiksemibold
+style tab_text
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

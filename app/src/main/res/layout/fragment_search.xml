@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             app:tabGravity="fill"
             app:tabMode="fixed"
+            app:tabTextAppearance="@style/tab_text"
             tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.appbar.AppBarLayout>
 
