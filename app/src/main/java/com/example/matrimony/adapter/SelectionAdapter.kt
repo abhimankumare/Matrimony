@@ -5,6 +5,7 @@ package com.example.matrimony.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +19,7 @@ internal class SelectionAdapter(val context: RegisterActivity, val data: ArrayLi
     internal inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         var tv_self: TextView = view.findViewById(R.id.tv_self)
+        var ll_self: LinearLayout = view.findViewById(R.id.ll_self)
 
 
     }
@@ -31,7 +33,7 @@ internal class SelectionAdapter(val context: RegisterActivity, val data: ArrayLi
         val data = data[position]
         holder.tv_self.text = data.toString()
 
-        holder.tv_self.setOnClickListener(View.OnClickListener {
+        holder.ll_self.setOnClickListener(View.OnClickListener {
             context.setView()
 
         })

@@ -1904,6 +1904,7 @@ int drawable home 0x7f080085
 int drawable ic___leading_icon_l_use_high_emphasis 0x7f080086
 int drawable ic_action_password 0x7f080087
 int drawable ic_back_button_ 0x7f080088
+int drawable ic_baseline_account_circle_24 0x7f0800fc
 int drawable ic_baseline_exit_to_app_24 0x7f080089
 int drawable ic_baseline_search_24 0x7f08008a
 int drawable ic_clock_black_24dp 0x7f08008b
