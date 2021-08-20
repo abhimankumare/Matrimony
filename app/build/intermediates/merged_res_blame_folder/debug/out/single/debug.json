@@ -8,12 +8,16 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\icon9.png"
     },
     {
-        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon12.png.flat",
-        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\icon12.png"
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_success_stories_adapter.xml.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\success_stories_adapter.xml"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_component_1039___1.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_component_1039___1.png"
+    },
+    {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon12.png.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\icon12.png"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_component_1015___1.png.flat",
@@ -32,6 +36,14 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_hamburger.png"
     },
     {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_verifiedicon.png.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\verifiedicon.png"
+    },
+    {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_image_rounded.xml.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\image_rounded.xml"
+    },
+    {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_component_1039___1.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_component_1039___1.png"
     },
@@ -44,12 +56,12 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\bottom_rounded_orange.xml"
     },
     {
-        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\font_rubik_regular_.ttf.flat",
-        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\font\\rubik_regular_.ttf"
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_imageback.jpg.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\imageback.jpg"
     },
     {
-        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_component_1021___1.png.flat",
-        "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_component_1021___1.png"
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\font_rubik_regular_.ttf.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\font\\rubik_regular_.ttf"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_regularsearch.xml.flat",
@@ -64,8 +76,16 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_launcher_background.png"
     },
     {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_verifiedicon.png.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\verifiedicon.png"
+    },
+    {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_diet.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\diet.png"
+    },
+    {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_showintrest.png.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\showintrest.png"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_component_1023___1.xml.flat",
@@ -102,6 +122,10 @@
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_component_1024___1.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_component_1024___1.png"
+    },
+    {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_verifiedicon.png.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\verifiedicon.png"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_exit_to_app_24.png.flat",
@@ -288,8 +312,16 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_back_button_.png"
     },
     {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_card_line_curve.xml.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\ic_card_line_curve.xml"
+    },
+    {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_component_1023___1.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_component_1023___1.png"
+    },
+    {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_verifiedicon.png.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\verifiedicon.png"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_component_1024___1.png.flat",
@@ -342,6 +374,10 @@
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_girl_circle.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\girl_circle.png"
+    },
+    {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_saveprofile.png.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\saveprofile.png"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_component_1038___1.png.flat",
@@ -524,6 +560,10 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_component_1023___1.png"
     },
     {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_layout_text_row_chat_screen.xml.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\layout_text_row_chat_screen.xml"
+    },
+    {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_component_1015___1.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_component_1015___1.png"
     },
@@ -590,10 +630,6 @@
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_left_right_top_border_white.xml.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\left_right_top_border_white.xml"
-    },
-    {
-        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_component_1021___1.xml.flat",
-        "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_component_1021___1.xml"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_component_1012___1.png.flat",
@@ -664,6 +700,10 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_back_button_.png"
     },
     {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_verifiedicon.xml.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\verifiedicon.xml"
+    },
+    {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\menu_bottom_nav_menu.xml.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\menu\\bottom_nav_menu.xml"
     },
@@ -674,10 +714,6 @@
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_profession.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\profession.png"
-    },
-    {
-        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_component_1021___1.png.flat",
-        "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_component_1021___1.png"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_component_1013___1.png.flat",
@@ -740,6 +776,10 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_component_1004___1.png"
     },
     {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_change_password.xml.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\change_password.xml"
+    },
+    {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\activity_splash.xml"
     },
@@ -756,16 +796,16 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_component_1021___1.png.flat",
-        "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_component_1021___1.png"
-    },
-    {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_component_1037___1.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_component_1037___1.png"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_messagematr.png.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\drawable\\messagematr.png"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_selection_control___checkbox___on___enabled.png.flat",
@@ -798,6 +838,10 @@
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_family_detais.xml.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_family_detais.xml"
+    },
+    {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_inbox.xml.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_inbox.xml"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_component_1004___1.png.flat",
@@ -834,6 +878,10 @@
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_component_1016___1.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_component_1016___1.png"
+    },
+    {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_verifiedicon.png.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\verifiedicon.png"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_component_1007___1.png.flat",
@@ -948,16 +996,8 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\chat_icon_foreground.png"
     },
     {
-        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_component_1021___1.png.flat",
-        "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_component_1021___1.png"
-    },
-    {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_chat_icon_foreground.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\chat_icon_foreground.png"
-    },
-    {
-        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_component_1021___1.png.flat",
-        "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_component_1021___1.png"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mail.png.flat",
@@ -1184,6 +1224,10 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_component_1037___1.png"
     },
     {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_verifiedicon.png.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\verifiedicon.png"
+    },
+    {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_back_button_.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_back_button_.png"
     },
@@ -1228,12 +1272,12 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_exit_to_app_24.png"
     },
     {
-        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\font_rubik_medium.ttf.flat",
-        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\font\\rubik_medium.ttf"
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_hide_profile.xml.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\hide_profile.xml"
     },
     {
-        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_component_1021___1.png.flat",
-        "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_component_1021___1.png"
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\font_rubik_medium.ttf.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\font\\rubik_medium.ttf"
     },
     {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\font_robotocondensedold.ttf.flat",

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hamburgerback"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin20"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/margin18"
+                android:layout_marginLeft="@dimen/margin25"
+                android:fontFamily="@font/robotoregular"
+                android:layout_marginTop="31dp"
+                android:text="How long you want to hide your profile"
+                android:textColor="#5A5858" />
+
+
+            <TextView
+                android:id="@+id/tv_text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/margin18"
+                android:layout_marginLeft="@dimen/margin25"
+                android:fontFamily="@font/robotoregular"
+                android:layout_marginTop="10dp"
+                android:text="Select Duration"
+                android:textColor="#5A5858" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/margin10">
+
+                <ImageView
+                    android:layout_width="@dimen/margin25"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_selection_control___checkbox___on___enabled"
+                    android:layout_marginLeft="@dimen/margin16"
+                    android:layout_marginTop="@dimen/margin10">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tv_text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin20"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="7 days"
+                    android:textColor="#5A5858"
+                    android:textSize="@dimen/margin18" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/margin10">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/margin16"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:background="@drawable/ic_selection_control___checkbox___off___enabled">
+
+                </ImageView>
+
+
+                <TextView
+                    android:id="@+id/tv_text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin20"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="15 days"
+                    android:textColor="#5A5858"
+                    android:textSize="@dimen/margin18" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/margin10">
+
+                <ImageView
+                    android:layout_width="@dimen/margin25"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/ic_selection_control___checkbox___off___enabled"
+                    android:layout_marginLeft="@dimen/margin16"
+                    android:layout_marginTop="@dimen/margin10">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/tv_text5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin20"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="30 days"
+                    android:textColor="#5A5858"
+                    android:textSize="@dimen/margin18" />
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin56"
+                android:fontFamily="@font/robotoregular"
+                android:hint="Enter Password"
+                android:layout_gravity="center"
+
+                android:layout_marginTop="@dimen/margin20"
+                android:shadowColor="@color/color_gray"
+                app:endIconMode="password_toggle"
+                app:endIconTint="#7F7F7F">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@color/white"
+
+                    android:fontFamily="@font/robotoregular"
+                    android:shadowColor="@color/color_gray" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/changeButton"
+                android:layout_marginLeft="@dimen/margin20"
+                android:layout_width="@dimen/margin330"
+                android:layout_height="@dimen/margin45"
+                android:layout_marginBottom="@dimen/margin15"
+                android:background="@drawable/bkg_button_gradient"
+                android:shadowColor="#000000"
+                android:text="SAVE"
+                android:layout_marginTop="@dimen/margin250"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="20dp"/>
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

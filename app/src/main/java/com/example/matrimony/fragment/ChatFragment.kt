@@ -5,7 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.matrimony.R
+import com.example.matrimony.adapter.ChatAdapter
+import com.example.matrimony.adapter.SuccessAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +26,9 @@ class ChatFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    internal lateinit var view: View
+    lateinit var list2: RecyclerView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,13 +38,40 @@ class ChatFragment : Fragment() {
         }
     }
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_chat, container, false)
+        view = inflater.inflate(R.layout.fragment_chat, container, false)
+        (activity as AppCompatActivity).supportActionBar?.title = "Chat"
+        initView(view)
+        return view
     }
+
+    private fun initView(view: View) {
+        list2 = view.findViewById(R.id.Recycler1)
+        val layoutManager = LinearLayoutManager(requireContext())
+        list2.setHasFixedSize(true);
+        list2.setLayoutManager(layoutManager);
+        //creating a  arraylist of data
+        val data: ArrayList<String> = ArrayList()
+        data.add("Self")
+        data.add("Relative")
+        data.add("Son")
+        data.add("Daughter")
+        data.add("Brother")
+        data.add("Sister")
+        data.add("Client")
+        data.add("Friend")
+
+        //setting adapter to recycler
+        list2.adapter = ChatAdapter(requireContext(),data)
+
+
+    }
+
 
     companion object {
         /**

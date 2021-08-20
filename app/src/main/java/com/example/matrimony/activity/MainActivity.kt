@@ -11,6 +11,7 @@ import android.widget.*
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.app.NotificationCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -19,6 +20,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.matrimony.R
 import com.example.matrimony.fragment.ChatFragment
 import com.example.matrimony.fragment.HomeFragment
+import com.example.matrimony.fragment.InboxFragment
 import com.example.matrimony.fragment.SearchFragment
 import com.example.poultry_i.common.Utils.BlurBuilder.blur
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -137,9 +139,39 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
 
+                R.id.action_matches -> {
+                    bottomNavigationView.getMenu().getItem(0)
+                        .setIcon(R.drawable.matches);
+                    addFragment(
+                        HomeFragment(),
+                        true,
+                        HomeFragment::class.java.simpleName
+                    )
+                }
+
+                R.id.action_search -> {
+                    bottomNavigationView.getMenu().getItem(1)
+                        .setIcon(R.drawable.search);
+                    addFragment(
+                        SearchFragment(),
+                        true,
+                        SearchFragment::class.java.simpleName
+                    )
+                }
+
+
+                R.id.action_inbox -> {
+                    bottomNavigationView.getMenu().getItem(3)
+                        .setIcon(R.drawable.inbox);
+                    addFragment(
+                        InboxFragment(),
+                        true,
+                        InboxFragment::class.java.simpleName
+                    )
+                }
 
                 R.id.action_chat -> {
-                    bottomNavigationView.getMenu().getItem(0)
+                    bottomNavigationView.getMenu().getItem(4)
                         .setIcon(R.drawable.chat);
                     addFragment(
                         ChatFragment(),
@@ -148,16 +180,6 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
                     )
                 }
 
-
-                R.id.action_search -> {
-                    bottomNavigationView.getMenu().getItem(0)
-                        .setIcon(R.drawable.chat);
-                    addFragment(
-                        SearchFragment(),
-                        true,
-                        SearchFragment::class.java.simpleName
-                    )
-                }
             }
             true
         }
