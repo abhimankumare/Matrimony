@@ -1,20 +1,35 @@
 package com.example.matrimony.activity
 
+import android.app.DatePickerDialog
+import android.content.ClipData.Item
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.Button
-import android.widget.LinearLayout
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bfl.superapp.api.ApiName
+import com.bfl.superapp.viewmodel.CommonViewModel
 import com.example.matrimony.R
 import com.example.matrimony.adapter.SelectionAdapter
+import com.example.matrimony.model.MasterContent
+import com.example.matrimony.model.MasterResponse
+import com.example.matrimony.repository.ApiInterface
+import com.example.poultry_i.common.Utils
+import com.example.poultry_i.common.Utils.toast
+import com.example.poultry_i.storageHelpers.PreferenceHelper
+import com.google.gson.Gson
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Response.success
+import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.Result.Companion.failure
 
 
 lateinit var ll_career_details: LinearLayout
@@ -24,6 +39,25 @@ lateinit var ll_family_details: LinearLayout
 lateinit var rv_selection: RecyclerView
 private lateinit var selectionAdapter: SelectionAdapter
 lateinit var toolbar1: Toolbar
+private var listHeight: ArrayList<MasterContent> = arrayListOf()
+private var listState: ArrayList<MasterContent> = arrayListOf()
+private var listcities: ArrayList<MasterContent> = arrayListOf()
+private var listeducation: ArrayList<MasterContent> = arrayListOf()
+private var listoccupation: ArrayList<MasterContent> = arrayListOf()
+private var listreligion: ArrayList<MasterContent> = arrayListOf()
+private var spinnerheightArray: ArrayList<String> = arrayListOf()
+private var spinnerStateArray: ArrayList<String> = arrayListOf()
+private var spinnercitiesArray: ArrayList<String> = arrayListOf()
+private var spinnereducationArray: ArrayList<String> = arrayListOf()
+private var spinneroccupationArray: ArrayList<String> = arrayListOf()
+private var spinnerreligionArray: ArrayList<String> = arrayListOf()
+lateinit var edit_text_DOB: EditText
+lateinit var ed_mobileemail: EditText
+lateinit var saveButton: Button
+var radioGroup: RadioGroup? = null
+lateinit var radioButton: RadioButton
+
+val calendar = Calendar.getInstance()
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -36,33 +70,35 @@ class RegisterActivity : AppCompatActivity() {
         ll_social_details = findViewById(R.id.ll_social_details)
         ll_family_details = findViewById(R.id.ll_family_details)
         rv_selection = findViewById(R.id.rv_selection)
-
-
+        edit_text_DOB = findViewById(R.id.edit_text_DOB)
+        ed_mobileemail = findViewById(R.id.ed_mobileemail)
+        radioGroup = findViewById(R.id.radioGroup1)
+        saveButton = findViewById(R.id.saveButton)
+        initClickListeners()
 
         toolbar1 = findViewById(R.id.toolbar1)
         setSupportActionBar(toolbar1)
         getSupportActionBar()!!.setTitle("Details");
 
-
+        getMasterData()
 
         //Set Adpater
         setSelfAdapter()
 
 
         //Personal Details
-        initUIHeight()
+
         initUICountry()
-        initUIState()
-        initUICity()
+
         //Career Details
-        initUIEducatoin()
+
         initUISector()
-        initUIOccupation()
+
         initUIIncome()
         //Social Details
         initUIMaritalStatus()
         initUIMotherTongue()
-        initUIReligion()
+
         initUICast()
         initUIHoroscope()
         initUIManglik()
@@ -75,12 +111,7 @@ class RegisterActivity : AppCompatActivity() {
         initUISister()
         initUINoofMarriedSister()
 
-        val save = findViewById<View>(R.id.saveButton) as Button
-        save.setOnClickListener {
-            ll_personal_details.visibility = View.GONE
-            ll_career_details.visibility = View.VISIBLE
-            getSupportActionBar()!!.setTitle("Career Details");
-        }
+
 
         val savecarrer = findViewById<View>(R.id.save_car_details) as Button
         savecarrer.setOnClickListener {
@@ -108,6 +139,151 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun initClickListeners() {
+        edit_text_DOB.setOnClickListener(View.OnClickListener {
+            val day = calendar[Calendar.DAY_OF_WEEK]
+            val month = calendar[Calendar.MONTH]
+            val year = calendar[Calendar.YEAR]
+            val dpd = DatePickerDialog(
+                this,
+                { datePicker, nYear, nMonth, nDay ->
+                    val sdf = SimpleDateFormat("yyyy-MM-dd")
+                    calendar[nYear, nMonth] = nDay
+                    val dateString: String = sdf.format(calendar.time)
+                    edit_text_DOB.setText(dateString)
+                }, year, month, day
+            )
+            dpd.show()
+        })
+
+        saveButton.setOnClickListener(View.OnClickListener {
+
+           // ll_personal_details.visibility = View.GONE
+           // ll_career_details.visibility = View.VISIBLE
+           // getSupportActionBar()!!.setTitle("Career Details");
+
+            val selectedOption: Int = radioGroup!!.checkedRadioButtonId
+
+            // Assigning id of the checked radio button
+            radioButton = findViewById(selectedOption)
+
+            // Displaying text of the checked radio button in the form of toast
+            Toast.makeText(baseContext, radioButton.text, Toast.LENGTH_SHORT).show()
+
+            signUpProfile()
+
+        })
+
+
+    }
+
+    private fun signUpProfile() {
+        val map: HashMap<String, String> = HashMap()
+        map["user_type"] = "self"
+        map["name"] = "Abhishek Mankumare"
+        map["gender"] = "Male"
+        map["birth_date"] = "1990-06-05"
+        map["hight"] = "5.6"
+        map["contry"] = "INDIA"
+        map["state_id"] = "4"
+        map["city_id"] = "19"
+        map["mobile"] = "9323936081"
+        map["user_bio"] = "Human Being"
+        map["password"] = "123123"
+        map["confirm_password"] = "123123"
+
+        getCommonViewModel().getSignUpData(map).observe(this,{
+            it.run {
+
+                if(it.Status.equals("Success")){
+                    Toast.makeText(this@RegisterActivity,""+it.message,Toast.LENGTH_LONG).show()
+                }
+
+            }
+        })
+
+    }
+
+
+    fun getCommonViewModel(): CommonViewModel {
+        return ViewModelProviders.of(this).get(CommonViewModel::class.java)
+    }
+
+
+    private fun getMasterData() {
+
+        try {
+            getCommonViewModel().getMasterData(ApiName.MASTER_URL)
+                .observe(this, androidx.lifecycle.Observer {
+                    it.let {
+
+                        if (it != null) {
+
+                            val allData = Gson().toJson(it)
+
+                            if (Utils.isConnectingToInternet(this@RegisterActivity) && allData.toString() != "{}") {
+
+
+                                Gson().fromJson(allData, MasterResponse::class.java).let { response ->
+                                    if (response.toString() != "") {
+                                        try {
+                                            listHeight = response.height as ArrayList<MasterContent>
+                                            listState = response.state as ArrayList<MasterContent>
+                                            listcities = response.cities as ArrayList<MasterContent>
+                                            listeducation = response.education as ArrayList<MasterContent>
+                                            listoccupation = response.occupation as ArrayList<MasterContent>
+                                            listreligion= response.religion as ArrayList<MasterContent>
+
+
+                                            for(i in 0 until listHeight.size){
+                                                spinnerheightArray.add(listHeight[i].height_type)
+                                            }
+                                            for(i in 0 until listState.size){
+                                                spinnerStateArray.add(listState[i].name)
+                                            }
+                                            for(i in 0 until listcities.size){
+                                                spinnercitiesArray.add(listcities[i].name)
+                                            }
+                                            for(i in 0 until listeducation.size){
+                                                spinnereducationArray.add(listeducation[i].name)
+                                            }
+                                            for(i in 0 until listoccupation.size){
+                                                spinneroccupationArray.add(listoccupation[i].name)
+                                            }
+                                            for(i in 0 until listreligion.size){
+                                                spinnerreligionArray.add(listreligion[i].name)
+                                            }
+
+
+                                            initUIHeight()
+                                            initUIState()
+                                            initUICity()
+                                            initUIEducatoin()
+                                            initUIOccupation()
+                                            initUIReligion()
+
+
+
+
+                                        } catch (e: Exception) {
+                                            toast(this,"No Proper data found.")
+                                            println("inAppMasterData== ${e.message}")
+                                        }
+                                    }
+                                }
+                            } else {
+                                toast(this,"No Proper data found.")
+                            }
+                        }
+                    }
+                })
+        } catch (e: Exception) {
+            toast(this,"No Proper data found.")
+            //Log.i("Common FAQ", "Common FAQ Error : $e")
+        }
+    }
+
 
     fun setView() {
         getSupportActionBar()!!.setTitle("Presonal Details");
@@ -138,29 +314,14 @@ class RegisterActivity : AppCompatActivity() {
     private fun initUIHeight() {
         //UI reference of textView
         val customerAutoTV = findViewById<AutoCompleteTextView>(R.id.customerHeightTextView)
-
-        // create list of customer
-        val customerList = getCustomerHeightList()
-
         //Create adapter
         val adapter = ArrayAdapter(
             this@RegisterActivity,
-            android.R.layout.simple_spinner_item,
-            customerList
+            R.layout.custome_new_spinner,
+            spinnerheightArray
         )
-
         //Set adapter
         customerAutoTV.setAdapter(adapter)
-
-        //submit button click event registration
-//        findViewById(R.id.submitButton).setOnClickListener(new View.OnClickListener()
-//        {
-//            @Override
-//            public void onClick(View view)
-//            {
-//                Toast.makeText(Personal_Information.this, customerAutoTV.getText(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
     }
 
     private fun initUICountry() {
@@ -171,13 +332,13 @@ class RegisterActivity : AppCompatActivity() {
                 findViewById<AutoCompleteTextView>(R.id.customerCountryTextView)
 
             // create list of customer
-            val customerList = getCustomerCountryList()
+            val countryList = getCountryList()
 
             //Create adapter
             val adapter = ArrayAdapter(
                 this@RegisterActivity,
-                android.R.layout.simple_spinner_item,
-                customerList
+                R.layout.custome_new_spinner,
+                countryList
             )
 
             //Set adapter
@@ -192,14 +353,12 @@ class RegisterActivity : AppCompatActivity() {
             val customerAutoTV =
                 findViewById<AutoCompleteTextView>(R.id.customerStateTextView)
 
-            // create list of customer
-            val customerList = getCustomerStateList()
 
             //Create adapter
             val adapter = ArrayAdapter(
                 this@RegisterActivity,
-                android.R.layout.simple_spinner_item,
-                customerList
+                R.layout.custome_new_spinner,
+                spinnerStateArray
             )
 
             //Set adapter
@@ -214,14 +373,11 @@ class RegisterActivity : AppCompatActivity() {
             val customerAutoTV =
                 findViewById<AutoCompleteTextView>(R.id.customerCityTextView)
 
-            // create list of customer
-            val customerList = getCustomerCityList()
-
             //Create adapter
             val adapter = ArrayAdapter(
                 this@RegisterActivity,
-                android.R.layout.simple_spinner_item,
-                customerList
+                R.layout.custome_new_spinner,
+                spinnercitiesArray
             )
 
             //Set adapter
@@ -229,87 +385,28 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun getCustomerHeightList(): ArrayList<String> {
-        val customers = ArrayList<String>()
-        customers.add("4' 6" + "(137 cm)")
-        customers.add("4' 7" + "(140 cm)")
-        customers.add("4' 8" + "(142 cm)")
-        customers.add("4' 9" + "(145 cm)")
-        customers.add("4' 10" + "(147 cm)")
-        customers.add("4' 11" + "(150 cm)")
-        customers.add("5' 0" + "(152 cm)")
-        customers.add("5' 1" + "(155 cm)")
-        customers.add("5' 2" + "(157 cm)")
-        customers.add("5' 3" + "(160 cm)")
-        customers.add("5' 4" + "(163 cm)")
-        customers.add("5' 5" + "(165 cm)")
-        return customers
-    }
-
-    private fun getCustomerCountryList(): ArrayList<String> {
+    private fun getCountryList(): ArrayList<String> {
         val Country = ArrayList<String>()
         Country.add("India")
-        Country.add("America")
-        Country.add("Africa")
-        Country.add("Dubai")
-        Country.add("Italy")
         return Country
     }
 
-    private fun getCustomerStateList(): ArrayList<String> {
-        val Country = ArrayList<String>()
-        Country.add("MAHARASTRA")
-        Country.add("GUJRAT")
-        Country.add("PUNJAB")
-        Country.add("RAJASHTAN")
-        Country.add("DELHI")
-        return Country
-    }
 
-    private fun getCustomerCityList(): ArrayList<String> {
-        val Country = ArrayList<String>()
-        Country.add("NASHIK")
-        Country.add("PUNE")
-        Country.add("MUMBAI")
-        Country.add("KOKAN")
-        Country.add("NAGPUR")
-        return Country
-    }
 
     private fun initUIEducatoin() {
         //UI reference of textView
         val customerAutoTV = findViewById<AutoCompleteTextView>(R.id.educationTextView)
-
-        // create list of customer
-        val customerList = getEducationList()
-
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, spinnereducationArray)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
 
         //submit button click event registration
-//        findViewById(R.id.submitButton).setOnClickListener(new View.OnClickListener()
-//        {
-//            @Override
-//            public void onClick(View view)
-//            {
-//                Toast.makeText(Personal_Information.this, customerAutoTV.getText(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
+
     }
 
-    private fun getEducationList(): ArrayList<String> {
-        val customers = ArrayList<String>()
-        customers.add("BSC")
-        customers.add("BSC(Comp.Sci.)")
-        customers.add("BCOM")
-        customers.add("BBA")
-        customers.add("BA")
-        return customers
-    }
 
     private fun initUISector() {
         //UI reference of textView
@@ -320,7 +417,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
@@ -355,7 +452,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
@@ -390,7 +487,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
@@ -425,7 +522,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
@@ -458,7 +555,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
@@ -493,7 +590,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
@@ -526,7 +623,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
@@ -560,7 +657,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
@@ -583,7 +680,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
@@ -615,7 +712,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
@@ -648,7 +745,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
@@ -681,7 +778,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
@@ -714,7 +811,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
@@ -747,7 +844,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)
@@ -772,7 +869,7 @@ class RegisterActivity : AppCompatActivity() {
 
         //Create adapter
         val adapter =
-            ArrayAdapter(this@RegisterActivity, android.R.layout.simple_spinner_item, customerList)
+            ArrayAdapter(this@RegisterActivity, R.layout.custome_new_spinner, customerList)
 
         //Set adapter
         customerAutoTV.setAdapter(adapter)

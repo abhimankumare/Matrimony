@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:textColor="#0E0E0E"
+    android:padding="@dimen/margin8"
+    android:textStyle="bold"
+    android:textSize="@dimen/margin14"
+    android:text="Test"
+    android:fontFamily="@font/robotoregular"/>
