@@ -12,6 +12,10 @@
         "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\success_stories_adapter.xml"
     },
     {
+        "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\layout_custome_new_spinner.xml.flat",
+        "source": "D:\\best\\Freelance\\Matrimony\\app\\src\\main\\res\\layout\\custome_new_spinner.xml"
+    },
+    {
         "merged": "D:\\best\\Freelance\\Matrimony\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_component_1039___1.png.flat",
         "source": "D:\\best\\Freelance\\Matrimony\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_component_1039___1.png"
     },

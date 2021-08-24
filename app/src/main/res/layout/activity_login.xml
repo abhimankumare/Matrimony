@@ -57,7 +57,7 @@
 
                 <!--this is the actual edit text which takes the input-->
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_text_login"
+                    android:id="@+id/edit_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
@@ -79,6 +79,7 @@
                 app:endIconTint="#7F7F7F">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_text_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"

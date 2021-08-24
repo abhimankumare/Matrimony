@@ -18,7 +18,7 @@ interface NetworkService {
     fun getHybridFaqResponseData(@Url url:String?):Observable<MasterResponse>
 
     @Headers("Content-Type: application/json")
-    @POST("http://anterpat.com/api/v1/signup")
+    @POST("/signup")
     fun registration(@Body obj: HashMap<String, String>): Observable<SignUpResponse>
 
 }

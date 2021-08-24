@@ -1,10 +1,8 @@
 package com.example.matrimony.activity
 
 import android.app.DatePickerDialog
-import android.content.ClipData.Item
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -18,18 +16,17 @@ import com.example.matrimony.R
 import com.example.matrimony.adapter.SelectionAdapter
 import com.example.matrimony.model.MasterContent
 import com.example.matrimony.model.MasterResponse
+import com.example.matrimony.model.SignUpModel
+import com.example.matrimony.model.SignUpResponse
 import com.example.matrimony.repository.ApiInterface
 import com.example.poultry_i.common.Utils
 import com.example.poultry_i.common.Utils.toast
-import com.example.poultry_i.storageHelpers.PreferenceHelper
 import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Response.success
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.Result.Companion.failure
 
 
 lateinit var ll_career_details: LinearLayout
@@ -51,11 +48,20 @@ private var spinnercitiesArray: ArrayList<String> = arrayListOf()
 private var spinnereducationArray: ArrayList<String> = arrayListOf()
 private var spinneroccupationArray: ArrayList<String> = arrayListOf()
 private var spinnerreligionArray: ArrayList<String> = arrayListOf()
+
+lateinit var customerHeightTextView: AutoCompleteTextView
+lateinit var edit_text_login: EditText
 lateinit var edit_text_DOB: EditText
 lateinit var ed_mobileemail: EditText
+lateinit var etPassword: EditText
+
+lateinit var info_about: EditText
+
 lateinit var saveButton: Button
 var radioGroup: RadioGroup? = null
 lateinit var radioButton: RadioButton
+
+var username: String? = null
 
 val calendar = Calendar.getInstance()
 
@@ -70,10 +76,16 @@ class RegisterActivity : AppCompatActivity() {
         ll_social_details = findViewById(R.id.ll_social_details)
         ll_family_details = findViewById(R.id.ll_family_details)
         rv_selection = findViewById(R.id.rv_selection)
+        edit_text_login = findViewById(R.id.edit_text_login)
         edit_text_DOB = findViewById(R.id.edit_text_DOB)
         ed_mobileemail = findViewById(R.id.ed_mobileemail)
+        etPassword = findViewById(R.id.etPassword)
+        info_about = findViewById(R.id.info_about)
+
         radioGroup = findViewById(R.id.radioGroup1)
         saveButton = findViewById(R.id.saveButton)
+        customerHeightTextView = findViewById(R.id.customerHeightTextView)
+
         initClickListeners()
 
         toolbar1 = findViewById(R.id.toolbar1)
@@ -159,10 +171,6 @@ class RegisterActivity : AppCompatActivity() {
 
         saveButton.setOnClickListener(View.OnClickListener {
 
-           // ll_personal_details.visibility = View.GONE
-           // ll_career_details.visibility = View.VISIBLE
-           // getSupportActionBar()!!.setTitle("Career Details");
-
             val selectedOption: Int = radioGroup!!.checkedRadioButtonId
 
             // Assigning id of the checked radio button
@@ -171,38 +179,78 @@ class RegisterActivity : AppCompatActivity() {
             // Displaying text of the checked radio button in the form of toast
             Toast.makeText(baseContext, radioButton.text, Toast.LENGTH_SHORT).show()
 
-            signUpProfile()
+            signUpProfile("self", edit_text_login.text.toString(),radioButton.text.toString(),
+                            edit_text_DOB.text.toString(),customerHeightTextView.text.toString(),
+                            "India","4","19",ed_mobileemail.text.toString(),info_about.text.toString(),
+                            etPassword.text.toString(),etPassword.text.toString())
 
         })
-
 
     }
 
-    private fun signUpProfile() {
-        val map: HashMap<String, String> = HashMap()
-        map["user_type"] = "self"
-        map["name"] = "Abhishek Mankumare"
-        map["gender"] = "Male"
-        map["birth_date"] = "1990-06-05"
-        map["hight"] = "5.6"
-        map["contry"] = "INDIA"
-        map["state_id"] = "4"
-        map["city_id"] = "19"
-        map["mobile"] = "9323936081"
-        map["user_bio"] = "Human Being"
-        map["password"] = "123123"
-        map["confirm_password"] = "123123"
 
-        getCommonViewModel().getSignUpData(map).observe(this,{
-            it.run {
 
-                if(it.Status.equals("Success")){
-                    Toast.makeText(this@RegisterActivity,""+it.message,Toast.LENGTH_LONG).show()
+    private fun signUpProfile(user_type: String,
+        name: String,
+        gender: String,
+        birth_date: String,
+        hight: String,
+        contry: String,
+        state_id: String,
+        city_id: String,
+        mobile: String,
+        user_bio: String,
+        password: String,
+        confirm_password: String
+    ) {
+        if (Utils.isConnectingToInternet(this)) {
+            val retIn =
+                ApiInterface.RetrofitInstance.getRetrofitInstance().create(ApiInterface::class.java)
+            val signInInfo = SignUpModel(user_type,name,gender,
+                                        birth_date,hight,contry,state_id,
+                                        city_id,mobile,user_bio,password,confirm_password)
+            retIn.signUp(signInInfo).enqueue(object : Callback<SignUpResponse> {
+                override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
+                    Toast.makeText(
+                        this@RegisterActivity,
+                        t.message,
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
-            }
-        })
+                override fun onResponse(
+                    call: Call<SignUpResponse>,
+                    response: Response<SignUpResponse>
+                ) {
 
+                    if (response.code() == 200) {
+                        val responseBody: SignUpResponse? = response.body()
+                        if (responseBody != null) {
+                            username = responseBody.userdata[0].name
+                        }
+
+                        Toast.makeText(this@RegisterActivity, response.message(), Toast.LENGTH_SHORT)
+                            .show()
+
+                        goToNextScreen()
+
+
+                    } else {
+                        Toast.makeText(this@RegisterActivity, response.message(), Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                }
+            })
+        } else {
+
+        }
+    }
+
+    private fun goToNextScreen() {
+        val intent = Intent(this@RegisterActivity, MainActivity::class.java)
+            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
+        finish()
     }
 
 

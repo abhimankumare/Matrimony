@@ -2242,10 +2242,12 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
+id ed_mobileemail
+id edit_login
 id edit_query
 id edit_text_DOB
-id edit_text_PIfullName
 id edit_text_login
+id edit_text_password
 id educationTextView
 id elastic
 id end
@@ -2253,6 +2255,8 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id etPassword
+id etPasswordLayout
 id exitUntilCollapsed
 id expand
 id expand_activities_button
@@ -2260,6 +2264,7 @@ id expanded_menu
 id fabScan
 id fade
 id fatherStatusTextView
+id femaleButton
 id fill
 id fill_horizontal
 id fill_vertical
@@ -2301,6 +2306,7 @@ id imageView
 id imgBack
 id include
 id info
+id info_about
 id invisible
 id inward
 id italic
@@ -2414,6 +2420,7 @@ id ll_self
 id ll_social_details
 id ll_state
 id loginButton
+id maleButton
 id maritalStatusTextView
 id masked
 id materialCheckBox
@@ -2519,8 +2526,7 @@ id progress_circular
 id progress_horizontal
 id r
 id radio
-id radioFemale
-id radioMale
+id radioGroup1
 id ratio
 id rectangles
 id registerButton
@@ -2872,6 +2878,7 @@ layout app_bar_main
 layout change_password
 layout content_main
 layout custom_dialog
+layout custome_new_spinner
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -3237,6 +3244,7 @@ string select_mother_tongue
 string select_occupation
 string select_religion
 string select_sector
+string select_your_city
 string select_your_country
 string select_your_height
 string select_your_state

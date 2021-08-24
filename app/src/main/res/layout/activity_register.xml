@@ -243,6 +243,8 @@
                         android:id="@+id/ed_mobileemail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:maxLength="10"
+                        android:digits="0123456789"
                         android:background="@drawable/text_background"
                         android:fontFamily="@font/robotoregular"
                         android:shadowColor="@color/color_gray" />
@@ -296,6 +298,7 @@
                     app:counterMaxLength="4">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/info_about"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/text_background"

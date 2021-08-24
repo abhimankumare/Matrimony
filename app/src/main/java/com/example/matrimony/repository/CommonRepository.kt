@@ -43,33 +43,38 @@ class CommonRepository : BaseRepository() {
 
     fun getSignUpResponse(obj: HashMap<String, String>) : MutableLiveData<SignUpResponse> {
 //        Log.e("work","API"+ApiName.BiometricsURL)
-   //     Log.e("work","API"+url)
+        //     Log.e("work","API"+url)
         val data = MutableLiveData<SignUpResponse>()
-        getNetworkService()
-            .registration(obj)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribeOn(Schedulers.io())
-            .subscribe({ response: SignUpResponse? ->
-                Log.e("work",  " RESPONSE"+
-                        Gson().toJson(response))
-                if (response != null) {
-                    data.postValue(response)
-                }
-            }, { error: Throwable? ->
-                error?.printStackTrace()
-                var msg = error?.message
-                Log.e("work","error ------"+msg)
-                if (error is HttpException) {
-                    msg = getError(error)
-                }
-                data.postValue(
-                    SignUpResponse(emptyList(),"","")
-                )
-            })
+        try {
+            getNetworkService()
+                .registration(obj)
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe({ response: SignUpResponse? ->
+                    Log.e(
+                        "work", " RESPONSE" +
+                                Gson().toJson(response)
+                    )
+                    if (response != null) {
+                        data.postValue(response)
+                    }
+                }, { error: Throwable? ->
+                    error?.printStackTrace()
+                    var msg = error?.message
+                    Log.e("work", "error ------" + msg)
+                    if (error is HttpException) {
+                        msg = getError(error)
+                    }
+                    data.postValue(
+                        SignUpResponse(emptyList(), "", "")
+                    )
+                })
+        } catch (e: Exception) {
+            e.toString()
+        }
+
         return data
     }
-
-
 
 }
 

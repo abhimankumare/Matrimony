@@ -1,9 +1,12 @@
 package com.example.matrimony.model
 
-import com.google.gson.annotations.Expose
-import com.google.gson.annotations.SerializedName
 
-class SignUpModel {
+data class SignUpModel (val user_type: String, val name: String,
+                        val gender: String, val birth_date: String,
+                        val hight: String, val contry: String,
+                        val state_id: String, val city_id: String,
+                        val mobile: String, val user_bio: String,
+                        val password: String, val confirm_password: String)
 
 
 
@@ -21,7 +24,7 @@ class SignUpModel {
 //        @Field("confirm_password") confirm_password: String?,
 
 
-    @SerializedName("user_type")
+   /* @SerializedName("user_type")
     @Expose
     private var user_type: String? = null
 
@@ -69,6 +72,6 @@ class SignUpModel {
     @SerializedName("confirm_password")
     @Expose
     private var confirm_password: String? = null
+*/
 
 
-}
