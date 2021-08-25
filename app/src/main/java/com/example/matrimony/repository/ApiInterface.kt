@@ -23,6 +23,10 @@ interface ApiInterface {
     @POST("login")
     fun login(@Body info: Login): retrofit2.Call<LoginResponse>
 
+    @Headers("Content-Type:application/json")
+    @GET("master")
+    fun getMasterData(): Call<MasterResponse>
+
 
     class RetrofitInstance {
         companion object {

@@ -7,11 +7,8 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bfl.superapp.api.ApiName
-import com.bfl.superapp.viewmodel.CommonViewModel
 import com.example.matrimony.R
 import com.example.matrimony.adapter.SelectionAdapter
 import com.example.matrimony.model.MasterContent
@@ -20,8 +17,6 @@ import com.example.matrimony.model.SignUpModel
 import com.example.matrimony.model.SignUpResponse
 import com.example.matrimony.repository.ApiInterface
 import com.example.poultry_i.common.Utils
-import com.example.poultry_i.common.Utils.toast
-import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -54,6 +49,7 @@ lateinit var edit_text_login: EditText
 lateinit var edit_text_DOB: EditText
 lateinit var ed_mobileemail: EditText
 lateinit var etPassword: EditText
+lateinit var ed_email: EditText
 
 lateinit var info_about: EditText
 
@@ -81,6 +77,7 @@ class RegisterActivity : AppCompatActivity() {
         ed_mobileemail = findViewById(R.id.ed_mobileemail)
         etPassword = findViewById(R.id.etPassword)
         info_about = findViewById(R.id.info_about)
+        ed_email = findViewById(R.id.ed_email)
 
         radioGroup = findViewById(R.id.radioGroup1)
         saveButton = findViewById(R.id.saveButton)
@@ -181,7 +178,7 @@ class RegisterActivity : AppCompatActivity() {
 
             signUpProfile("self", edit_text_login.text.toString(),radioButton.text.toString(),
                             edit_text_DOB.text.toString(),customerHeightTextView.text.toString(),
-                            "India","4","19",ed_mobileemail.text.toString(),info_about.text.toString(),
+                            "India","4","19",ed_mobileemail.text.toString(),ed_email.text.toString(),info_about.text.toString(),
                             etPassword.text.toString(),etPassword.text.toString())
 
         })
@@ -199,6 +196,7 @@ class RegisterActivity : AppCompatActivity() {
         state_id: String,
         city_id: String,
         mobile: String,
+        email: String,
         user_bio: String,
         password: String,
         confirm_password: String
@@ -208,7 +206,7 @@ class RegisterActivity : AppCompatActivity() {
                 ApiInterface.RetrofitInstance.getRetrofitInstance().create(ApiInterface::class.java)
             val signInInfo = SignUpModel(user_type,name,gender,
                                         birth_date,hight,contry,state_id,
-                                        city_id,mobile,user_bio,password,confirm_password)
+                                        city_id,mobile,email,user_bio,password,confirm_password)
             retIn.signUp(signInInfo).enqueue(object : Callback<SignUpResponse> {
                 override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
                     Toast.makeText(
@@ -253,83 +251,70 @@ class RegisterActivity : AppCompatActivity() {
         finish()
     }
 
-
-    fun getCommonViewModel(): CommonViewModel {
-        return ViewModelProviders.of(this).get(CommonViewModel::class.java)
-    }
-
-
     private fun getMasterData() {
-
         try {
-            getCommonViewModel().getMasterData(ApiName.MASTER_URL)
-                .observe(this, androidx.lifecycle.Observer {
-                    it.let {
+            if (Utils.isConnectingToInternet(this@RegisterActivity)) {
+                val retIn = ApiInterface.RetrofitInstance.getRetrofitInstance()
+                    .create(ApiInterface::class.java)
+                retIn.getMasterData().enqueue(object : Callback<MasterResponse> {
+                    override fun onFailure(call: Call<MasterResponse>, t: Throwable) {
 
-                        if (it != null) {
+                    }
 
-                            val allData = Gson().toJson(it)
-
-                            if (Utils.isConnectingToInternet(this@RegisterActivity) && allData.toString() != "{}") {
-
-
-                                Gson().fromJson(allData, MasterResponse::class.java).let { response ->
-                                    if (response.toString() != "") {
-                                        try {
-                                            listHeight = response.height as ArrayList<MasterContent>
-                                            listState = response.state as ArrayList<MasterContent>
-                                            listcities = response.cities as ArrayList<MasterContent>
-                                            listeducation = response.education as ArrayList<MasterContent>
-                                            listoccupation = response.occupation as ArrayList<MasterContent>
-                                            listreligion= response.religion as ArrayList<MasterContent>
-
-
-                                            for(i in 0 until listHeight.size){
-                                                spinnerheightArray.add(listHeight[i].height_type)
-                                            }
-                                            for(i in 0 until listState.size){
-                                                spinnerStateArray.add(listState[i].name)
-                                            }
-                                            for(i in 0 until listcities.size){
-                                                spinnercitiesArray.add(listcities[i].name)
-                                            }
-                                            for(i in 0 until listeducation.size){
-                                                spinnereducationArray.add(listeducation[i].name)
-                                            }
-                                            for(i in 0 until listoccupation.size){
-                                                spinneroccupationArray.add(listoccupation[i].name)
-                                            }
-                                            for(i in 0 until listreligion.size){
-                                                spinnerreligionArray.add(listreligion[i].name)
-                                            }
+                    override fun onResponse(
+                        call: Call<MasterResponse>,
+                        response: Response<MasterResponse>
+                    ) {
+                        if (response.code() == 200) {
+                          //  progressBar.visibility=View.VISIBLE
+                            val responseBody: MasterResponse? = response.body()
+                            if (responseBody != null) {
+                                listHeight = responseBody.height as ArrayList<MasterContent>
+                                listState = responseBody.state as ArrayList<MasterContent>
+                                listcities = responseBody.cities as ArrayList<MasterContent>
+                                listeducation = responseBody.education as ArrayList<MasterContent>
+                                listoccupation = responseBody.occupation as ArrayList<MasterContent>
+                                listreligion= responseBody.religion as ArrayList<MasterContent>
 
 
-                                            initUIHeight()
-                                            initUIState()
-                                            initUICity()
-                                            initUIEducatoin()
-                                            initUIOccupation()
-                                            initUIReligion()
-
-
-
-
-                                        } catch (e: Exception) {
-                                            toast(this,"No Proper data found.")
-                                            println("inAppMasterData== ${e.message}")
-                                        }
-                                    }
+                                for(i in 0 until listHeight.size){
+                                    spinnerheightArray.add(listHeight[i].height_type)
                                 }
-                            } else {
-                                toast(this,"No Proper data found.")
+                                for(i in 0 until listState.size){
+                                    spinnerStateArray.add(listState[i].name)
+                                }
+                                for(i in 0 until listcities.size){
+                                    spinnercitiesArray.add(listcities[i].name)
+                                }
+                                for(i in 0 until listeducation.size){
+                                    spinnereducationArray.add(listeducation[i].name)
+                                }
+                                for(i in 0 until listoccupation.size){
+                                    spinneroccupationArray.add(listoccupation[i].name)
+                                }
+                                for(i in 0 until listreligion.size){
+                                    spinnerreligionArray.add(listreligion[i].name)
+                                }
+
+
+                                initUIHeight()
+                                initUIState()
+                                initUICity()
+                                initUIEducatoin()
+                                initUIOccupation()
+                                initUIReligion()
                             }
+                        }else{
+                            //progressBar.visibility=View.GONE
                         }
                     }
                 })
-        } catch (e: Exception) {
-            toast(this,"No Proper data found.")
-            //Log.i("Common FAQ", "Common FAQ Error : $e")
+            }else{
+            }
+        } catch (err: Exception) {
+            err.printStackTrace()
         }
+
     }
 
 

@@ -230,6 +230,25 @@
                         android:shadowColor="@color/color_gray"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ti_email"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginTop="10dp"
+                    android:hint="Email Id">
+
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+
+                </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/PIfullname"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
