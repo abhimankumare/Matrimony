@@ -18,4 +18,10 @@ class LoginResponse {
     @SerializedName("userdata")
     @Expose
     var loginDetails: LoginDetails? = null
+
+    @SerializedName("token")
+    @Expose
+    var token: String? = null
+
+
 }

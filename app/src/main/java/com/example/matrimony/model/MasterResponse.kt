@@ -10,7 +10,13 @@ data class MasterResponse(
     val cities: List<MasterContent>,
     val education: List<MasterContent>,
     val occupation: List<MasterContent>,
-    val religion: List<MasterContent>
+    val religion: List<MasterContent>,
+    val horoscope: List<MasterContent>,
+    val employed_sector: List<MasterContent>,
+    val income: List<MasterContent>,
+    val mother_tongue: List<MasterContent>,
+    val caste: List<MasterContent>,
+    val Language: List<MasterContent>,
 
 )
 

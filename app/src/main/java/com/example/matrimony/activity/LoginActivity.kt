@@ -94,7 +94,8 @@ class LoginActivity : AppCompatActivity() {
                        // progressBar.visibility = View.GONE
                         val responseBody: LoginResponse? = response.body()
                         if (responseBody != null) {
-                            username = responseBody.loginDetails!!.name.toString()
+                           // username = responseBody.loginDetails!!.name.toString()
+                            Utils.token = responseBody.token.toString()
                         }
                         Toast.makeText(this@LoginActivity, responseBody!!.message.toString(), Toast.LENGTH_SHORT)
                             .show()

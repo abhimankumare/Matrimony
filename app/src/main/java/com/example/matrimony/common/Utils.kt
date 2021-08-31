@@ -38,7 +38,7 @@ object Utils {
     const val PATTERN_START_WITH_MONTH_SHORT_NO_YEAR = "MMM dd"
     const val PATTERN_START_WITH_MONTH_WITH_TIME = "MMM dd, yyyy HH:mm:ss"
     const val PATTERN_START_WITH_MONTH_SMALL_NO_YEAR = "MMM dd"
-
+    var token : String? = null
     @SuppressLint("MissingPermission")
     fun isConnectingToInternet(context: Context): Boolean {
         var result = false
@@ -164,4 +164,7 @@ object Utils {
             return outputBitmap
         }
     }
+
+
+
 }

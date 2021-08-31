@@ -59,8 +59,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_login"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="@color/white"
+                    android:padding="@dimen/margin2"
                     android:fontFamily="@font/robotoregular"
                     android:shadowColor="@color/color_gray" />
 
@@ -83,6 +84,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
+                    android:padding="@dimen/margin2"
                     android:fontFamily="@font/robotoregular"
                     android:shadowColor="@color/color_gray" />
 

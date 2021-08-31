@@ -34,7 +34,7 @@ internal class SelectionAdapter(val context: RegisterActivity, val data: ArrayLi
         holder.tv_self.text = data.toString()
 
         holder.ll_self.setOnClickListener(View.OnClickListener {
-            context.setView()
+            context.setView(holder.tv_self.text.toString())
 
         })
 
