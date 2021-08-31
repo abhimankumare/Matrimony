@@ -1,73 +1,64 @@
-package com.example.matrimony.activity;
+package com.example.matrimony.activity
 
-import android.os.Bundle;
-import android.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.tabs.TabLayout
+import androidx.viewpager.widget.ViewPager
+import android.os.Bundle
+import android.view.View
+import android.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import com.example.matrimony.R
+import com.example.matrimony.fragment.PersonalDetailsFragment
+import com.example.matrimony.fragment.FamilyDetaisFragment
+import androidx.fragment.app.FragmentPagerAdapter
+import com.example.matrimony.fragment.PreferenceFragment
+import java.util.ArrayList
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
-import com.example.matrimony.R;
-import com.example.matrimony.fragment.FamilyDetaisFragment;
-import com.example.matrimony.fragment.PersonalDetailsFragment;
-import com.example.matrimony.fragment.PreferenceFragment;
-import com.google.android.material.tabs.TabLayout;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class MenDetailsShow extends AppCompatActivity {
-    private Toolbar toolbar;
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_men_details_show);
-        viewPager = (ViewPager) findViewById(R.id.viewpager_Men);
-        setupViewPager(viewPager);
-
-        tabLayout = (TabLayout) findViewById(R.id.tabs_Men);
-        tabLayout.setupWithViewPager(viewPager);
+class MenDetailsShow : AppCompatActivity() {
+    private val toolbar: Toolbar? = null
+    private var tabLayout: TabLayout? = null
+    private var viewPager: ViewPager? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_men_details_show)
+        viewPager = findViewById<View>(R.id.viewpager_Men) as ViewPager
+        setupViewPager(viewPager)
+        tabLayout = findViewById<View>(R.id.tabs_Men) as TabLayout
+        tabLayout!!.setupWithViewPager(viewPager)
     }
-    private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+    private fun setupViewPager(viewPager: ViewPager?) {
+        val adapter: ViewPagerAdapter = ViewPagerAdapter(
+            supportFragmentManager
+        )
         //add fragments
-        adapter.addFragment(new PersonalDetailsFragment(), "Personal");
-        adapter.addFragment(new FamilyDetaisFragment(), "Family");
-        adapter.addFragment(new PreferenceFragment(), "Preference");
-        viewPager.setAdapter(adapter);
+        adapter.addFragment(PersonalDetailsFragment(), "Personal")
+        adapter.addFragment(FamilyDetaisFragment(), "Family")
+        adapter.addFragment(PreferenceFragment(), "Preference")
+        viewPager!!.adapter = adapter
     }
 
-    class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-        private final List<String> mFragmentTitleList = new ArrayList<>();
-
-        public ViewPagerAdapter(FragmentManager manager) {
-            super(manager);
+    internal inner class ViewPagerAdapter(manager: FragmentManager?) : FragmentPagerAdapter(
+        manager!!
+    ) {
+        private val mFragmentList: MutableList<Fragment> = ArrayList()
+        private val mFragmentTitleList: MutableList<String> = ArrayList()
+        override fun getItem(position: Int): Fragment {
+            return mFragmentList[position]
         }
 
-        @Override
-        public Fragment getItem(int position) {
-            return mFragmentList.get(position);
+        override fun getCount(): Int {
+            return mFragmentList.size
         }
 
-        @Override
-        public int getCount() {
-            return mFragmentList.size();
+        fun addFragment(fragment: Fragment, title: String) {
+            mFragmentList.add(fragment)
+            mFragmentTitleList.add(title)
         }
 
-        public void addFragment(Fragment fragment, String title) {
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return mFragmentTitleList.get(position);
+        override fun getPageTitle(position: Int): CharSequence? {
+            return mFragmentTitleList[position]
         }
     }
 }
