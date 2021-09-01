@@ -18,6 +18,7 @@ import com.example.matrimony.model.SignUpModel
 import com.example.matrimony.model.SignUpResponse
 import com.example.matrimony.repository.ApiInterface
 import com.example.poultry_i.common.Utils
+import com.example.poultry_i.storageHelpers.PreferenceHelper
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,7 +37,7 @@ private var listHeight: ArrayList<MasterContent> = arrayListOf()
 private var listState: ArrayList<MasterContent> = arrayListOf()
 private var listcities: ArrayList<MasterContent> = arrayListOf()
 private var listeducation: ArrayList<MasterContent> = arrayListOf()
-private var listoccupation: ArrayList<MasterContent> = arrayListOf()
+var listoccupation: ArrayList<MasterContent> = arrayListOf()
 private var listreligion: ArrayList<MasterContent> = arrayListOf()
 
 private var listhoroscope: ArrayList<MasterContent> = arrayListOf()
@@ -190,7 +191,7 @@ class RegisterActivity : AppCompatActivity() {
 
         saveButton.setOnClickListener(View.OnClickListener {
 
-
+            //goToNextScreen()
             //Toast.makeText(baseContext, radioButton.text, Toast.LENGTH_SHORT).show()
 
             try {
@@ -280,6 +281,11 @@ class RegisterActivity : AppCompatActivity() {
                         if (responseBody != null) {
                             token = responseBody!!.token
                             Utils.token = responseBody!!.token.toString()
+                            PreferenceHelper.setStringPreference(
+                                this@RegisterActivity,
+                                "token",
+                                Utils.token
+                            )
                         }
 
 
@@ -308,7 +314,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun goToNextScreen() {
-        val intent = Intent(this@RegisterActivity, MainActivity::class.java)
+        val intent = Intent(this@RegisterActivity, BasicDataActivity::class.java)
             .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
         startActivity(intent)
         finish()

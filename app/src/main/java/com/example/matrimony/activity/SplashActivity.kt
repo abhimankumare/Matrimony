@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import com.example.matrimony.R
+import com.example.poultry_i.common.Utils
+import com.example.poultry_i.storageHelpers.PreferenceHelper
 
 
 private val SPLASH_DELAY: Long = 2000
@@ -16,8 +19,10 @@ lateinit var splash: ImageView
 lateinit var splash1: ImageView
 lateinit var splash2: ImageView
 lateinit var splash3: ImageView
+lateinit var rl_root_view: RelativeLayout
 
 
+var tokenonstart:String? = null
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +31,41 @@ class SplashActivity : AppCompatActivity() {
         splash1 = findViewById(R.id.splash1)
         splash2 = findViewById(R.id.splash2)
         splash3 = findViewById(R.id.splash3)
+        rl_root_view = findViewById(R.id.rl_root_view)
 
-        mDelayHandler = Handler()
-//Navigate with delay
-        mDelayHandler!!.postDelayed(mRunnable, SPLASH_DELAY)
+
+        tokenonstart = PreferenceHelper.getStringPreference(this@SplashActivity, "token").toString()
+        Utils.token = tokenonstart
+        startapp()
+    }
+
+    private fun startapp() {
+        if (Utils.isConnectingToInternet(this@SplashActivity)) {
+            if(tokenonstart.equals("null")){
+                try {
+                    mDelayHandler = Handler()
+                    //Navigate with delay
+                    mDelayHandler!!.postDelayed(mRunnable, SPLASH_DELAY)
+                } catch (err: Exception) {
+                    err.printStackTrace()
+                }
+            }else{
+                try {
+                    val intent = Intent(this@SplashActivity, MainActivity::class.java)
+                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    startActivity(intent)
+                    finish()
+                } catch (err: Exception) {
+                    err.printStackTrace()
+                }
+
+            }
+        }else{
+            Utils.showIndefiniteSnackBar(
+                rl_root_view,
+                "You're offline, Please check your network connection."
+            )
+        }
     }
 
 

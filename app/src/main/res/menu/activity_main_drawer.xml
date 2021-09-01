@@ -39,7 +39,10 @@
             android:id="@+id/nav_help"
             android:icon="@drawable/faq"
             android:title="@string/help" />
-
+        <item
+            android:id="@+id/nav_changepassword"
+            android:icon="@drawable/profilevisitor"
+            android:title="Change Password" />
 
         <item
             android:id="@+id/nav_logout"

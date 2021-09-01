@@ -71,11 +71,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
-    private fun signin(email: String, password: String) {
+    private fun signin(mobile: String, password: String) {
         if (Utils.isConnectingToInternet(this)) {
             val retIn =
                 ApiInterface.RetrofitInstance.getRetrofitInstance().create(ApiInterface::class.java)
-            val signInInfo = Login(email, password)
+            val signInInfo = Login(mobile, password)
             retIn.login(signInInfo).enqueue(object : Callback<LoginResponse> {
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Toast.makeText(
@@ -96,6 +96,11 @@ class LoginActivity : AppCompatActivity() {
                         if (responseBody != null) {
                            // username = responseBody.loginDetails!!.name.toString()
                             Utils.token = responseBody.token.toString()
+                            PreferenceHelper.setStringPreference(
+                                this@LoginActivity,
+                                "token",
+                                Utils.token
+                            )
                         }
                         Toast.makeText(this@LoginActivity, responseBody!!.message.toString(), Toast.LENGTH_SHORT)
                             .show()
