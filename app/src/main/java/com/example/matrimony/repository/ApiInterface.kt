@@ -42,6 +42,12 @@ interface ApiInterface {
     @GET("logout")
     fun LogoutData(): Call<LoginResponse>
 
+    @POST("myprofile")
+    fun ProfileData(): Call<ProfileResponse>
+
+    @POST("password_change")
+    fun ChanePasswordData(@Body info: PasswordInfo): Call<LoginResponse>
+
 
     class RetrofitInstance {
         companion object {

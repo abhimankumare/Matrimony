@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FamilyDetaisFragment"
     android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
@@ -52,7 +51,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_rs_4l_5_l_per_annum"
+            android:id="@+id/tv_fam_income"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -63,20 +62,20 @@
             android:textColor="#99000000" />
 
         <TextView
-            android:id="@+id/tv_father_occupation"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="21dp"
+            android:fontFamily="@font/robotoregular"
             android:text="@string/father_occupation"
             android:textColor="#000000"
-            android:fontFamily="@font/robotoregular"
             android:textSize="12sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_service_private"
+            android:id="@+id/tv_father_occupation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -87,7 +86,6 @@
             android:textColor="#99000000" />
 
         <TextView
-            android:id="@+id/tv_mother_occupation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -100,7 +98,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_housewife"
+            android:id="@+id/tv_mother_occupation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -124,7 +122,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_1_sister_of_which_1_married"
+            android:id="@+id/tv_sis_marr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -135,7 +133,7 @@
             android:textColor="#99000000" />
 
         <TextView
-            android:id="@+id/tv_1_brother_of_which_1_married"
+            android:id="@+id/tv_bro_marr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"

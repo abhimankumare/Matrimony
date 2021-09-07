@@ -23,6 +23,24 @@ import java.io.IOException
 
 object Utils {
 
+    var foccuDetails: String?=null
+    var moccuDetails: String?=null
+    var incomeDetails: String?=null
+    var famincomeDetails: String?=null
+    var AboutFamily: String?=null
+
+    var noofbro: String?=null
+    var noofmarrbro: String?=null
+    var noofsis: String?=null
+    var noofmarrsis: String?=null
+
+    var educationName: String?=null
+    var Gender: String?=null
+    var UserName: String?=null
+    var mothertoungeName: String?=null
+    var occupationName: String?=null
+
+    var casteName: String?=null
     const val PATTERN_YEAR = "yyyy"
     const val PATTERN_MONTH = "MMM"
     const val PATTERN_MONTH_FULL = "MMMM"
@@ -39,6 +57,11 @@ object Utils {
     const val PATTERN_START_WITH_MONTH_WITH_TIME = "MMM dd, yyyy HH:mm:ss"
     const val PATTERN_START_WITH_MONTH_SMALL_NO_YEAR = "MMM dd"
     var token : String? = null
+    var BirthDate : String? = null
+    var MarriedStatus : String? = null
+    var CityName : String? = null
+    var StateName : String? = null
+    var religionName : String?= null
     @SuppressLint("MissingPermission")
     fun isConnectingToInternet(context: Context): Boolean {
         var result = false

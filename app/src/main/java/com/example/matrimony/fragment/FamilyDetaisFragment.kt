@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.matrimony.R
+import com.example.poultry_i.common.Utils
 
 /**
  * A simple [Fragment] subclass.
@@ -19,14 +20,12 @@ class FamilyDetaisFragment : Fragment() {
     var aboutFamily: TextView? = null
     var moderate_nuclear_family_upper_middle: TextView? = null
     var family_income: TextView? = null
-    var rs_4l_5_l_per_annum: TextView? = null
+    var tv_fam_income: TextView? = null
     var father_occupation: TextView? = null
-    var service_private: TextView? = null
     var mother_occupation: TextView? = null
-    var housewife: TextView? = null
     var brother_sister: TextView? = null
-    var _1_sister_of_which_1_married: TextView? = null
-    var _1_brother_of_which_1_married: TextView? = null
+    var tv_bro_marr: TextView? = null
+    var tv_sis_marr: TextView? = null
     var family_based_out_of: TextView? = null
     var nagpur_maharashtra: TextView? = null
 
@@ -51,15 +50,20 @@ class FamilyDetaisFragment : Fragment() {
         aboutFamily = view.findViewById(R.id.tv_aboutfamily)
         moderate_nuclear_family_upper_middle =
             view.findViewById(R.id.tv_moderate_nuclear_family_upper_middle)
+        moderate_nuclear_family_upper_middle!!.text = Utils.AboutFamily.toString()
         family_income = view.findViewById(R.id.tv_family_income)
-        rs_4l_5_l_per_annum = view.findViewById(R.id.tv_rs_4l_5_l_per_annum)
+        tv_fam_income = view.findViewById(R.id.tv_fam_income)
+        tv_fam_income!!.text = Utils.famincomeDetails.toString()
         father_occupation = view.findViewById(R.id.tv_father_occupation)
-        service_private = view.findViewById(R.id.tv_service_private)
+        father_occupation!!.text = Utils.foccuDetails.toString()
         mother_occupation = view.findViewById(R.id.tv_mother_occupation)
-        housewife = view.findViewById(R.id.tv_housewife)
+        mother_occupation!!.text = Utils.moccuDetails.toString()
         brother_sister = view.findViewById(R.id.tv_brother_sister)
-        _1_sister_of_which_1_married = view.findViewById(R.id.tv_1_sister_of_which_1_married)
-        _1_brother_of_which_1_married = view.findViewById(R.id.tv_1_brother_of_which_1_married)
+        tv_sis_marr = view.findViewById(R.id.tv_sis_marr)
+        tv_sis_marr!!.text = Utils.noofsis.toString()+" Sister of which "+Utils.noofmarrsis.toString()+" Married"
+        tv_bro_marr = view.findViewById(R.id.tv_bro_marr)
+        tv_bro_marr!!.text = Utils.noofbro.toString()+" Brother of which "+Utils.noofmarrbro.toString()+" Married"
+        tv_fam_income!!.text = Utils.famincomeDetails.toString()
         family_based_out_of = view.findViewById(R.id.tv_family_based_out_of)
         nagpur_maharashtra = view.findViewById(R.id.tv_nagpur_maharashtra)
         return view

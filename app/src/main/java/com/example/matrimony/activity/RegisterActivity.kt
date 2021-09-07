@@ -178,14 +178,14 @@ class RegisterActivity : AppCompatActivity() {
             )
             val selectedOption: Int = radioGroup!!.checkedRadioButtonId
             radioButton = findViewById(selectedOption)
-            val today = Calendar.getInstance()
-            val twoDaysAgo = today.clone() as Calendar
-            if(radioButton.text.equals("Male")){
-                twoDaysAgo.add(Calendar.YEAR, -21)
-            }else{
-                twoDaysAgo.add(Calendar.YEAR, -18)
-            }
-            dpd.datePicker.setMinDate(twoDaysAgo.timeInMillis)
+//            val today = Calendar.getInstance()
+//            val twoDaysAgo = today.clone() as Calendar
+//            if(radioButton.text.equals("Male")){
+//                twoDaysAgo.add(Calendar.YEAR, -21)
+//            }else{
+//                twoDaysAgo.add(Calendar.YEAR, -18)
+//            }
+//            //dpd.datePicker.setMinDate(twoDaysAgo.timeInMillis)
             dpd.show()
         })
 
@@ -281,11 +281,11 @@ class RegisterActivity : AppCompatActivity() {
                         if (responseBody != null) {
                             token = responseBody!!.token
                             Utils.token = responseBody!!.token.toString()
-                            PreferenceHelper.setStringPreference(
-                                this@RegisterActivity,
-                                "token",
-                                Utils.token
-                            )
+//                            PreferenceHelper.setStringPreference(
+//                                this@RegisterActivity,
+//                                "token",
+//                                Utils.token
+//                            )
                         }
 
 

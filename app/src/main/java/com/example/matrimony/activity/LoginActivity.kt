@@ -131,7 +131,7 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun toast(message: String) {
+    fun toast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

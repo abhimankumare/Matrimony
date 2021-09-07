@@ -1,5 +1,6 @@
 package com.example.matrimony.activity
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -200,6 +201,27 @@ class BasicDataActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        Utils.showDialog(
+            "Do You Want to Exit From App? Your Data Will Be Lost",
+            DialogInterface.OnClickListener { dialog, which ->
+                when (which) {
+                    DialogInterface.BUTTON_POSITIVE -> {
+                        dialog.dismiss()
+                        val intent = Intent(this@BasicDataActivity, LoginActivity::class.java)
+                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                        startActivity(intent)
+                        finish()
+
+                    }
+                    DialogInterface.BUTTON_NEGATIVE -> {
+                        dialog.dismiss()
+                    }
+                }
+            }, this
+        )
+
+    }
     private fun RegisterBasicDataOfUser(
         educations_id: String?,
         employed_sector: String?,
@@ -550,6 +572,7 @@ class BasicDataActivity : AppCompatActivity() {
 
     private fun getBrotherList(): ArrayList<String> {
         val customers = ArrayList<String>()
+        customers.add("0")
         customers.add("1")
         customers.add("2")
         customers.add("3")
@@ -574,6 +597,8 @@ class BasicDataActivity : AppCompatActivity() {
 
     private fun getBrotherMarriedList(): ArrayList<String> {
         val customers = ArrayList<String>()
+        
+        customers.add("0")
         customers.add("1")
         customers.add("2")
         customers.add("3")
@@ -599,6 +624,7 @@ class BasicDataActivity : AppCompatActivity() {
 
     private fun getSisterList(): ArrayList<String> {
         val customers = ArrayList<String>()
+        customers.add("0")
         customers.add("1")
         customers.add("2")
         customers.add("3")
@@ -624,6 +650,7 @@ class BasicDataActivity : AppCompatActivity() {
 
     private fun getSisterMarriedList(): ArrayList<String> {
         val customers = ArrayList<String>()
+        customers.add("0")
         customers.add("1")
         customers.add("2")
         customers.add("3")

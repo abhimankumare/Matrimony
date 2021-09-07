@@ -123,6 +123,14 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
                 drawerLayout.closeDrawer(GravityCompat.START)
                 return true
             }
+
+            R.id.nav_changepassword -> {
+                val intent = Intent(this@MainActivity, ChangePasswordActivity::class.java)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(intent)
+                drawerLayout.closeDrawer(GravityCompat.START)
+                return true
+            }
             R.id.nav_logout -> {
                 Utils.showDialog(
                     "Are you sure you want to logout?",
