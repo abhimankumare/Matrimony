@@ -186,7 +186,7 @@ class BasicDataActivity : AppCompatActivity() {
                         sisterTextView.text.toString(),
                         brotherMarriedTextView.text.toString(),
                         sisterMarriedTextView.text.toString(),
-                        "1"
+                        "1","1"
                     )
                 }
 
@@ -208,6 +208,10 @@ class BasicDataActivity : AppCompatActivity() {
                 when (which) {
                     DialogInterface.BUTTON_POSITIVE -> {
                         dialog.dismiss()
+                        if(Utils.token != null){
+                            Utils.token = tokenonstart
+                        }
+                        Utils.clearPrefrences(this@BasicDataActivity)
                         val intent = Intent(this@BasicDataActivity, LoginActivity::class.java)
                             .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
                         startActivity(intent)
@@ -222,6 +226,8 @@ class BasicDataActivity : AppCompatActivity() {
         )
 
     }
+
+
     private fun RegisterBasicDataOfUser(
         educations_id: String?,
         employed_sector: String?,
@@ -239,7 +245,8 @@ class BasicDataActivity : AppCompatActivity() {
         sister_no: String,
         brother_married_no: String,
         sister_married_no: String,
-        open_cast_marriage: String?
+        open_cast_marriage: String?,
+        profile_saved: String?
     ) {
 
         if (Utils.isConnectingToInternet(this)) {
@@ -262,7 +269,8 @@ class BasicDataActivity : AppCompatActivity() {
                 sister_no,
                 brother_married_no,
                 sister_married_no,
-                open_cast_marriage
+                open_cast_marriage,
+                profile_saved
             )
             retIn.RegisterBasicData(basicDataInfo).enqueue(object : Callback<SignUpResponse> {
                 override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {

@@ -17,6 +17,9 @@ class ProfileResponse {
 
 
 
+
+
+
     @SerializedName("city_name")
     @Expose
     var cityDetails: MasterContent? = null

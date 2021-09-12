@@ -48,8 +48,7 @@ class FamilyDetaisFragment : Fragment() {
         //return inflater.inflate(R.layout.fragment_family_detais, container, false);
         val view: View = inflater.inflate(R.layout.fragment_family_detais, container, false)
         aboutFamily = view.findViewById(R.id.tv_aboutfamily)
-        moderate_nuclear_family_upper_middle =
-            view.findViewById(R.id.tv_moderate_nuclear_family_upper_middle)
+        moderate_nuclear_family_upper_middle = view.findViewById(R.id.tv_moderate_nuclear_family_upper_middle)
         moderate_nuclear_family_upper_middle!!.text = Utils.AboutFamily.toString()
         family_income = view.findViewById(R.id.tv_family_income)
         tv_fam_income = view.findViewById(R.id.tv_fam_income)

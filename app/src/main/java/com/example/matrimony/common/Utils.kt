@@ -24,6 +24,8 @@ import java.io.IOException
 object Utils {
 
     var foccuDetails: String?=null
+    var profile_saved: String?=null
+
     var moccuDetails: String?=null
     var incomeDetails: String?=null
     var famincomeDetails: String?=null
@@ -144,14 +146,10 @@ object Utils {
         }
     }
 
-//    fun logoutclearperf(context: Context) {
-//        PreferenceHelper.clearValueForKey(context, "token")
-//
-//        val intent = Intent(context, LoginActivity::class.java)
-//            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-//        context.startActivity(intent)
-//        (context as Activity).finish()
-//    }
+
+    fun clearPrefrences(context: Context) {
+        PreferenceHelper.clearValueForKey(context, "token")
+    }
 
 
 

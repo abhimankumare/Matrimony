@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 
 class LoginResponse {
-    @SerializedName("Status")
+    @SerializedName("status")
     @Expose
     var Status: String? = null
 
@@ -14,6 +14,9 @@ class LoginResponse {
     @Expose
     var message: String? = null
 
+    @SerializedName("error")
+    @Expose
+    var error: String? = null
 
     @SerializedName("userdata")
     @Expose

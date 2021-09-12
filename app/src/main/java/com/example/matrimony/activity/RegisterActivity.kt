@@ -12,13 +12,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.matrimony.R
 import com.example.matrimony.adapter.SelectionAdapter
-import com.example.matrimony.model.MasterContent
-import com.example.matrimony.model.MasterResponse
-import com.example.matrimony.model.SignUpModel
-import com.example.matrimony.model.SignUpResponse
+import com.example.matrimony.model.*
 import com.example.matrimony.repository.ApiInterface
 import com.example.poultry_i.common.Utils
 import com.example.poultry_i.storageHelpers.PreferenceHelper
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,26 +31,26 @@ lateinit var ll_register_root_view: LinearLayout
 
 lateinit var rv_selection: RecyclerView
 lateinit var toolbar1: Toolbar
-private var listHeight: ArrayList<MasterContent> = arrayListOf()
-private var listState: ArrayList<MasterContent> = arrayListOf()
-private var listcities: ArrayList<MasterContent> = arrayListOf()
-private var listeducation: ArrayList<MasterContent> = arrayListOf()
+var listHeight: ArrayList<MasterContent> = arrayListOf()
+var listState: ArrayList<MasterContent> = arrayListOf()
+var listcities: ArrayList<MasterContent> = arrayListOf()
+ var listeducation: ArrayList<MasterContent> = arrayListOf()
 var listoccupation: ArrayList<MasterContent> = arrayListOf()
-private var listreligion: ArrayList<MasterContent> = arrayListOf()
+ var listreligion: ArrayList<MasterContent> = arrayListOf()
 
-private var listhoroscope: ArrayList<MasterContent> = arrayListOf()
-private var listemployed_sector: ArrayList<MasterContent> = arrayListOf()
-private var listincome: ArrayList<MasterContent> = arrayListOf()
-private var listmother_tongue: ArrayList<MasterContent> = arrayListOf()
-private var listcaste: ArrayList<MasterContent> = arrayListOf()
-private var listLanguage: ArrayList<MasterContent> = arrayListOf()
+ var listhoroscope: ArrayList<MasterContent> = arrayListOf()
+ var listemployed_sector: ArrayList<MasterContent> = arrayListOf()
+ var listincome: ArrayList<MasterContent> = arrayListOf()
+ var listmother_tongue: ArrayList<MasterContent> = arrayListOf()
+ var listcaste: ArrayList<MasterContent> = arrayListOf()
+ var listLanguage: ArrayList<MasterContent> = arrayListOf()
 
 
-private var spinnerheightArray: ArrayList<String> = arrayListOf()
-private var spinnerStateArray: ArrayList<String> = arrayListOf()
-private var spinnerStateArrayIds: ArrayList<String> = arrayListOf()
-private var spinnerCityArrayIds: ArrayList<String> = arrayListOf()
-private var spinnerheightArrayIds: ArrayList<String> = arrayListOf()
+ var spinnerheightArray: ArrayList<String> = arrayListOf()
+ var spinnerStateArray: ArrayList<String> = arrayListOf()
+ var spinnerStateArrayIds: ArrayList<String> = arrayListOf()
+ var spinnerCityArrayIds: ArrayList<String> = arrayListOf()
+ var spinnerheightArrayIds: ArrayList<String> = arrayListOf()
 var spinnereducationArrayIds: ArrayList<String> = arrayListOf()
 var spinneroccupationArrayIds: ArrayList<String> = arrayListOf()
 var spinnerreligionArrayIds: ArrayList<String> = arrayListOf()
@@ -65,7 +63,7 @@ var spinnerLanguageArrayIds: ArrayList<String> = arrayListOf()
 
 
 
-private var spinnercitiesArray: ArrayList<String> = arrayListOf()
+ var spinnercitiesArray: ArrayList<String> = arrayListOf()
 var spinnereducationArray: ArrayList<String> = arrayListOf()
 var spinneroccupationArray: ArrayList<String> = arrayListOf()
 var spinnerreligionArray: ArrayList<String> = arrayListOf()
@@ -298,8 +296,14 @@ class RegisterActivity : AppCompatActivity() {
 
 
                     } else {
-                      //  Toast.makeText(this@RegisterActivity, responseBody!!.error.toString(), Toast.LENGTH_SHORT)
-                         //   .show()
+                    val gson = Gson()
+                    val errorResponse: ErrorResponse = gson.fromJson(
+                        response.errorBody()!!.string(),
+                        ErrorResponse::class.java
+                    )
+                    Toast.makeText(this@RegisterActivity, errorResponse.message.toString(), Toast.LENGTH_SHORT)
+                        .show()
+                     //   Toast.makeText(this@RegisterActivity, responseBody!!.message.toString(), Toast.LENGTH_SHORT).show()
                     }
                 }
             })
@@ -320,7 +324,7 @@ class RegisterActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun getMasterData() {
+    fun getMasterData() {
         try {
             if (Utils.isConnectingToInternet(this@RegisterActivity)) {
                 val retIn = ApiInterface.RetrofitInstance.getRetrofitInstance()

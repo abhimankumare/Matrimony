@@ -22,4 +22,9 @@ class UserDetails {
     @Expose
     var gender: String? = null
 
+
+    @SerializedName("profile_saved")
+    @Expose
+    var profile_saved: String? = null
+
 }
