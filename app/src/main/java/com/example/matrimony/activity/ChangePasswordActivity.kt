@@ -77,6 +77,9 @@ class ChangePasswordActivity : AppCompatActivity() {
                             val responseBody: LoginResponse? = response.body()
                             if (responseBody != null) {
                                 println(responseBody.toString())
+                                if(Utils.token != null){
+                                    Utils.token = tokenonstart
+                                }
                                 toast(this@ChangePasswordActivity,responseBody.message.toString())
                                 gotoLoginActivity()
                             }

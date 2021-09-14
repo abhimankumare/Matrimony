@@ -1,7 +1,2 @@
 com/example/matrimony/BuildConfig.java
  com.example.matrimony.BuildConfig
-com/example/matrimony/activity/MenDetailsShow.java
- com.example.matrimony.activity.MenDetailsShow
- com.example.matrimony.activity.MenDetailsShow$ViewPagerAdapter
-com/example/matrimony/fragment/PersonalDetailsFragment.java
- com.example.matrimony.fragment.PersonalDetailsFragment

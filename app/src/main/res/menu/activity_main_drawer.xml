@@ -51,7 +51,7 @@
         <item
             android:id="@+id/nav_rate"
             android:icon="@drawable/rate"
-            android:title="Rate the App" />
+            android:title="Hide Profile" />
 
 
 

@@ -237,7 +237,13 @@
                         android:shadowColor="@color/color_gray"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <ProgressBar
+                    android:id="@+id/pr_bar"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
+                </ProgressBar>
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/ti_email"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

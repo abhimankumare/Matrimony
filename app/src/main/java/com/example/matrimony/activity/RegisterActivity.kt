@@ -30,6 +30,8 @@ lateinit var ll_register_root_view: LinearLayout
 
 
 lateinit var rv_selection: RecyclerView
+private var pr_bar: ProgressBar? = null
+
 lateinit var toolbar1: Toolbar
 var listHeight: ArrayList<MasterContent> = arrayListOf()
 var listState: ArrayList<MasterContent> = arrayListOf()
@@ -90,8 +92,8 @@ lateinit var ed_email: EditText
 lateinit var info_about: EditText
 
 lateinit var saveButton: Button
-var radioGroup: RadioGroup? = null
-lateinit var radioButton: RadioButton
+private var radioGroup: RadioGroup? = null
+private lateinit var radioButton: RadioButton
 
 var token: String? = null
 var state_id : String? = null
@@ -123,7 +125,7 @@ class RegisterActivity : AppCompatActivity() {
 
         ll_personal_details = findViewById(R.id.ll_personal_details)
         ll_register_root_view = findViewById(R.id.ll_register_root_view)
-
+        pr_bar = findViewById(R.id.pr_bar)
         rv_selection = findViewById(R.id.rv_selection)
         edit_text_login = findViewById(R.id.edit_text_login)
         edit_text_DOB = findViewById(R.id.edit_text_DOB)
@@ -204,10 +206,11 @@ class RegisterActivity : AppCompatActivity() {
                 }else if(customerStateTextView.text.isNullOrBlank()) {
                     Utils.toast(this@RegisterActivity,"Please Select State")
                 }else if(customerCityTextView.text.isNullOrBlank()) {
-                    Utils.toast(this@RegisterActivity,"Please Select City")
-                }else if(ed_email.text.isNullOrBlank()) {
-                    Utils.toast(this@RegisterActivity,"Please Enter Email Id")
-                }else if(!Patterns.EMAIL_ADDRESS.matcher(ed_email.text.toString()).matches()) {
+                    Utils.toast(this@RegisterActivity, "Please Select City")
+//                }else if(ed_email.text.isNullOrBlank()) {
+//                    Utils.toast(this@RegisterActivity,"Please Enter Email Id")
+//
+                }else if(!ed_email.text.isNullOrBlank() && !Patterns.EMAIL_ADDRESS.matcher(ed_email.text.toString()).matches()) {
                     Utils.toast(this@RegisterActivity,"Please Enter Valid Email Id")
                 }else if(ed_mobileemail.text.isNullOrBlank()) {
                     Utils.toast(this@RegisterActivity,"Please Enter Mobile Number")
@@ -227,13 +230,6 @@ class RegisterActivity : AppCompatActivity() {
             } catch (err: Exception) {
                 err.printStackTrace()
             }
-
-
-
-
-
-
-
         })
     }
 
@@ -257,6 +253,7 @@ class RegisterActivity : AppCompatActivity() {
     ) {
 
         if (Utils.isConnectingToInternet(this)) {
+            pr_bar!!.visibility=View.VISIBLE
             val retIn =
                 ApiInterface.RetrofitInstance.getRetrofitInstance().create(ApiInterface::class.java)
             val signInInfo = SignUpModel(user_type,name,gender,
@@ -269,12 +266,14 @@ class RegisterActivity : AppCompatActivity() {
                         t.message,
                         Toast.LENGTH_SHORT
                     ).show()
+                    pr_bar!!.visibility=View.GONE
                 }
 
                 override fun onResponse(
                     call: Call<SignUpResponse>,
                     response: Response<SignUpResponse>
                 ) {if (response.code() == 200) {
+                    pr_bar!!.visibility=View.GONE
                     responseBody = response.body()
                         if (responseBody != null) {
                             token = responseBody!!.token
@@ -296,6 +295,7 @@ class RegisterActivity : AppCompatActivity() {
 
 
                     } else {
+                    pr_bar!!.visibility=View.GONE
                     val gson = Gson()
                     val errorResponse: ErrorResponse = gson.fromJson(
                         response.errorBody()!!.string(),
@@ -308,7 +308,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
             })
         } else {
-
+            pr_bar!!.visibility=View.GONE
             Utils.showIndefiniteSnackBar(
                 ll_register_root_view,
                 "You're offline, Please check your network connection."

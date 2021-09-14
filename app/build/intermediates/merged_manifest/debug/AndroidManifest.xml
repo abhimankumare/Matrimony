@@ -38,6 +38,10 @@
         android:testOnly="true"
         android:theme="@style/NoActionBar"
         android:usesCleartextTraffic="true" >
+        <activity
+            android:name="com.example.matrimony.activity.HideProfileActivity"
+            android:exported="true" />
+        <activity android:name="com.example.matrimony.activity.BasicDataActivity" />
         <activity android:name="com.example.matrimony.activity.RegisterActivity" />
         <activity android:name="com.example.matrimony.activity.LoginActivity" />
         <activity android:name="com.example.matrimony.activity.SplashActivity" >
@@ -55,6 +59,9 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.example.matrimony.activity.MenDetailsShow"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.matrimony.activity.ChangePasswordActivity"
             android:screenOrientation="portrait" />
 
         <provider

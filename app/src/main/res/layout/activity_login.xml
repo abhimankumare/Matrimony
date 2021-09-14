@@ -61,7 +61,7 @@
                     android:id="@+id/edit_login"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/white"
+                    android:background="@drawable/text_background"
                     android:padding="@dimen/margin2"
                     android:maxLength="10"
                     android:fontFamily="@font/robotoregular"
@@ -69,27 +69,25 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:id="@+id/etPasswordLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin56"
-                android:fontFamily="@font/robotoregular"
-                android:hint="@string/password"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/margin20"
-                android:shadowColor="@color/color_gray"
-                app:endIconMode="password_toggle"
-                app:endIconTint="#7F7F7F">
+                android:layout_marginTop="10dp"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_text_password"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
+                    android:layout_height="match_parent"
                     android:padding="@dimen/margin2"
+                    android:background="@drawable/text_background"
                     android:fontFamily="@font/robotoregular"
-                    android:shadowColor="@color/color_gray" />
-
+                    android:hint="@string/enter_password"
+                    android:inputType="textPassword"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -129,7 +127,19 @@
                 android:layout_marginBottom="@dimen/margin20"
                 app:backgroundTint="@color/white"/>
 
+
+            <ProgressBar
+                android:id="@+id/pr_bar"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </ProgressBar>
+
         </LinearLayout>
+
+
+
     </ScrollView>
 
 </LinearLayout>

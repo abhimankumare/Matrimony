@@ -51,10 +51,11 @@ class SplashActivity : AppCompatActivity() {
                 }
             }else{
                 try {
-                    val intent = Intent(this@SplashActivity, MainActivity::class.java)
-                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                    startActivity(intent)
-                    finish()
+                    mDelayHandler = Handler()
+                    //Navigate with delay
+                    mDelayHandler!!.postDelayed(mRunnableNow, SPLASH_DELAY)
+
+
                 } catch (err: Exception) {
                     err.printStackTrace()
                 }
@@ -68,6 +69,17 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
+
+    internal val mRunnableNow: Runnable = Runnable {
+
+        splash.visibility = View.GONE
+
+        val intent = Intent(this@SplashActivity, MainActivity::class.java)
+            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        startActivity(intent)
+        finish()
+
+    }
 
     internal val mRunnable: Runnable = Runnable {
 

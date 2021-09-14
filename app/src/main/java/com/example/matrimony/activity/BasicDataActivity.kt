@@ -202,7 +202,7 @@ class BasicDataActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        Utils.showDialog(
+        Utils.showDialogBasicData(
             "Do You Want to Exit From App? Your Data Will Be Lost",
             DialogInterface.OnClickListener { dialog, which ->
                 when (which) {

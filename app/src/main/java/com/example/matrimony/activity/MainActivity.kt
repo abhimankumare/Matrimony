@@ -109,6 +109,7 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
     }
 
 
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_view_profile -> {
@@ -124,6 +125,14 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
                 return true
             }
 
+            R.id.nav_rate -> {
+                val intent = Intent(this@MainActivity, HideProfileActivity::class.java)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(intent)
+                drawerLayout.closeDrawer(GravityCompat.START)
+                return true
+            }
+
             R.id.nav_changepassword -> {
                 val intent = Intent(this@MainActivity, ChangePasswordActivity::class.java)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -131,6 +140,8 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
                 drawerLayout.closeDrawer(GravityCompat.START)
                 return true
             }
+
+
             R.id.nav_logout -> {
                 Utils.showDialog(
                     "Are you sure you want to logout?",
@@ -254,7 +265,21 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         } else if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawers()
         } else {
-            finishAffinity()
+            Utils.showDialogExitApp(
+                "Are you sure you want to close the app?",
+                DialogInterface.OnClickListener { dialog, which ->
+                    when (which) {
+                        DialogInterface.BUTTON_POSITIVE -> {
+                            dialog.dismiss()
+                            finishAffinity()
+                        }
+                        DialogInterface.BUTTON_NEGATIVE -> {
+                            dialog.dismiss()
+                        }
+                    }
+                }, this
+            )
+
         }
     }
 

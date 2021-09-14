@@ -18,7 +18,7 @@ import com.example.poultry_i.common.Utils
 class PersonalDetailsFragment : Fragment() {
     var about: TextView? = null
     var tv_userName: TextView? = null
-    var text: TextView? = null
+    var textab: TextView? = null
     var tv_profile_manage: TextView? = null
     var basic_details: TextView? = null
     var birth_date: TextView? = null
@@ -97,7 +97,8 @@ class PersonalDetailsFragment : Fragment() {
         tv_userName!!.text = Utils.UserName.toString()
 
 
-        text = view.findViewById(R.id.tv_text)
+        textab = view.findViewById(R.id.tv_text)
+        textab!!.text = Utils.user_bio.toString()
         tv_profile_manage = view.findViewById(R.id.tv_profile_manage)
         if(Utils.Gender.equals("Male")){
             tv_profile_manage!!.text = "His Profile is managed by Self"

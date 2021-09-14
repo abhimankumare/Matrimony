@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/robotoregular"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="17dp"
                 android:text="@string/paragraph"
                 android:textColor="#99000000"
                 android:textSize="12sp" />

@@ -4,10 +4,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.matrimony.R
@@ -31,7 +28,7 @@ lateinit var edit_login: EditText
 lateinit var edit_text_password: EditText
 lateinit var ll_login_root_view: LinearLayout
 
-
+private var pr_bar: ProgressBar? = null
 
 
 class LoginActivity : AppCompatActivity() {
@@ -44,6 +41,7 @@ class LoginActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         getSupportActionBar()!!.setTitle("Login");
         loginButton = findViewById(R.id.loginButton)
+        pr_bar = findViewById(R.id.pr_bar)
         edit_login = findViewById(R.id.edit_login)
         edit_text_password = findViewById(R.id.edit_text_password)
         registerButton = findViewById(R.id.registerButton)
@@ -82,6 +80,7 @@ class LoginActivity : AppCompatActivity() {
     private fun signin(mobile: String, password: String) {
         println("In Master Data signin")
         if (Utils.isConnectingToInternet(this)) {
+            pr_bar!!.visibility=View.VISIBLE
             val retIn =
                 ApiInterface.RetrofitInstance.getRetrofitInstance().create(ApiInterface::class.java)
             val signInInfo = Login(mobile, password)
@@ -92,6 +91,7 @@ class LoginActivity : AppCompatActivity() {
                         t.message,
                         Toast.LENGTH_SHORT
                     ).show()
+                    pr_bar!!.visibility=View.GONE
                 }
 
                 override fun onResponse(
@@ -99,6 +99,7 @@ class LoginActivity : AppCompatActivity() {
                     response: Response<LoginResponse>
                 ) {
                     if (response.code() == 200) {
+                        pr_bar!!.visibility=View.GONE
                        // progressBar.visibility = View.GONE
                         val responseBody: LoginResponse? = response.body()
                         if (responseBody != null) {
@@ -117,6 +118,7 @@ class LoginActivity : AppCompatActivity() {
 
 
                     } else {
+                        pr_bar!!.visibility=View.GONE
                         val gson = Gson()
                         val errorResponse: ErrorResponse = gson.fromJson(
                             response.errorBody()!!.string(),
@@ -129,6 +131,7 @@ class LoginActivity : AppCompatActivity() {
             })
         } else {
             //progressBar.visibility = View.GONE
+            pr_bar!!.visibility=View.GONE
             Utils.showIndefiniteSnackBar(
                 ll_login_root_view,
                 "You're offline, Please check your network connection."

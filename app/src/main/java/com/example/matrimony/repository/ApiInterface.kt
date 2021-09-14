@@ -49,6 +49,11 @@ interface ApiInterface {
     fun ChanePasswordData(@Body info: PasswordInfo): Call<LoginResponse>
 
 
+
+    @POST("hide_profile")
+    fun HideProfileData(@Body info: ProfileInfo): Call<LoginResponse>
+
+
     class RetrofitInstance {
         companion object {
             val BASE_URL: String = "http://anterpat.com/api/v1/"

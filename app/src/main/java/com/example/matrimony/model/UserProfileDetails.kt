@@ -11,6 +11,10 @@ class UserProfileDetails {
     var gender: String? = null
 
 
+    @SerializedName("user_bio")
+    @Expose
+    var user_bio: String? = null
+
 
     @SerializedName("contry")
     @Expose

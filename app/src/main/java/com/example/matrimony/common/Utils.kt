@@ -23,6 +23,7 @@ import java.io.IOException
 
 object Utils {
 
+    var user_bio: String?=null
     var foccuDetails: String?=null
     var profile_saved: String?=null
 
@@ -96,6 +97,20 @@ object Utils {
 
         return result
     }
+    fun showDialogBasicData(
+        message: String,
+        okListener: DialogInterface.OnClickListener,
+        context: Context
+    ) {
+        val builder = AlertDialog.Builder(context)
+        builder.setMessage(message)
+        builder.setTitle("Warning")
+        builder.setCancelable(false)
+        builder.setPositiveButton("Yes", okListener)
+        builder.setNegativeButton("No", okListener)
+        builder.create()
+        builder.show()
+    }
 
     fun showDialog(
         message: String,
@@ -112,6 +127,22 @@ object Utils {
         builder.show()
     }
 
+    fun showDialogExitApp(
+        message: String,
+        okListener: DialogInterface.OnClickListener,
+        context: Context
+    ) {
+        val builder = AlertDialog.Builder(context)
+        builder.setMessage(message)
+        builder.setTitle("Exit")
+        builder.setPositiveButton("Yes", okListener)
+        builder.setNegativeButton("No", okListener)
+        builder.create()
+        builder.show()
+    }
+
+
+
     fun showDialog1(
         message: String,
         okListener: DialogInterface.OnClickListener,
@@ -119,6 +150,7 @@ object Utils {
     ) {
         val builder = AlertDialog.Builder(context)
         builder.setMessage(message)
+        builder.setCancelable(false)
         builder.setPositiveButton("Yes", okListener)
         builder.create()
         builder.show()

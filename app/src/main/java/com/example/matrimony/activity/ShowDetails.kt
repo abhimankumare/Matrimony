@@ -49,7 +49,7 @@ class ShowDetails : AppCompatActivity() {
                     .create(ApiInterface::class.java)
                 retIn.ProfileData().enqueue(object : Callback<ProfileResponse> {
                     override fun onFailure(call: Call<ProfileResponse>, t: Throwable) {
-
+                        println("In Data Failure")
                     }
 
                     override fun onResponse(
@@ -60,7 +60,7 @@ class ShowDetails : AppCompatActivity() {
                             //  progressBar.visibility=View.VISIBLE
                             val responseBody: ProfileResponse? = response.body()
                             if (responseBody != null) {
-                                println(responseBody.toString())
+                                println("In Data "+responseBody.toString())
                                 Utils.UserName = responseBody.userDetails!!.name.toString()
                                 Utils.Gender = responseBody.userDetails!!.gender.toString()
                                 Utils.BirthDate = responseBody.userprofileDetails!!.birth_date.toString()
@@ -76,6 +76,8 @@ class ShowDetails : AppCompatActivity() {
                                 Utils.famincomeDetails =responseBody.userprofileDetails!!.family_income.toString()
                                 Utils.foccuDetails =responseBody.fatheroccupatonDetails!!.name.toString()
                                 Utils.moccuDetails =responseBody.motheroccupatonDetails!!.name.toString()
+
+                                Utils.user_bio =responseBody.userprofileDetails!!.user_bio.toString()
 
                                 Utils.noofbro =responseBody.userprofileDetails!!.brother_no.toString()
                                 Utils.noofmarrbro =responseBody.userprofileDetails!!.brother_married_no.toString()
@@ -97,6 +99,7 @@ class ShowDetails : AppCompatActivity() {
             }else{
             }
         } catch (err: Exception) {
+            println("In Data catch")
             err.printStackTrace()
         }
     }
