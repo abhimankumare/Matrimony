@@ -137,10 +137,10 @@ class BasicDataActivity : AppCompatActivity() {
                     toast("Please Select Religion")
                 } else if (castTextView.text.isNullOrBlank()) {
                     toast("Please Select Caste")
-                } else if (horoscopeTextView.text.isNullOrBlank()) {
-                    toast("Please Select Horoscope")
-                } else if (ManglikTextView.text.isNullOrBlank()) {
-                    toast("Please Select Magalik Status")
+//                } else if (horoscopeTextView.text.isNullOrBlank()) {
+//                    toast("Please Select Horoscope")
+//                } else if (ManglikTextView.text.isNullOrBlank()) {
+//                    toast("Please Select Magalik Status")
                 } else {
                     ll_social_details.visibility = View.GONE
                     ll_family_details.visibility = View.VISIBLE
@@ -161,13 +161,17 @@ class BasicDataActivity : AppCompatActivity() {
                 } else if (motherStatusTextView.text.isNullOrBlank()) {
                     toast("Please Select Mother Status")
                 } else if (brotherTextView.text.isNullOrBlank()) {
-                    toast("Please Select Nu of Brothers")
+                    toast("Please Select No of Brothers")
                 } else if (brotherMarriedTextView.text.isNullOrBlank()) {
                     toast("Please Select Married Brothers")
+                }else if (brotherTextView.text.toString() > brotherMarriedTextView.text.toString()) {
+                    toast("Please Select Valid Married Brothers")
                 } else if (sisterTextView.text.isNullOrBlank()) {
-                    toast("Please Select Nu of Sisters")
+                    toast("Please Select No of Sisters")
                 } else if (sisterMarriedTextView.text.isNullOrBlank()) {
                     toast("Please Select Married Sisters")
+                }else if (sisterTextView.text.toString() > sisterMarriedTextView.text.toString()) {
+                    toast("Please Select Valid Married Sisters")
                 } else {
                     RegisterBasicDataOfUser(
                         education_id,

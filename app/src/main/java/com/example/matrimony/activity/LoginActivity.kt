@@ -262,7 +262,7 @@ class LoginActivity : AppCompatActivity() {
                                 }
                                 for(i in 0 until listmother_tongue.size){
                                     spinnermother_tongueArrayIds.add(listmother_tongue[i].id)
-                                    spinnermother_tongueArray.add(listmother_tongue[i].mother_tongue_name)
+                                    spinnermother_tongueArray.add(listmother_tongue[i].name)
                                 }
                                 for(i in 0 until listcaste.size){
                                     spinnercasteArrayIds.add(listcaste[i].id)

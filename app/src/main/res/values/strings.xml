@@ -39,8 +39,8 @@
     <string name="select_horoscope_optional">Select Horoscope(Optional)</string>
     <string name="manglik_optional">Manglik (Optional)</string>
     <string name="select_cast">Select Cast</string>
-    <string name="father_s_status">Father\'s Status</string>
-    <string name="mother_s_status">Mother\'s Status</string>
+    <string name="father_s_status">Father\'s Occupation</string>
+    <string name="mother_s_status">Mother\'s Occupation</string>
     <string name="brothers_sisters"><![CDATA[Brothers & Sisters]]></string>
     <string name="no_of_brothers">No. of Brothers</string>
     <string name="no_of_married">No. of Married</string>

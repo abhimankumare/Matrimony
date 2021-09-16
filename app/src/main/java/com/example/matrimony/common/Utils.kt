@@ -151,7 +151,7 @@ object Utils {
         val builder = AlertDialog.Builder(context)
         builder.setMessage(message)
         builder.setCancelable(false)
-        builder.setPositiveButton("Yes", okListener)
+        builder.setPositiveButton("OK", okListener)
         builder.create()
         builder.show()
     }

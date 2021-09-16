@@ -37,7 +37,7 @@ class ProfileResponse {
     @Expose
     var casteDetails: MasterContent? = null
 
-    @SerializedName("language_name")
+    @SerializedName("mother_tongue_name")
     @Expose
     var motherToungeDetails: MasterContent? = null
 

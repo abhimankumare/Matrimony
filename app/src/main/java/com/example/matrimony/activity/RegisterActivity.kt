@@ -207,10 +207,9 @@ class RegisterActivity : AppCompatActivity() {
                     Utils.toast(this@RegisterActivity,"Please Select State")
                 }else if(customerCityTextView.text.isNullOrBlank()) {
                     Utils.toast(this@RegisterActivity, "Please Select City")
-//                }else if(ed_email.text.isNullOrBlank()) {
-//                    Utils.toast(this@RegisterActivity,"Please Enter Email Id")
-//
-                }else if(!ed_email.text.isNullOrBlank() && !Patterns.EMAIL_ADDRESS.matcher(ed_email.text.toString()).matches()) {
+                }else if(ed_email.text.isNullOrBlank()) {
+                    Utils.toast(this@RegisterActivity,"Please Enter Email Id")
+                }else if(!Patterns.EMAIL_ADDRESS.matcher(ed_email.text.toString()).matches()) {
                     Utils.toast(this@RegisterActivity,"Please Enter Valid Email Id")
                 }else if(ed_mobileemail.text.isNullOrBlank()) {
                     Utils.toast(this@RegisterActivity,"Please Enter Mobile Number")
@@ -398,7 +397,7 @@ class RegisterActivity : AppCompatActivity() {
                                 }
                                 for(i in 0 until listmother_tongue.size){
                                     spinnermother_tongueArrayIds.add(listmother_tongue[i].id)
-                                    spinnermother_tongueArray.add(listmother_tongue[i].mother_tongue_name)
+                                    spinnermother_tongueArray.add(listmother_tongue[i].name)
                                 }
                                 for(i in 0 until listcaste.size){
                                     spinnercasteArrayIds.add(listcaste[i].id)
@@ -434,7 +433,7 @@ class RegisterActivity : AppCompatActivity() {
     fun setView(User_Type: String) {
         //goToNextScreen()
         getSupportActionBar()!!.setTitle("Presonal Details");
-        user_type == User_Type
+        user_type = User_Type
         rv_selection.visibility = View.GONE
         ll_personal_details.visibility = View.VISIBLE
     }
