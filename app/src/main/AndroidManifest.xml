@@ -32,6 +32,12 @@
         android:theme="@style/NoActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activity.CommonWebViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ForgetPasswordActivity"
+            android:exported="true" />
+        <activity
             android:name=".activity.HideProfileActivity"
             android:exported="true" />
         <activity android:name=".activity.BasicDataActivity" />

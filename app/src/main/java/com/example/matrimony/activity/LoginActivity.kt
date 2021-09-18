@@ -28,7 +28,9 @@ lateinit var edit_login: EditText
 lateinit var edit_text_password: EditText
 lateinit var ll_login_root_view: LinearLayout
 
-private var pr_bar: ProgressBar? = null
+
+lateinit var forgetPassword: TextView
+private var pr_bar_login: ProgressBar? = null
 
 
 class LoginActivity : AppCompatActivity() {
@@ -41,11 +43,12 @@ class LoginActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         getSupportActionBar()!!.setTitle("Login");
         loginButton = findViewById(R.id.loginButton)
-        pr_bar = findViewById(R.id.pr_bar)
+        pr_bar_login = findViewById(R.id.pr_bar_login)
         edit_login = findViewById(R.id.edit_login)
         edit_text_password = findViewById(R.id.edit_text_password)
         registerButton = findViewById(R.id.registerButton)
         ll_login_root_view = findViewById(R.id.ll_login_root_view)
+        forgetPassword = findViewById(R.id.forgetPassword)
 
         getMasterData()
 
@@ -73,6 +76,18 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
+        forgetPassword.setOnClickListener(View.OnClickListener {
+            try {
+                val intent = Intent(this@LoginActivity, ForgetPasswordActivity::class.java)
+                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                startActivity(intent)
+                finish()
+            } catch (err: Exception) {
+                err.printStackTrace()
+            }
+        })
+
+
 
     }
 
@@ -80,7 +95,7 @@ class LoginActivity : AppCompatActivity() {
     private fun signin(mobile: String, password: String) {
         println("In Master Data signin")
         if (Utils.isConnectingToInternet(this)) {
-            pr_bar!!.visibility=View.VISIBLE
+            pr_bar_login!!.visibility=View.VISIBLE
             val retIn =
                 ApiInterface.RetrofitInstance.getRetrofitInstance().create(ApiInterface::class.java)
             val signInInfo = Login(mobile, password)
@@ -91,7 +106,7 @@ class LoginActivity : AppCompatActivity() {
                         t.message,
                         Toast.LENGTH_SHORT
                     ).show()
-                    pr_bar!!.visibility=View.GONE
+                    pr_bar_login!!.visibility=View.GONE
                 }
 
                 override fun onResponse(
@@ -99,7 +114,7 @@ class LoginActivity : AppCompatActivity() {
                     response: Response<LoginResponse>
                 ) {
                     if (response.code() == 200) {
-                        pr_bar!!.visibility=View.GONE
+
                        // progressBar.visibility = View.GONE
                         val responseBody: LoginResponse? = response.body()
                         if (responseBody != null) {
@@ -118,7 +133,7 @@ class LoginActivity : AppCompatActivity() {
 
 
                     } else {
-                        pr_bar!!.visibility=View.GONE
+                        pr_bar_login!!.visibility=View.GONE
                         val gson = Gson()
                         val errorResponse: ErrorResponse = gson.fromJson(
                             response.errorBody()!!.string(),
@@ -131,7 +146,7 @@ class LoginActivity : AppCompatActivity() {
             })
         } else {
             //progressBar.visibility = View.GONE
-            pr_bar!!.visibility=View.GONE
+            pr_bar_login!!.visibility=View.GONE
             Utils.showIndefiniteSnackBar(
                 ll_login_root_view,
                 "You're offline, Please check your network connection."
@@ -152,18 +167,19 @@ class LoginActivity : AppCompatActivity() {
             if (Utils.isConnectingToInternet(this@LoginActivity)) {
                 val retIn = ApiInterface.RetrofitInstance.getRetrofitInstance()
                     .create(ApiInterface::class.java)
-                retIn.ProfileData().enqueue(object : Callback<ProfileResponse> {
-                    override fun onFailure(call: Call<ProfileResponse>, t: Throwable) {
-
+                retIn.ProfileData1().enqueue(object : Callback<ProfileResponse1> {
+                    override fun onFailure(call: Call<ProfileResponse1>, t: Throwable) {
+                        pr_bar_login!!.visibility=View.GONE
                     }
 
                     override fun onResponse(
-                        call: Call<ProfileResponse>,
-                        response: Response<ProfileResponse>
+                        call: Call<ProfileResponse1>,
+                        response: Response<ProfileResponse1>
                     ) {
                         if (response.code() == 200) {
+                            pr_bar_login!!.visibility=View.GONE
                             //  progressBar.visibility=View.VISIBLE
-                            val responseBody: ProfileResponse? = response.body()
+                            val responseBody: ProfileResponse1? = response.body()
                             if (responseBody != null) {
                                 println(responseBody.toString())
                                 profile_saved = responseBody.userDetails!!.profile_saved.toString()
@@ -192,11 +208,13 @@ class LoginActivity : AppCompatActivity() {
 
                             }
                         }else{
+                            pr_bar_login!!.visibility=View.GONE
                             //progressBar.visibility=View.GONE
                         }
                     }
                 })
             }else{
+                pr_bar_login!!.visibility=View.GONE
             }
         } catch (err: Exception) {
             err.printStackTrace()

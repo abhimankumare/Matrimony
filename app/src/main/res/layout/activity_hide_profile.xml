@@ -13,6 +13,17 @@
         android:orientation="vertical">
 
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_view"
+            app:elevation="@dimen/margin4"
+            android:fontFamily="@font/robotoregular"
+            app:titleTextAppearance="@style/Toolbar.TitleText"
+            app:titleTextColor="@color/white"/>
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,25 +103,23 @@
             </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etPasswordLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/margin56"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/margin20"
-                android:fontFamily="@font/robotoregular"
-                android:hint="Enter Password"
-                android:shadowColor="@color/color_gray"
-                app:endIconMode="password_toggle"
-                app:endIconTint="#7F7F7F">
+                android:layout_marginTop="10dp"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
                     android:id="@+id/et_password"
-                    android:layout_height="56dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/margin2"
                     android:background="@drawable/text_background"
                     android:fontFamily="@font/robotoregular"
-                    android:padding="@dimen/margin2"
-                    android:shadowColor="@color/color_gray" />
-
+                    android:hint="@string/enter_password"
+                    android:inputType="textPassword"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button

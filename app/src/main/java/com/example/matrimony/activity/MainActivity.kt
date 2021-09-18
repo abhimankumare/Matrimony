@@ -4,6 +4,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -125,7 +126,7 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
                 return true
             }
 
-            R.id.nav_rate -> {
+            R.id.nav_hide -> {
                 val intent = Intent(this@MainActivity, HideProfileActivity::class.java)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(intent)
@@ -140,6 +141,93 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
                 drawerLayout.closeDrawer(GravityCompat.START)
                 return true
             }
+
+            R.id.nav_about -> {
+                var intent = Intent(
+                    this@MainActivity,
+                    CommonWebViewActivity::class.java
+                )
+                intent.putExtra("toolbar_title", "About Us")
+                intent.putExtra(
+                    "url",
+                    "https://thehappinessindia.com/terms.php"
+                )
+                startActivity(intent)
+                drawerLayout.closeDrawer(GravityCompat.START)
+                return true
+            }
+
+
+            R.id.nav_terms -> {
+                var intent = Intent(
+                    this@MainActivity,
+                    CommonWebViewActivity::class.java
+                )
+                intent.putExtra("toolbar_title", "Terms and Condition")
+                intent.putExtra(
+                    "url",
+                    "https://thehappinessindia.com/terms.php"
+                )
+                startActivity(intent)
+                drawerLayout.closeDrawer(GravityCompat.START)
+                return true
+            }
+
+            R.id.nav_help -> {
+                var intent = Intent(
+                    this@MainActivity,
+                    CommonWebViewActivity::class.java
+                )
+                intent.putExtra("toolbar_title", "Help and Support")
+                intent.putExtra(
+                    "url",
+                    "https://thehappinessindia.com/terms.php"
+                )
+                startActivity(intent)
+                drawerLayout.closeDrawer(GravityCompat.START)
+                return true
+            }
+
+            R.id.nav_privacy -> {
+                var intent = Intent(
+                    this@MainActivity,
+                    CommonWebViewActivity::class.java
+                )
+                intent.putExtra("toolbar_title", "Privacy Policy")
+                intent.putExtra(
+                    "url",
+                    "https://thehappinessindia.com/terms.php"
+                )
+                startActivity(intent)
+                drawerLayout.closeDrawer(GravityCompat.START)
+                return true
+            }
+
+            R.id.nav_faq -> {
+                var intent = Intent(
+                    this@MainActivity,
+                    CommonWebViewActivity::class.java
+                )
+                intent.putExtra("toolbar_title", "FAQ")
+                intent.putExtra(
+                    "url",
+                    "https://thehappinessindia.com/terms.php"
+                )
+                startActivity(intent)
+                drawerLayout.closeDrawer(GravityCompat.START)
+                return true
+            }
+
+            R.id.nav_rate -> {
+                val marketUri =
+                    Uri.parse("https://play.google.com/store/apps/details?id=com.facebook.katana&hl=en")
+                val marketIntent = Intent(Intent.ACTION_VIEW, marketUri)
+                startActivity(marketIntent)
+                drawerLayout.closeDrawer(GravityCompat.START)
+                return true
+            }
+
+
 
 
             R.id.nav_logout -> {

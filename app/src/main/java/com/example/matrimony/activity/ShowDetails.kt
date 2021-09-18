@@ -3,8 +3,7 @@ package com.example.matrimony.activity
 import android.os.Bundle
 import android.view.View
 import android.widget.ProgressBar
-import android.widget.Toast
-import android.widget.Toolbar
+import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -13,12 +12,9 @@ import androidx.viewpager.widget.ViewPager
 import com.example.matrimony.R
 import com.example.matrimony.fragment.FamilyDetaisFragment
 import com.example.matrimony.fragment.PersonalDetailsFragment
-import com.example.matrimony.fragment.PreferenceFragment
-import com.example.matrimony.model.LoginResponse
 import com.example.matrimony.model.ProfileResponse
 import com.example.matrimony.repository.ApiInterface
 import com.example.poultry_i.common.Utils
-import com.example.poultry_i.storageHelpers.PreferenceHelper
 import com.google.android.material.tabs.TabLayout
 import retrofit2.Call
 import retrofit2.Callback
@@ -69,7 +65,7 @@ class ShowDetails : AppCompatActivity() {
                                 Utils.StateName = responseBody.stateDetails!!.name.toString()
                                 Utils.religionName = responseBody.religionDetails!!.name.toString()
                                 Utils.casteName = responseBody.casteDetails!!.name.toString()
-                                Utils.mothertoungeName = responseBody.motherToungeDetails!!.name.toString()
+                                Utils.mothertoungeName = responseBody.motherToungeDetails!!.get(0).name.toString()
                                 Utils.educationName = responseBody.educationDetails!!.name.toString()
                                 Utils.occupationName = responseBody.occuoatonDetails!!.name.toString()
                                 Utils.incomeDetails =responseBody.userprofileDetails!!.annual_income.toString()
@@ -78,6 +74,8 @@ class ShowDetails : AppCompatActivity() {
                                 Utils.moccuDetails =responseBody.motheroccupatonDetails!!.name.toString()
 
                                 Utils.user_bio =responseBody.userprofileDetails!!.user_bio.toString()
+                                Utils.contact_no =responseBody.userDetails!!.mobile.toString()
+                                Utils.email_id =responseBody.userDetails!!.email.toString()
 
                                 Utils.noofbro =responseBody.userprofileDetails!!.brother_no.toString()
                                 Utils.noofmarrbro =responseBody.userprofileDetails!!.brother_married_no.toString()

@@ -30,7 +30,9 @@ class ChangePasswordActivity : AppCompatActivity() {
         setContentView(R.layout.change_password)
         pr_bar = findViewById(R.id.pr_bar)
         changeButton = findViewById(R.id.changeButton)
-
+        toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        getSupportActionBar()!!.setTitle("Change Password");
         new_confirm_password = findViewById(R.id.new_confirm_password)
         new_password = findViewById(R.id.new_password)
         old_password = findViewById(R.id.old_password)

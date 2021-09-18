@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -61,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:adjustViewBounds="true"
-                    android:src="@drawable/sxcx" />
+                    app:srcCompat="@drawable/sxcx" />
 
 
                   <LinearLayout
@@ -82,7 +83,7 @@
                             android:layout_weight="0.1"
                             android:padding="@dimen/margin5"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/verifiedicon"/>
+                            app:srcCompat="@drawable/verifiedicon"/>
 
 
                         <TextView
@@ -236,7 +237,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/margin24"
-                            android:src="@drawable/showintrest" />
+                            app:srcCompat="@drawable/showintrest" />
 
 
                         <TextView
@@ -262,7 +263,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/margin24"
-                            android:src="@drawable/saveprofile" />
+                            app:srcCompat="@drawable/saveprofile" />
 
 
                         <TextView
@@ -288,7 +289,7 @@
                         <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/margin24"
-                            android:src="@drawable/messagematr" />
+                            app:srcCompat="@drawable/messagematr" />
 
 
                         <TextView

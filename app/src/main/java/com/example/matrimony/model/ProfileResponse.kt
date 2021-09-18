@@ -16,10 +16,6 @@ class ProfileResponse {
     var userprofileDetails: UserProfileDetails? = null
 
 
-
-
-
-
     @SerializedName("city_name")
     @Expose
     var cityDetails: MasterContent? = null
@@ -39,7 +35,9 @@ class ProfileResponse {
 
     @SerializedName("mother_tongue_name")
     @Expose
-    var motherToungeDetails: MasterContent? = null
+    lateinit var motherToungeDetails: List<MasterContent>
+
+
 
     @SerializedName("educations_name")
     @Expose

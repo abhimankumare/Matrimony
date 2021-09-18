@@ -22,16 +22,18 @@ lateinit var hideButton: Button
 lateinit var et_password: EditText
 
 
-
 class HideProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hide_profile)
 
-
+        toolbar = findViewById(R.id.toolbar)
         hideButton = findViewById(R.id.hideButton)
         radioGroup = findViewById(R.id.radioGroup2)
         et_password = findViewById(R.id.et_password)
+        setSupportActionBar(toolbar)
+        getSupportActionBar()!!.setTitle("Hide Profile");
+
 
         hideButton.setOnClickListener(View.OnClickListener {
             val selectedOption: Int = radioGroup!!.checkedRadioButtonId

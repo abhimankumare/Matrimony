@@ -102,6 +102,14 @@
                 android:textAlignment="textEnd"
                 android:textSize="@dimen/margin14"/>
 
+            <ProgressBar
+                android:id="@+id/pr_bar_login"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </ProgressBar>
+
             <Button
                 android:id="@+id/loginButton"
                 android:layout_width="match_parent"
@@ -128,13 +136,7 @@
                 app:backgroundTint="@color/white"/>
 
 
-            <ProgressBar
-                android:id="@+id/pr_bar"
-                android:visibility="gone"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
-            </ProgressBar>
 
         </LinearLayout>
 

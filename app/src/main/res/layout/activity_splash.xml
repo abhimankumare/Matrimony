@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/splash"
         android:scaleType="fitXY"
-        android:src="@drawable/spalsh"
+        app:srcCompat="@drawable/spalsh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -18,14 +18,14 @@
         android:id="@+id/splash1"
         android:scaleType="fitXY"
         android:visibility="gone"
-        android:src="@drawable/splash1"
+        app:srcCompat="@drawable/splash1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <ImageView
         android:id="@+id/splash2"
         android:scaleType="fitXY"
-        android:src="@drawable/splash2"
+        app:srcCompat="@drawable/splash2"
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
@@ -33,7 +33,7 @@
     <ImageView
         android:id="@+id/splash3"
         android:scaleType="fitXY"
-        android:src="@drawable/splash3"
+        app:srcCompat="@drawable/splash3"
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

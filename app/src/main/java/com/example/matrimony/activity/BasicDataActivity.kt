@@ -164,13 +164,13 @@ class BasicDataActivity : AppCompatActivity() {
                     toast("Please Select No of Brothers")
                 } else if (brotherMarriedTextView.text.isNullOrBlank()) {
                     toast("Please Select Married Brothers")
-                }else if (brotherTextView.text.toString() > brotherMarriedTextView.text.toString()) {
+                }else if (Integer.parseInt(brotherTextView.text.toString()) > Integer.parseInt(brotherMarriedTextView.text.toString())) {
                     toast("Please Select Valid Married Brothers")
                 } else if (sisterTextView.text.isNullOrBlank()) {
                     toast("Please Select No of Sisters")
                 } else if (sisterMarriedTextView.text.isNullOrBlank()) {
                     toast("Please Select Married Sisters")
-                }else if (sisterTextView.text.toString() > sisterMarriedTextView.text.toString()) {
+                }else if (Integer.parseInt(sisterTextView.text.toString()) > Integer.parseInt(sisterMarriedTextView.text.toString())) {
                     toast("Please Select Valid Married Sisters")
                 } else {
                     RegisterBasicDataOfUser(

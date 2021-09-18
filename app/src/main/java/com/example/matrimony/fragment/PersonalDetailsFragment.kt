@@ -35,7 +35,7 @@ class PersonalDetailsFragment : Fragment() {
     var non_vegetarian: TextView? = null
     var contact_details: TextView? = null
     var contact_no: TextView? = null
-    var pd_email_id: TextView? = null
+    var tv_email_id: TextView? = null
     var gmail_com: TextView? = null
     var get_contact_information_by: TextView? = null
     var education_career: TextView? = null
@@ -118,6 +118,12 @@ class PersonalDetailsFragment : Fragment() {
 
         tv_city_state!!.text = Utils.CityName.toString()+","+Utils.StateName.toString()
 
+        contact_no = view.findViewById(R.id.tv_contact_no)
+        contact_no!!.text = "+91 "+Utils.contact_no.toString()
+
+
+        tv_email_id = view.findViewById(R.id.tv_email_id)
+        tv_email_id!!.text = Utils.email_id.toString()
 
         religion_mother_tongue = view.findViewById(R.id.tv_religion_mother_tongue)
 
@@ -144,9 +150,8 @@ class PersonalDetailsFragment : Fragment() {
         diet_preference = view.findViewById(R.id.tv_diet_preference)
         non_vegetarian = view.findViewById(R.id.tv_non_vegetarian)
         contact_details = view.findViewById(R.id.tv_contact_details)
-        contact_no = view.findViewById(R.id.tv_contact_no)
-        pd_email_id = view.findViewById(R.id.tv_pd_email_id)
-        gmail_com = view.findViewById(R.id.tv_gmail_com)
+
+
         get_contact_information_by = view.findViewById(R.id.tv_get_contact_information_by)
         education_career = view.findViewById(R.id.tv_education_career)
         qualification = view.findViewById(R.id.tv_qualification)

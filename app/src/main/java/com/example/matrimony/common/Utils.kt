@@ -22,6 +22,8 @@ import java.io.IOException
 
 
 object Utils {
+    var contact_no: String?=null
+    var email_id: String?=null
 
     var user_bio: String?=null
     var foccuDetails: String?=null

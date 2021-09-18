@@ -38,6 +38,8 @@ interface ApiInterface {
     @GET("master")
     fun getMasterData(): Call<MasterResponse>
 
+    @GET("forgot_password")
+    fun ForgetPassData(): Call<LoginResponse>
 
     @GET("logout")
     fun LogoutData(): Call<LoginResponse>
@@ -52,6 +54,11 @@ interface ApiInterface {
 
     @POST("hide_profile")
     fun HideProfileData(@Body info: ProfileInfo): Call<LoginResponse>
+
+    @POST("myprofile")
+    fun ProfileData1(): Call<ProfileResponse1>
+
+
 
 
     class RetrofitInstance {
