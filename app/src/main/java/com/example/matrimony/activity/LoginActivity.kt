@@ -1,12 +1,22 @@
 package com.example.matrimony.activity
 
+import android.Manifest
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.content.res.Configuration
+import android.content.res.Resources
+import android.os.Build
 import android.os.Bundle
+import android.util.DisplayMetrics
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import com.example.matrimony.R
 import com.example.matrimony.model.*
 import com.example.matrimony.repository.ApiInterface
@@ -17,11 +27,13 @@ import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.ArrayList
+import androidx.core.app.ActivityCompat
+import java.util.*
 
 
 lateinit var toolbar: Toolbar
-
+private val STORAGE_REQUEST = 200
+lateinit var storagePermission1: Array<String>
 lateinit var loginButton: Button
 lateinit var registerButton: Button
 lateinit var edit_login: EditText
@@ -31,8 +43,9 @@ lateinit var ll_login_root_view: LinearLayout
 
 lateinit var forgetPassword: TextView
 private var pr_bar_login: ProgressBar? = null
-
-
+val REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
+var actionBarDrawerToggle: ActionBarDrawerToggle? = null
+var myLocale: Locale? = null
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +65,8 @@ class LoginActivity : AppCompatActivity() {
 
         getMasterData()
 
+        checkAndRequestPermissions()
+
         loginButton.setOnClickListener(View.OnClickListener {
             try {
 
@@ -69,6 +84,7 @@ class LoginActivity : AppCompatActivity() {
             try {
                 val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                intent.putExtra("fromData","loginDetails")
                 startActivity(intent)
                 finish()
             } catch (err: Exception) {
@@ -89,6 +105,67 @@ class LoginActivity : AppCompatActivity() {
 
 
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle presses on the action bar menu items
+        when (item.itemId) {
+            R.id.action_noification -> {
+                Utils.showLanguage(
+                    "Please Select Language",
+                    DialogInterface.OnClickListener { dialog, which ->
+                        when (which) {
+                            DialogInterface.BUTTON_POSITIVE -> {
+                                setLocale("en");
+                                dialog.dismiss()
+                            }
+                            DialogInterface.BUTTON_NEGATIVE -> {
+                                setLocale("hi");
+                                dialog.dismiss()
+                            }
+                            DialogInterface.BUTTON_NEUTRAL -> {
+                                setLocale("mr");
+                                dialog.dismiss()
+                            }
+                        }
+                    }, this
+                )
+//                addFragment(
+//                    NotificationFragment(),
+//                    true,
+//                    NotificationFragment::class.java.simpleName
+//                )
+                return true
+            }
+
+        }
+        return actionBarDrawerToggle!!.onOptionsItemSelected(item)
+    }
+
+    fun setLocale(localeName: String) {
+
+        if (localeName != Utils.currentLanguage) {
+            myLocale = Locale(localeName)
+            val res: Resources = resources
+            val dm: DisplayMetrics = res.getDisplayMetrics()
+            val conf: Configuration = res.getConfiguration()
+            conf.locale = myLocale
+            res.updateConfiguration(conf, dm)
+            Utils.currentLanguage = localeName
+            PreferenceHelper.setStringPreference(this@LoginActivity,"currentLanguage",Utils.currentLanguage)
+            val refresh = Intent(this, LoginActivity::class.java)
+            refresh.putExtra(Utils.currentLanguage, localeName)
+            startActivity(refresh)
+        } else {
+            Toast.makeText(this@LoginActivity, "Language already selected!", Toast.LENGTH_SHORT)
+                .show()
+        }
     }
 
 
@@ -159,7 +236,36 @@ class LoginActivity : AppCompatActivity() {
         getProfileData()
     }
 
-
+    private fun checkAndRequestPermissions(): Boolean {
+        val camera = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+        val storage =
+            ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        val loc =
+            ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+        val loc2 = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+        val listPermissionsNeeded: MutableList<String> = ArrayList()
+        if (camera != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.CAMERA)
+        }
+        if (storage != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        }
+        if (loc2 != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION)
+        }
+        if (loc != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.ACCESS_COARSE_LOCATION)
+        }
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(
+                this,
+                listPermissionsNeeded.toTypedArray(),
+                REQUEST_ID_MULTIPLE_PERMISSIONS
+            )
+            return false
+        }
+        return true
+    }
 
     fun getProfileData() {
         println("In Master Data getProfileData")
@@ -192,6 +298,7 @@ class LoginActivity : AppCompatActivity() {
                                                     dialog.dismiss()
                                                     val intent = Intent(this@LoginActivity, BasicDataActivity::class.java)
                                                         .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                                                    intent.putExtra("fromData","LoginActivity")
                                                     startActivity(intent)
                                                     finish()
                                                 }
@@ -307,5 +414,14 @@ class LoginActivity : AppCompatActivity() {
 
     fun toast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(Intent.ACTION_MAIN)
+        intent.addCategory(Intent.CATEGORY_HOME)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)
+        finish()
+        System.exit(0)
     }
 }

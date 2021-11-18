@@ -47,6 +47,7 @@
 
             <TextView
                 android:id="@+id/tv_text"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/robotoregular"
@@ -584,6 +585,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="25dp"
+                android:visibility="gone"
                 android:text="@string/get_contact_information_by"
                 android:fontFamily="@font/robotoregular"
                 android:textColor="#99000000"
@@ -593,6 +595,7 @@
                 android:layout_width="239dp"
                 android:layout_height="37dp"
                 android:text="@string/take_premium"
+                android:visibility="gone"
                 android:layout_marginTop="21dp"
                 android:layout_gravity="center_horizontal"
                 android:textColor="#FF8025"
@@ -847,6 +850,7 @@
                 <LinearLayout
                     android:id="@+id/ll_Collage"
                     android:layout_width="wrap_content"
+                    android:visibility="gone"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
@@ -874,7 +878,8 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <TextView
                             android:id="@+id/tv_college_name"
@@ -908,8 +913,6 @@
                     android:id="@+id/ll_anual_income"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="55dp"
-                    android:layout_marginLeft="55dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -998,6 +1001,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="50dp"
+                android:visibility="gone"
                 android:fontFamily="@font/robotoregular"
                 android:text="@string/request_for_horoscope"
                 android:textColor="#FF8025"

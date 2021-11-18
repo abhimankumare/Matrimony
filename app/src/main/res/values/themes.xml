@@ -20,8 +20,16 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Matrimony.AppBarOverlay"
-        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Matrimony.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Matrimony.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="NoActionBar.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

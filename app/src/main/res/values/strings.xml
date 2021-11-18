@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Anterpat</string>
-    <string name="nav_open">Open</string>
+    <string name="nav_open" translatable="false">Open</string>
     <string name="nav_close">Close</string>
     <string name="terms">Terms &amp; Condition</string>
     <string name="help">Help &amp; Support</string>
@@ -13,14 +13,19 @@
     <string name="login_register">Login/Register</string>
     <string name="enter_password_login">Enter password</string>
     <string name="enter_your_full_name">Enter your full name</string>
+    <string name="enter_your_birth_place">Enter your Birth Place</string>
+    <string name="enter_your_family_diety">Enter your Family Diety</string>
     <string name="gender">Gender*</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="enter_your_date_of_birth">Enter Your Date Of Birth</string>
+    <string name="enter_your_birth_time">Enter Your Birth-Time</string>
     <string name="select_your_height">Select Your Height</string>
     <string name="select_your_country">Select Your Country</string>
     <string name="select_your_state">Select Your State</string>
     <string name="select_your_city">Select Your City</string>
+    <string name="select_your_day">Select Your Birth-Day</string>
+    <string name="select_your_blood_group">Select Your Blood-Group</string>
     <string name="comment_box">Write About You</string>
     <string name="enter_password">Enter password</string>
     <string name="indicates_mandatory_fields">*Indicates mandatory fields</string>
@@ -177,9 +182,6 @@
     <string name="never_married">Never Married</string>
     <string name="todo4">TODO</string>
     <string name="birth_date">Birth Date</string>
-    <string name="todo5">TODO</string>
-    <string name="todo6">TODO</string>
-    <string name="todo7">TODO</string>
     <string name="contact_details">Contact Details</string>
     <string name="contact_no">Contact No.</string>
     <string name="_91_11">+91-11*********</string>
@@ -261,6 +263,22 @@
     <string name="qualification">Qualification</string>
     <string name="men">TODO</string>
     <string name="men1">TODO</string>
+    <string name="matches">Matches</string>
+    <string name="search">Search</string>
+    <string name="inbox">Inbox</string>
+    <string name="chat">Chat</string>
+    <string name="viewprofile">View Profile</string>
+    <string name="favouritesav">Favorites/Saved</string>
+    <string name="profilevisit">Profile Visitor</string>
+    <string name="successstories">Success Stories</string>
+    <string name="changepassword">Change Password</string>
+    <string name="hideprofile">Hide Profile</string>
+    <string name="faq">FAQ</string>
+    <string name="privacypoli">Privacy Policy</string>
+    <string name="rateus">Rate Us</string>
+    <string name="aboutus">About Us</string>
+    <string name="logout">Logout</string>
+    <string name="relativeinfo">Relative Info</string>
     <string-array name="list_items">
         <item>Home</item>
         <item>User Account</item>
@@ -268,4 +286,12 @@
         <item>Settings</item>
         <item>About Us</item>
     </string-array>
+    <string name="title_activity_edit_register">EditRegisterActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

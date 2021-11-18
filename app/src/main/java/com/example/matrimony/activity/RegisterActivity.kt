@@ -21,7 +21,13 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
+import java.time.DayOfWeek
 import java.util.*
+import android.widget.TimePicker
+
+import android.app.TimePickerDialog
+import android.app.TimePickerDialog.OnTimeSetListener
+import android.content.DialogInterface
 
 
 lateinit var ll_personal_details: LinearLayout
@@ -52,6 +58,7 @@ var listoccupation: ArrayList<MasterContent> = arrayListOf()
  var spinnerStateArray: ArrayList<String> = arrayListOf()
  var spinnerStateArrayIds: ArrayList<String> = arrayListOf()
  var spinnerCityArrayIds: ArrayList<String> = arrayListOf()
+var spinnercitiesArray: ArrayList<String> = arrayListOf()
  var spinnerheightArrayIds: ArrayList<String> = arrayListOf()
 var spinnereducationArrayIds: ArrayList<String> = arrayListOf()
 var spinneroccupationArrayIds: ArrayList<String> = arrayListOf()
@@ -65,7 +72,7 @@ var spinnerLanguageArrayIds: ArrayList<String> = arrayListOf()
 
 
 
- var spinnercitiesArray: ArrayList<String> = arrayListOf()
+
 var spinnereducationArray: ArrayList<String> = arrayListOf()
 var spinneroccupationArray: ArrayList<String> = arrayListOf()
 var spinnerreligionArray: ArrayList<String> = arrayListOf()
@@ -81,6 +88,8 @@ lateinit var customerCountryTextView: AutoCompleteTextView
 lateinit var customerStateTextView: AutoCompleteTextView
 lateinit var customerCityTextView: AutoCompleteTextView
 
+lateinit var DayTextView: AutoCompleteTextView
+lateinit var BloodGroupTextView: AutoCompleteTextView
 
 
 lateinit var edit_text_login: EditText
@@ -88,6 +97,11 @@ lateinit var edit_text_DOB: EditText
 lateinit var ed_mobileemail: EditText
 lateinit var etPassword: EditText
 lateinit var ed_email: EditText
+lateinit var edit_text_DOB_Time: EditText
+lateinit var edit_text_birth_place: EditText
+
+lateinit var edit_text_family_diety: EditText
+
 
 lateinit var info_about: EditText
 
@@ -131,8 +145,13 @@ class RegisterActivity : AppCompatActivity() {
         edit_text_DOB = findViewById(R.id.edit_text_DOB)
         ed_mobileemail = findViewById(R.id.ed_mobileemail)
         etPassword = findViewById(R.id.etPassword)
-        info_about = findViewById(R.id.info_about)
+
         ed_email = findViewById(R.id.ed_email)
+        info_about = findViewById(R.id.info_about)
+        edit_text_DOB_Time = findViewById(R.id.edit_text_DOB_Time)
+        edit_text_birth_place = findViewById(R.id.edit_text_birth_place)
+        edit_text_family_diety = findViewById(R.id.edit_text_family_diety)
+
 
         radioGroup = findViewById(R.id.radioGroup1)
         saveButton = findViewById(R.id.saveButton)
@@ -140,7 +159,9 @@ class RegisterActivity : AppCompatActivity() {
         customerCountryTextView = findViewById(R.id.customerCountryTextView)
         customerStateTextView = findViewById(R.id.customerStateTextView)
         customerCityTextView = findViewById(R.id.customerCityTextView)
+        BloodGroupTextView = findViewById(R.id.BloodGroupTextView)
 
+        DayTextView = findViewById(R.id.DayTextView)
 
         initClickListeners()
 
@@ -154,7 +175,8 @@ class RegisterActivity : AppCompatActivity() {
         setSelfAdapter()
 
         initUICountry()
-
+        initUiDay()
+       initBloodGroup()
 
 
     }
@@ -189,6 +211,26 @@ class RegisterActivity : AppCompatActivity() {
             dpd.show()
         })
 
+        edit_text_DOB_Time.setOnClickListener(View.OnClickListener {
+
+            val mcurrentTime = Calendar.getInstance()
+            val hour = mcurrentTime[Calendar.HOUR_OF_DAY]
+            val minute = mcurrentTime[Calendar.MINUTE]
+            val mTimePicker: TimePickerDialog
+            mTimePicker = TimePickerDialog(this@RegisterActivity,
+                { timePicker, selectedHour, selectedMinute ->
+                    edit_text_DOB_Time.setText("$selectedHour:$selectedMinute") },
+                hour,
+                minute,
+                false
+            ) //Yes 24 hour time
+            mTimePicker.setTitle("Select Time")
+            mTimePicker.show()
+
+        })
+
+
+
         saveButton.setOnClickListener(View.OnClickListener {
 
             //goToNextScreen()
@@ -207,19 +249,20 @@ class RegisterActivity : AppCompatActivity() {
                     Utils.toast(this@RegisterActivity,"Please Select State")
                 }else if(customerCityTextView.text.isNullOrBlank()) {
                     Utils.toast(this@RegisterActivity, "Please Select City")
-                }else if(ed_email.text.isNullOrBlank()) {
-                    Utils.toast(this@RegisterActivity,"Please Enter Email Id")
-                }else if(!Patterns.EMAIL_ADDRESS.matcher(ed_email.text.toString()).matches()) {
+                }else if(!ed_email.text.isNullOrBlank() && !Patterns.EMAIL_ADDRESS.matcher(ed_email.text.toString()).matches()) {
                     Utils.toast(this@RegisterActivity,"Please Enter Valid Email Id")
                 }else if(ed_mobileemail.text.isNullOrBlank()) {
                     Utils.toast(this@RegisterActivity,"Please Enter Mobile Number")
                 }else if(etPassword.text.isNullOrBlank()) {
                     Utils.toast(this@RegisterActivity,"Please Enter Password")
                 }else if(info_about.text.isNullOrBlank()) {
-                    Utils.toast(this@RegisterActivity,"Please Write Something About You")
+                    Utils.toast(this@RegisterActivity,"Please Write Abpout Relatives")
                 } else {
                     signUpProfile(user_type.toString(), edit_text_login.text.toString(),
                         radioButton.text.toString(), edit_text_DOB.text.toString(),
+                        DayTextView.text.toString(),edit_text_DOB_Time.text.toString(),
+                        edit_text_birth_place.text.toString(),BloodGroupTextView.text.toString(),
+                        edit_text_family_diety.text.toString(),
                         height_id.toString(), customerCountryTextView.text.toString(),
                         state_id.toString(), city_id.toString(),
                         ed_mobileemail.text.toString(),ed_email.text.toString(),
@@ -240,13 +283,18 @@ class RegisterActivity : AppCompatActivity() {
         name: String,
         gender: String,
         birth_date: String,
+        birthday: String,
+        birthtime: String,
+        birthplace: String,
+        bloodgroup: String,
+        familydiety: String,
         hight: String,
-        contry: String,
+        country : String,
         state_id: String,
         city_id: String,
         mobile: String,
         email: String,
-        user_bio: String,
+        relatives: String,
         password: String,
         confirm_password: String
     ) {
@@ -256,8 +304,10 @@ class RegisterActivity : AppCompatActivity() {
             val retIn =
                 ApiInterface.RetrofitInstance.getRetrofitInstance().create(ApiInterface::class.java)
             val signInInfo = SignUpModel(user_type,name,gender,
-                                        birth_date,hight,contry,state_id,
-                                        city_id,mobile,email,user_bio,password,confirm_password)
+                                        birth_date,birthday,birthtime,
+                                        birthplace,bloodgroup,familydiety,
+                                        hight,country,state_id,
+                                        city_id,mobile,email,relatives,password,confirm_password)
             retIn.signUp(signInInfo).enqueue(object : Callback<SignUpResponse> {
                 override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
                     Toast.makeText(
@@ -277,11 +327,11 @@ class RegisterActivity : AppCompatActivity() {
                         if (responseBody != null) {
                             token = responseBody!!.token
                             Utils.token = responseBody!!.token.toString()
-//                            PreferenceHelper.setStringPreference(
-//                                this@RegisterActivity,
-//                                "token",
-//                                Utils.token
-//                            )
+                            PreferenceHelper.setStringPreference(
+                                this@RegisterActivity,
+                                "token",
+                                Utils.token
+                            )
                         }
 
 
@@ -319,6 +369,7 @@ class RegisterActivity : AppCompatActivity() {
     private fun goToNextScreen() {
         val intent = Intent(this@RegisterActivity, BasicDataActivity::class.java)
             .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        intent.putExtra("fromData","RegisterActivity")
         startActivity(intent)
         finish()
     }
@@ -497,6 +548,53 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
+
+    private fun initBloodGroup() {
+        run {
+
+            //UI reference of textView
+            val customerAutoBg =
+                findViewById<AutoCompleteTextView>(R.id.BloodGroupTextView)
+
+            // create list of customer
+            val bgList = getBGList()
+
+            //Create adapter
+            val adapter = ArrayAdapter(
+                this@RegisterActivity,
+                R.layout.custome_new_spinner,
+                bgList
+            )
+
+            //Set adapter
+            customerAutoBg.setAdapter(adapter)
+        }
+    }
+
+    private fun initUiDay() {
+        run {
+
+            //UI reference of textView
+            val customerAutoDay =
+                findViewById<AutoCompleteTextView>(R.id.DayTextView)
+
+            // create list of customer
+            val dayList = getDayList()
+
+            //Create adapter
+            val adapter = ArrayAdapter(
+                this@RegisterActivity,
+                R.layout.custome_new_spinner,
+                dayList
+            )
+
+            //Set adapter
+            customerAutoDay.setAdapter(adapter)
+        }
+    }
+
+
+
     private fun initUIState() {
         run {
 
@@ -555,6 +653,35 @@ class RegisterActivity : AppCompatActivity() {
         val Country = ArrayList<String>()
         Country.add("India")
         return Country
+    }
+
+    private fun getDayList(): ArrayList<String> {
+        val Day = ArrayList<String>()
+        Day.add("Sunday")
+        Day.add("Monday")
+        Day.add("Tuesday")
+        Day.add("Wednesday")
+        Day.add("Thursday")
+        Day.add("Friday")
+        Day.add("Saturday")
+
+
+
+        return Day
+    }
+
+    private fun getBGList(): ArrayList<String> {
+        val BloodGroup = ArrayList<String>()
+        BloodGroup.add("O+")
+        BloodGroup.add("O-")
+        BloodGroup.add("A+")
+        BloodGroup.add("A-")
+        BloodGroup.add("B+")
+        BloodGroup.add("B-")
+        BloodGroup.add("AB+")
+        BloodGroup.add("AB-")
+
+        return BloodGroup
     }
 
 

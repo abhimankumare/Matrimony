@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#F7F7F7"
+    android:orientation="vertical"
+    android:id="@+id/ll_register_root_view"
+    tools:context=".activity.RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner_view"
+                app:elevation="@dimen/margin4"
+                app:titleTextAppearance="@style/Toolbar.TitleText"
+                app:titleTextColor="@color/white"/>
+
+
+
+
+            <!--//Personal Details-->
+            <LinearLayout
+                android:id="@+id/ll_personal_detailsed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin20"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotoregular"
+                    android:padding="@dimen/margin6"
+                    android:shadowColor="@color/color_gray"
+                    android:text="Personal Details"
+                    android:textColor="@color/color_gray"
+                    android:textSize="@dimen/margin20" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ti_email"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/pd_email_id">
+
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_emailed"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/margin2"
+                        android:background="@drawable/text_background"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/PIfullname"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/email_id_phone_number">
+
+                    <!--this is the actual edit text which takes the input-->
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/ed_mobileed"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/margin2"
+                        android:maxLength="10"
+                        android:inputType="number"
+                        android:digits="0123456789"
+                        android:background="@drawable/text_background"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/etPasswordLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginTop="10dp"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etPassworded"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/margin2"
+                        android:background="@drawable/text_background"
+                        android:fontFamily="@font/robotoregular"
+                        android:hint="@string/enter_password"
+                        android:inputType="textPassword"
+                        />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/saveButtoned"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin45"
+                    android:layout_marginBottom="@dimen/margin15"
+                    android:background="@drawable/bkg_button_gradient"
+                    android:shadowColor="#000000"
+                    android:text="@string/save"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:textColor="#FFFFFF"
+                    app:cornerRadius="20dp"/>
+
+            </LinearLayout>
+
+            <!--            //Personal Details-->
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

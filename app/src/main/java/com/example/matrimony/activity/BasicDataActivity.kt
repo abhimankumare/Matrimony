@@ -1,26 +1,72 @@
 package com.example.matrimony.activity
 
+
+import android.Manifest
+import android.app.Activity
 import android.content.DialogInterface
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.pm.PackageManager
+import android.database.Cursor
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.example.matrimony.R
 import com.example.matrimony.model.BasicData
 import com.example.matrimony.model.SignUpResponse
 import com.example.matrimony.repository.ApiInterface
 import com.example.poultry_i.common.Utils
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.util.ArrayList
+import java.util.*
+import okhttp3.RequestBody.Companion.create
+import okhttp3.MultipartBody
+import android.webkit.MimeTypeMap
+
+import android.provider.OpenableColumns
+import android.util.Log
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import com.bumptech.glide.Glide
+import com.bumptech.glide.util.Util
+import com.example.matrimony.model.MasterContent
+import com.example.matrimony.model.MasterResponse
+import com.example.poultry_i.common.Utils.casteName
+import com.example.poultry_i.common.Utils.educationName
+import com.example.poultry_i.common.Utils.educationsId
+import com.example.poultry_i.common.Utils.employe_sector
+import com.example.poultry_i.common.Utils.foccuDetails
+import com.example.poultry_i.common.Utils.incomeDetails
+import com.example.poultry_i.common.Utils.manglik
+import com.example.poultry_i.common.Utils.marstatus
+import com.example.poultry_i.common.Utils.moccuDetails
+import com.example.poultry_i.common.Utils.mothertoungeName
+import com.example.poultry_i.common.Utils.noofbro
+import com.example.poultry_i.common.Utils.noofmarrbro
+import com.example.poultry_i.common.Utils.noofmarrsis
+import com.example.poultry_i.common.Utils.noofsis
+import com.example.poultry_i.common.Utils.occupationName
+import com.example.poultry_i.common.Utils.religionName
+import com.example.poultry_i.storageHelpers.PreferenceHelper
+import com.google.android.material.checkbox.MaterialCheckBox
+import java.io.*
 
 
 lateinit var ll_career_details: LinearLayout
 lateinit var ll_social_details: LinearLayout
 lateinit var ll_family_details: LinearLayout
+lateinit var add_photo: LinearLayout
+lateinit var btn_add_photo: Button
+lateinit var iv_photo: ImageView
 
+lateinit var materialCheckBox : MaterialCheckBox
+val REQUEST_CODE = 100
+var uri: Uri? = null
+var file :File? = null
 lateinit var educationTextView: AutoCompleteTextView
 lateinit var selectSectorTextView: AutoCompleteTextView
 lateinit var SelectOccupationTextView: AutoCompleteTextView
@@ -42,16 +88,29 @@ lateinit var sisterMarriedTextView: AutoCompleteTextView
 
 var occupation_id_father: String? = null
 var occupation_id_mother: String? = null
+private lateinit var fromData: String
+var pos: Int = 0
+var cast_marriage: String? = "0"
+
 
 class BasicDataActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_basic_data)
 
+        val bundle: Bundle = intent.extras!!
+        if (bundle != null) {
+            fromData = bundle.getString("fromData").toString()
+        }
 
         ll_career_details = findViewById(R.id.ll_career_details)
         ll_social_details = findViewById(R.id.ll_social_details)
         ll_family_details = findViewById(R.id.ll_family_details)
+        add_photo = findViewById(R.id.add_photo)
+        btn_add_photo = findViewById(R.id.btn_add_photo)
+        iv_photo = findViewById(R.id.iv_photo)
+
+        materialCheckBox = findViewById(R.id.materialCheckBox)
 
 
         educationTextView = findViewById(R.id.educationTextView)
@@ -102,7 +161,28 @@ class BasicDataActivity : AppCompatActivity() {
         initUISister()
         initUINoofMarriedSister()
 
+        if(fromData.equals("ShowDetails")) {
+            Glide.with(this@BasicDataActivity).load(Utils.urifile).into(iv_photo);
+        }
 
+        iv_photo.setOnClickListener(View.OnClickListener {
+                openGalleryForImage()
+        })
+
+
+        btn_add_photo.setOnClickListener(View.OnClickListener {
+        if(file!=null){
+            saveProfileImage();
+        }else{
+            if(Utils.urifile != null || !Utils.urifile!!.isNullOrBlank()){
+                gotoMainActivity()
+            }else{
+                toast("Please Select Profile Pic")
+            }
+
+        }
+
+        })
         val savecarrer = findViewById<View>(R.id.save_car_details) as Button
         savecarrer.setOnClickListener {
             try {
@@ -164,15 +244,20 @@ class BasicDataActivity : AppCompatActivity() {
                     toast("Please Select No of Brothers")
                 } else if (brotherMarriedTextView.text.isNullOrBlank()) {
                     toast("Please Select Married Brothers")
-                }else if (Integer.parseInt(brotherTextView.text.toString()) > Integer.parseInt(brotherMarriedTextView.text.toString())) {
-                    toast("Please Select Valid Married Brothers")
                 } else if (sisterTextView.text.isNullOrBlank()) {
                     toast("Please Select No of Sisters")
                 } else if (sisterMarriedTextView.text.isNullOrBlank()) {
                     toast("Please Select Married Sisters")
-                }else if (Integer.parseInt(sisterTextView.text.toString()) > Integer.parseInt(sisterMarriedTextView.text.toString())) {
-                    toast("Please Select Valid Married Sisters")
-                } else {
+                }else {
+                    ll_family_details.visibility = View.GONE
+                    add_photo.visibility = View.VISIBLE
+                    if(materialCheckBox.isChecked())
+                    {
+                        cast_marriage = "1"
+                    }else{
+                        cast_marriage = "0"
+                    }
+                    getSupportActionBar()!!.setTitle("Add Photo");
                     RegisterBasicDataOfUser(
                         education_id,
                         sector_id,
@@ -182,7 +267,7 @@ class BasicDataActivity : AppCompatActivity() {
                         mothertounge_id,
                         religion_id,
                         caste_id,
-                        horoscopeTextView.text.toString(),
+                        horoscope_id,
                         ManglikTextView.text.toString(),
                         occupation_id_father,
                         occupation_id_mother,
@@ -190,15 +275,9 @@ class BasicDataActivity : AppCompatActivity() {
                         sisterTextView.text.toString(),
                         brotherMarriedTextView.text.toString(),
                         sisterMarriedTextView.text.toString(),
-                        "1","1"
+                        cast_marriage,"1",
                     )
                 }
-
-
-//                val intent = Intent(this@BasicDataActivity, MainActivity::class.java)
-//                    .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-//                startActivity(intent)
-//                finish()
             } catch (err: Exception) {
                 err.printStackTrace()
             }
@@ -206,28 +285,34 @@ class BasicDataActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        Utils.showDialogBasicData(
-            "Do You Want to Exit From App? Your Data Will Be Lost",
-            DialogInterface.OnClickListener { dialog, which ->
-                when (which) {
-                    DialogInterface.BUTTON_POSITIVE -> {
-                        dialog.dismiss()
-                        if(Utils.token != null){
-                            Utils.token = tokenonstart
-                        }
-                        Utils.clearPrefrences(this@BasicDataActivity)
-                        val intent = Intent(this@BasicDataActivity, LoginActivity::class.java)
-                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                        startActivity(intent)
-                        finish()
+        if(fromData.equals("ShowDetails")){
+            val intent = Intent(this@BasicDataActivity, MainActivity::class.java)
+                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            startActivity(intent)
+        }else {
+            Utils.showDialogBasicData(
+                "Do You Want to Exit From App? Your Data Will Be Lost",
+                DialogInterface.OnClickListener { dialog, which ->
+                    when (which) {
+                        DialogInterface.BUTTON_POSITIVE -> {
+                            dialog.dismiss()
+                            if (Utils.token != null) {
+                                Utils.token = tokenonstart
+                            }
+                            Utils.clearPrefrences(this@BasicDataActivity)
+                            val intent = Intent(this@BasicDataActivity, LoginActivity::class.java)
+                                .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                            startActivity(intent)
+                            finish()
 
+                        }
+                        DialogInterface.BUTTON_NEGATIVE -> {
+                            dialog.dismiss()
+                        }
                     }
-                    DialogInterface.BUTTON_NEGATIVE -> {
-                        dialog.dismiss()
-                    }
-                }
-            }, this
-        )
+                }, this
+            )
+        }
 
     }
 
@@ -274,7 +359,7 @@ class BasicDataActivity : AppCompatActivity() {
                 brother_married_no,
                 sister_married_no,
                 open_cast_marriage,
-                profile_saved
+                profile_saved,
             )
             retIn.RegisterBasicData(basicDataInfo).enqueue(object : Callback<SignUpResponse> {
                 override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
@@ -287,19 +372,11 @@ class BasicDataActivity : AppCompatActivity() {
                 ) {
                     if (response.code() == 200) {
                         responseBody = response.body()
-//                    if (responseBody != null) {
-//                        token = responseBody!!.token
-//                        Utils.token = responseBody!!.token.toString()
-//                    }
-
                         toast("Profile added successfull..")
-                        gotoMainActivity()
-                        //   {"status":{"status":"success"},"message":{"message":"Profile added successfull.."}}
-
+                       // saveProfileImage();
 
                     } else {
-                        //  Toast.makeText(this@BasicDataActiviy, responseBody!!.error.toString(), Toast.LENGTH_SHORT)
-                        //   .show()
+
                     }
                 }
             })
@@ -312,6 +389,44 @@ class BasicDataActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    private fun saveProfileImage() {
+        if (Utils.isConnectingToInternet(this)) {
+            val retIn =
+                ApiInterface.RetrofitInstance.getRetrofitInstance().create(ApiInterface::class.java)
+
+            val reqFile = create("image/*".toMediaTypeOrNull(), file!!)
+            val body = MultipartBody.Part.createFormData("image", file!!.name, reqFile)
+
+            retIn.updateProfile(body).enqueue(object : Callback<SignUpResponse> {
+                override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
+                    toast(t.message.toString())
+                }
+
+                override fun onResponse(
+                    call: Call<SignUpResponse>,
+                    response: Response<SignUpResponse>
+                ) {
+                    if (response.code() == 200) {
+                        responseBody = response.body()
+                        toast(response.message().toString())
+                        gotoMainActivity()
+                    } else {
+                        toast(response.message().toString())
+                       // toast("Profile Pic added successfull..")
+                     //   gotoMainActivity()
+                    }
+                }
+            })
+        } else {
+
+            Utils.showIndefiniteSnackBar(
+                ll_register_root_view,
+                "You're offline, Please check your network connection."
+            )
+
+        }
     }
 
     private fun gotoMainActivity() {
@@ -342,6 +457,10 @@ class BasicDataActivity : AppCompatActivity() {
             education_id = spinnereducationArrayIds.get(position)
         }
 
+        if(educationName!=null) {
+            customerAutoEducation.setText(educationName!!)
+        }
+
         //submit button click event registration
 
     }
@@ -363,6 +482,19 @@ class BasicDataActivity : AppCompatActivity() {
         customerAutoSector.setOnItemClickListener { parent, view, position, id ->
             sector_id = spinneremployed_sectorArrayIds.get(position)
         }
+
+
+        if(employe_sector != null || !employe_sector!!.isNullOrBlank()) {
+            for (i in 0 until listemployed_sector.size) {
+                if (employe_sector.equals(listemployed_sector.get(i).employed_sector)) {
+                    sector_id = listemployed_sector[i].id
+                }
+            }
+        }
+        Log.d("Sector Employee", sector_id.toString())
+
+        customerAutoSector.setText(employe_sector)
+     //   customerAutoSector.setText(sectorn!!)
 
     }
 
@@ -387,6 +519,9 @@ class BasicDataActivity : AppCompatActivity() {
         customerAutoOccupation.setOnItemClickListener { parent, view, position, id ->
             occupation_id = spinneroccupationArrayIds.get(position)
         }
+       // if(occupationName!=null) {
+            customerAutoOccupation.setText(occupationName)
+       // }
     }
 
     private fun initUIReligion() {
@@ -401,6 +536,10 @@ class BasicDataActivity : AppCompatActivity() {
         customerAutoReligion.setAdapter(adapter)
         customerAutoReligion.setOnItemClickListener { parent, view, position, id ->
             religion_id = spinnerreligionArrayIds.get(position)
+        }
+
+        if(religionName!=null) {
+            customerAutoReligion.setText(religionName!!)
         }
     }
 
@@ -417,6 +556,19 @@ class BasicDataActivity : AppCompatActivity() {
         customerAutoIncome.setOnItemClickListener { parent, view, position, id ->
             income_id = spinnerincomeArrayIds.get(position)
         }
+
+        if(incomeDetails != null || !incomeDetails!!.isNullOrBlank()) {
+            for (i in 0 until listincome.size) {
+                if (incomeDetails.equals(listincome.get(i).income)) {
+                    income_id = listincome[i].id
+                }
+            }
+        }
+        Log.d("Sector incomeDetails", income_id.toString())
+
+        if(incomeDetails!=null) {
+            customerAutoIncome.setText(incomeDetails)
+        }
     }
 
     private fun initUIMaritalStatus() {
@@ -432,6 +584,9 @@ class BasicDataActivity : AppCompatActivity() {
 
         //Set adapter
         customerMarriedStatus.setAdapter(adapter)
+        if(marstatus!=null) {
+            customerMarriedStatus.setText(marstatus)
+        }
     }
 
     private fun getMaritalStatusList(): ArrayList<String> {
@@ -459,6 +614,10 @@ class BasicDataActivity : AppCompatActivity() {
         customerAutoMotheTounge.setOnItemClickListener { parent, view, position, id ->
             mothertounge_id = spinnermother_tongueArrayIds.get(position)
         }
+
+        if(mothertoungeName!=null) {
+            customerAutoMotheTounge.setText(mothertoungeName)
+        }
     }
 
     private fun initUICast() {
@@ -475,6 +634,9 @@ class BasicDataActivity : AppCompatActivity() {
 
         customerAutoCaste.setOnItemClickListener { parent, view, position, id ->
             caste_id = spinnercasteArrayIds.get(position)
+        }
+        if(casteName!=null) {
+            customerAutoCaste.setText(casteName)
         }
     }
 
@@ -495,6 +657,19 @@ class BasicDataActivity : AppCompatActivity() {
         customerAutoHoroscope.setOnItemClickListener { parent, view, position, id ->
             horoscope_id = spinnerhoroscopeArrayIds.get(position)
         }
+
+
+        if(Utils.horoscope != null || !Utils.horoscope!!.isNullOrBlank()) {
+            for (i in 0 until listhoroscope.size) {
+                if (Utils.horoscope.equals(listhoroscope.get(i).horoscope_name)) {
+                    horoscope_id = listhoroscope[i].id
+                }
+            }
+        }
+        Log.d("Sector horoscope", income_id.toString())
+
+
+        customerAutoHoroscope.setText(Utils.horoscope)
     }
 
 
@@ -511,6 +686,8 @@ class BasicDataActivity : AppCompatActivity() {
 
         //Set adapter
         customerAutoManglik.setAdapter(adapter)
+
+        customerAutoManglik.setText(Utils.manglik)
     }
 
     private fun getManglikList(): ArrayList<String> {
@@ -540,7 +717,9 @@ class BasicDataActivity : AppCompatActivity() {
         customerAutoFathersStatus.setOnItemClickListener { parent, view, position, id ->
             occupation_id_father = spinneroccupationArrayIds.get(position)
         }
-
+        if(foccuDetails!=null) {
+            customerAutoFathersStatus.setText(foccuDetails)
+        }
 
     }
 
@@ -564,6 +743,10 @@ class BasicDataActivity : AppCompatActivity() {
             occupation_id_mother = spinneroccupationArrayIds.get(position)
         }
 
+        if(moccuDetails!=null) {
+            customerAutoMothersStatus.setText(moccuDetails)
+        }
+
     }
 
 
@@ -580,6 +763,10 @@ class BasicDataActivity : AppCompatActivity() {
 
         //Set adapter
         customerAutoBrother.setAdapter(adapter)
+
+        if(noofbro!=null) {
+            customerAutoBrother.setText(noofbro)
+        }
     }
 
     private fun getBrotherList(): ArrayList<String> {
@@ -605,11 +792,15 @@ class BasicDataActivity : AppCompatActivity() {
 
         //Set adapter
         customerAutoMarriedBrother.setAdapter(adapter)
+
+        if(noofmarrbro!=null) {
+            customerAutoMarriedBrother.setText(noofmarrbro)
+        }
     }
 
     private fun getBrotherMarriedList(): ArrayList<String> {
         val customers = ArrayList<String>()
-        
+
         customers.add("0")
         customers.add("1")
         customers.add("2")
@@ -630,6 +821,10 @@ class BasicDataActivity : AppCompatActivity() {
 
         //Set adapter
         customerAutoSister.setAdapter(adapter)
+
+        if(noofsis!=null) {
+            customerAutoSister.setText(noofsis)
+        }
 
 
     }
@@ -658,6 +853,10 @@ class BasicDataActivity : AppCompatActivity() {
         //Set adapter
         customerAutoMarriedSister.setAdapter(adapter)
 
+        if(noofmarrsis!=null) {
+            customerAutoMarriedSister.setText(noofmarrsis)
+        }
+
     }
 
     private fun getSisterMarriedList(): ArrayList<String> {
@@ -667,6 +866,68 @@ class BasicDataActivity : AppCompatActivity() {
         customers.add("2")
         customers.add("3")
         return customers
+    }
+
+    private fun openGalleryForImage() {
+
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent, REQUEST_CODE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE) {
+            uri = data?.data
+            //= data?.data
+            file = getFileFromUri(uri!!)
+            PreferenceHelper.setStringPreference(this@BasicDataActivity,"uriimage",file.toString())
+            iv_photo.setImageURI(data?.data) // handle chosen image
+        }
+    }
+
+
+    private fun getFileFromUri(fileUri: Uri): File? {
+        val name = OpenableColumns.DISPLAY_NAME
+        val cursor: Cursor? = contentResolver.query(
+            fileUri, arrayOf(name),
+            null, null, null
+        )
+        var file: File? = null
+        if (cursor != null && cursor.moveToFirst()) {
+            val nameIndex: Int = cursor.getColumnIndex(name)
+            val fileName: String = cursor.getString(nameIndex)
+            val fileType = contentResolver.getType(fileUri)
+            val fileExtension = MimeTypeMap.getSingleton().getExtensionFromMimeType(fileType)
+            Log.d("fileName", fileName)
+            Log.d("fileType", fileType!!)
+            if (fileExtension != null) {
+                Log.d("fileExtension", fileExtension)
+            }
+            file = File(externalCacheDir, fileName)
+            try {
+                val fis: InputStream? = contentResolver.openInputStream(fileUri)
+                val buffer = ByteArray(fis!!.available())
+                fis!!.read(buffer)
+                val fos = FileOutputStream(file)
+                fos.write(buffer)
+                fis!!.close()
+                fos.close()
+                cursor.close()
+            } catch (e: FileNotFoundException) {
+                e.printStackTrace()
+                file = null
+                // showAlertDialog("Unable to read selected file")
+            } catch (e: IOException) {
+                e.printStackTrace()
+                file = null
+                // showAlertDialog("Unable to read selected file")
+            }
+        } else {
+            file = null
+            // showAlertDialog("Unable to read selected file")
+        }
+        return file
     }
 
 }

@@ -6,47 +6,43 @@
         <item
             android:id="@+id/nav_view_profile"
             android:icon="@drawable/viewprofile"
-            android:title="View Profile" />
+            android:title="@string/viewprofile" />
 
 
         <item
             android:id="@+id/nav_favorites"
             android:icon="@drawable/favourrites"
-            android:title="Favorites/Saved" />
+            android:title="@string/favouritesav" />
 
         <item
             android:id="@+id/nav_provisitor"
             android:icon="@drawable/profilevisitor"
-            android:title="Profile Visitor" />
+            android:title="@string/profilevisit" />
 
 
         <item
             android:id="@+id/nav_success"
             android:icon="@drawable/successstories"
-            android:title="Success Stories" />
-
-
-
-
+            android:title="@string/successstories" />
 
 
         <item
             android:id="@+id/nav_changepassword"
             android:icon="@drawable/profilevisitor"
-            android:title="Change Password" />
+            android:title="@string/changepassword" />
 
 
         <item
             android:id="@+id/nav_hide"
             android:icon="@drawable/favourrites"
-            android:title="Hide Profile" />
+            android:title="@string/hideprofile" />
 
 
 
         <item
             android:id="@+id/nav_faq"
             android:icon="@drawable/faq"
-            android:title="FAQ" />
+            android:title="@string/faq" />
 
         <item
             android:id="@+id/nav_help"
@@ -56,7 +52,7 @@
         <item
             android:id="@+id/nav_privacy"
             android:icon="@drawable/icon"
-            android:title="Privacy Policy"/>
+            android:title="@string/privacypoli"/>
 
         <item
             android:id="@+id/nav_terms"
@@ -67,18 +63,18 @@
         <item
             android:id="@+id/nav_rate"
             android:icon="@drawable/rate"
-            android:title="Rate Us" />
+            android:title="@string/rateus" />
 
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/rate"
-            android:title="About Us" />
+            android:title="@string/aboutus" />
 
 
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/logout"
-            android:title="Logout" />
+            android:title="@string/logout" />
 
 
 </menu>

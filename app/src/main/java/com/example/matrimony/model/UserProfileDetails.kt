@@ -10,10 +10,46 @@ class UserProfileDetails {
     @Expose
     var gender: String? = null
 
+    @SerializedName("user_type")
+    @Expose
+    var user_type: String? = null
 
     @SerializedName("user_bio")
     @Expose
     var user_bio: String? = null
+
+    @SerializedName("educations_id")
+    @Expose
+    var educations_id: Int? = null
+
+    @SerializedName("father_occupation_id")
+    @Expose
+    var father_occupation_id: Int? = null
+
+    @SerializedName("mother_occupation_id")
+    @Expose
+    var mother_occupation_id: Int? = null
+
+    @SerializedName("occupation_id")
+    @Expose
+    var occupation_id: Int? = null
+
+
+
+
+
+    @SerializedName("religion_id")
+    @Expose
+    var religion_id: Int? = null
+
+    @SerializedName("caste_id")
+    @Expose
+    var caste_id: Int? = null
+
+
+    @SerializedName("language_id")
+    @Expose
+    var language_id: Int? = null
 
 
     @SerializedName("contry")
@@ -56,6 +92,19 @@ class UserProfileDetails {
     @SerializedName("about_family")
     @Expose
     var about_family: String? = null
+
+    @SerializedName("employed_sector")
+    @Expose
+    var employed_sector: String? = null
+
+    @SerializedName("horoscope")
+    @Expose
+    var horoscope: String? = null
+
+
+    @SerializedName("manglik")
+    @Expose
+    var manglik: String? = null
 
 
 

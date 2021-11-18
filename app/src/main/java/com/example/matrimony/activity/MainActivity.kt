@@ -1,7 +1,11 @@
 package com.example.matrimony.activity
 
+import android.Manifest
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
@@ -13,7 +17,9 @@ import android.widget.*
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -37,6 +43,16 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
+import android.graphics.Bitmap
+import java.io.File
+import android.widget.Toast
+
+import android.util.DisplayMetrics
+import com.bumptech.glide.Glide
+import com.example.matrimony.model.ProfileResponse
+import com.squareup.picasso.Picasso
+import java.lang.reflect.Array.get
+import java.nio.file.Paths.get
 
 
 class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener{
@@ -45,9 +61,11 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
     lateinit var drawerLayout: DrawerLayout
     lateinit var navView: NavigationView
     lateinit var imageView: ImageView
+    lateinit var img_profile: ImageView
+    val REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
     var actionBarDrawerToggle: ActionBarDrawerToggle? = null
     private lateinit var bottomNavigationView: BottomNavigationView
-
+    var myLocale: Locale? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,11 +84,22 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         assert(navView != null)
         navView.setNavigationItemSelectedListener(this@MainActivity)
         val headerView: View = navView.getHeaderView(0)
-
+        checkAndRequestPermissions()
         imageView = headerView.findViewById(R.id.imageView)
+
         val bitmap = BitmapFactory.decodeResource(resources, R.drawable.hamburgerdr)
         val blurredBitmap = blur(this@MainActivity, bitmap)
         imageView.setBackgroundDrawable(BitmapDrawable(resources, blurredBitmap))
+
+        getProfileData()
+        img_profile = headerView.findViewById(R.id.img_profile)
+//        val imgFile = File(Utils.urifile)
+//
+//        if (imgFile.exists()) {
+//            val myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath())
+//            img_profile.setImageBitmap(myBitmap)
+//        }
+      //  Utils.currentLanguage = PreferenceHelper.getStringPreference(this@MainActivity, "currentLanguage").toString()
         addFragment(HomeFragment(), false, HomeFragment::class.java.simpleName)
         initClickListeners()
 
@@ -87,29 +116,77 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         ft.commitAllowingStateLoss()
     }
 
-//    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        menuInflater.inflate(R.menu.activity_main_drawer, menu)
-//        return true
-//    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle presses on the action bar menu items
         when (item.itemId) {
-//            R.id.action_noification -> {
+            R.id.action_noification -> {
+                Utils.showLanguage(
+                    "Please Select Language",
+                    DialogInterface.OnClickListener { dialog, which ->
+                        when (which) {
+                            DialogInterface.BUTTON_POSITIVE -> {
+                                setLocale("en");
+                                dialog.dismiss()
+                            }
+                            DialogInterface.BUTTON_NEGATIVE -> {
+                                setLocale("hi");
+                                dialog.dismiss()
+                            }
+                            DialogInterface.BUTTON_NEUTRAL -> {
+                                setLocale("mr");
+                                dialog.dismiss()
+                            }
+                        }
+                    }, this
+                )
 //                addFragment(
 //                    NotificationFragment(),
 //                    true,
 //                    NotificationFragment::class.java.simpleName
 //                )
-//                return true
-//            }
+                return true
+            }
 
         }
         return actionBarDrawerToggle!!.onOptionsItemSelected(item)
     }
 
-
+    private fun checkAndRequestPermissions(): Boolean {
+        val camera = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
+        val storage =
+            ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        val loc =
+            ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+        val loc2 = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+        val listPermissionsNeeded: MutableList<String> = ArrayList()
+        if (camera != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.CAMERA)
+        }
+        if (storage != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        }
+        if (loc2 != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION)
+        }
+        if (loc != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.ACCESS_COARSE_LOCATION)
+        }
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(
+                this,
+                listPermissionsNeeded.toTypedArray(),
+                REQUEST_ID_MULTIPLE_PERMISSIONS
+            )
+            return false
+        }
+        return true
+    }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -130,6 +207,26 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
                 val intent = Intent(this@MainActivity, HideProfileActivity::class.java)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(intent)
+                drawerLayout.closeDrawer(GravityCompat.START)
+                return true
+            }
+
+            R.id.nav_success -> {
+//                Utils.showLanguage(
+//                    "Please Select Language",
+//                    DialogInterface.OnClickListener { dialog, which ->
+//                        when (which) {
+//                            DialogInterface.BUTTON_POSITIVE -> {
+//                                setLocale("en");
+//                                dialog.dismiss()
+//                            }
+//                            DialogInterface.BUTTON_NEGATIVE -> {
+//                                setLocale("hi");
+//                                dialog.dismiss()
+//                            }
+//                        }
+//                    }, this
+//                )
                 drawerLayout.closeDrawer(GravityCompat.START)
                 return true
             }
@@ -251,6 +348,26 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         return actionBarDrawerToggle!!.onOptionsItemSelected(item)
     }
 
+    fun setLocale(localeName: String) {
+
+        if (localeName != Utils.currentLanguage) {
+            myLocale = Locale(localeName)
+            val res: Resources = resources
+            val dm: DisplayMetrics = res.getDisplayMetrics()
+            val conf: Configuration = res.getConfiguration()
+            conf.locale = myLocale
+            res.updateConfiguration(conf, dm)
+            Utils.currentLanguage = localeName
+            PreferenceHelper.setStringPreference(this@MainActivity,"currentLanguage",Utils.currentLanguage)
+            val refresh = Intent(this, MainActivity::class.java)
+            refresh.putExtra(Utils.currentLanguage, localeName)
+            startActivity(refresh)
+        } else {
+            Toast.makeText(this@MainActivity, "Language already selected!", Toast.LENGTH_SHORT)
+                .show()
+        }
+    }
+
     private fun logoutapi() {
         try {
             if (Utils.isConnectingToInternet(this@MainActivity)) {
@@ -368,6 +485,46 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
                 }, this
             )
 
+        }
+    }
+
+
+    fun getProfileData() {
+        try {
+            if (Utils.isConnectingToInternet(this@MainActivity)) {
+                val retIn = ApiInterface.RetrofitInstance.getRetrofitInstance()
+                    .create(ApiInterface::class.java)
+                retIn.ProfileData().enqueue(object : Callback<ProfileResponse> {
+                    override fun onFailure(call: Call<ProfileResponse>, t: Throwable) {
+                        println("In Data Failure")
+                    }
+
+                    override fun onResponse(
+                        call: Call<ProfileResponse>,
+                        response: Response<ProfileResponse>
+                    ) {
+                        if (response.code() == 200) {
+                            //  progressBar.visibility=View.VISIBLE
+                            val responseBody: ProfileResponse? = response.body()
+                            if (responseBody != null) {
+                                println("In Data "+responseBody.toString())
+                                //pr_bar!!.visibility =View.GONE
+                                Utils.urifile = responseBody.userDetails!!.image.toString()
+                                Glide.with(this@MainActivity).load(Utils.urifile).into(img_profile);
+
+
+                            }
+                        }else{
+                          //  pr_bar!!.visibility =View.GONE
+                            //progressBar.visibility=View.GONE
+                        }
+                    }
+                })
+            }else{
+            }
+        } catch (err: Exception) {
+            println("In Data catch")
+            err.printStackTrace()
         }
     }
 

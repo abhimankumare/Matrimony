@@ -1,2 +1,72 @@
+com/example/matrimony/databinding/ActivityCommonWebViewBinding.java
+ com.example.matrimony.databinding.ActivityCommonWebViewBinding
+com/example/matrimony/databinding/ChangePasswordBinding.java
+ com.example.matrimony.databinding.ChangePasswordBinding
+com/example/matrimony/databinding/ActivityShowDetailsBinding.java
+ com.example.matrimony.databinding.ActivityShowDetailsBinding
+com/example/matrimony/databinding/LayoutCustomeDashBoardToolbarBinding.java
+ com.example.matrimony.databinding.LayoutCustomeDashBoardToolbarBinding
+com/example/matrimony/databinding/LayoutTextRowChatScreenBinding.java
+ com.example.matrimony.databinding.LayoutTextRowChatScreenBinding
+com/example/matrimony/databinding/ActivityRegisterBinding.java
+ com.example.matrimony.databinding.ActivityRegisterBinding
+com/example/matrimony/databinding/HideProfileBinding.java
+ com.example.matrimony.databinding.HideProfileBinding
+com/example/matrimony/databinding/ContentEditRegisterBinding.java
+ com.example.matrimony.databinding.ContentEditRegisterBinding
+com/example/matrimony/databinding/FragmentChatBinding.java
+ com.example.matrimony.databinding.FragmentChatBinding
+com/example/matrimony/databinding/TextRowItemBinding.java
+ com.example.matrimony.databinding.TextRowItemBinding
+com/example/matrimony/databinding/ContentMainBinding.java
+ com.example.matrimony.databinding.ContentMainBinding
+com/example/matrimony/databinding/FragmentPersonalDetailsBinding.java
+ com.example.matrimony.databinding.FragmentPersonalDetailsBinding
+com/example/matrimony/databinding/SuccessStoriesAdapterBinding.java
+ com.example.matrimony.databinding.SuccessStoriesAdapterBinding
+com/example/matrimony/databinding/FragmentHomeBinding.java
+ com.example.matrimony.databinding.FragmentHomeBinding
+com/example/matrimony/databinding/ActivitySplashBinding.java
+ com.example.matrimony.databinding.ActivitySplashBinding
+com/example/matrimony/databinding/ActivityLoginBinding.java
+ com.example.matrimony.databinding.ActivityLoginBinding
+com/example/matrimony/databinding/FragmentRegularsearchBinding.java
+ com.example.matrimony.databinding.FragmentRegularsearchBinding
+com/example/matrimony/databinding/FragmentInboxBinding.java
+ com.example.matrimony.databinding.FragmentInboxBinding
+com/example/matrimony/databinding/FragmentSearchBinding.java
+ com.example.matrimony.databinding.FragmentSearchBinding
+com/example/matrimony/databinding/FragmentFirstBinding.java
+ com.example.matrimony.databinding.FragmentFirstBinding
+com/example/matrimony/databinding/HamburgerMenuLayoutBinding.java
+ com.example.matrimony.databinding.HamburgerMenuLayoutBinding
 com/example/matrimony/BuildConfig.java
  com.example.matrimony.BuildConfig
+com/example/matrimony/databinding/AppBarMainBinding.java
+ com.example.matrimony.databinding.AppBarMainBinding
+com/example/matrimony/databinding/ActivityBasicDataBinding.java
+ com.example.matrimony.databinding.ActivityBasicDataBinding
+com/example/matrimony/databinding/ActivityForgetPasswordBinding.java
+ com.example.matrimony.databinding.ActivityForgetPasswordBinding
+com/example/matrimony/databinding/ActivityHideProfileBinding.java
+ com.example.matrimony.databinding.ActivityHideProfileBinding
+com/example/matrimony/databinding/FragmentFamilyDetaisBinding.java
+ com.example.matrimony.databinding.FragmentFamilyDetaisBinding
+com/example/matrimony/databinding/SplashStartBinding.java
+ com.example.matrimony.databinding.SplashStartBinding
+com/example/matrimony/databinding/NavHeaderMainBinding.java
+ com.example.matrimony.databinding.NavHeaderMainBinding
+com/example/matrimony/databinding/FragmentSecondBinding.java
+ com.example.matrimony.databinding.FragmentSecondBinding
+com/example/matrimony/databinding/ActivityMenDetailsShowBinding.java
+ com.example.matrimony.databinding.ActivityMenDetailsShowBinding
+com/example/matrimony/databinding/FragmentPreferenceBinding.java
+ com.example.matrimony.databinding.FragmentPreferenceBinding
+com/example/matrimony/databinding/CustomeNewSpinnerBinding.java
+ com.example.matrimony.databinding.CustomeNewSpinnerBinding
+com/example/matrimony/databinding/ActivityMainBinding.java
+ com.example.matrimony.databinding.ActivityMainBinding
+com/example/matrimony/databinding/FragmentMatrimonyidBinding.java
+ com.example.matrimony.databinding.FragmentMatrimonyidBinding
+com/example/matrimony/databinding/ActivityEditRegisterBinding.java
+ com.example.matrimony.databinding.ActivityEditRegisterBinding

@@ -6,12 +6,15 @@
     android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin10">
     <LinearLayout
         android:id="@+id/ll_familydetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        tools:ignore="MissingConstraints">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_aboutfamily"
@@ -19,8 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="26dp"
             android:text="@string/about_family"
+            android:visibility="gone"
             android:textColor="#000000"
             android:fontFamily="@font/robotoregular"
             android:textSize="12sp"
@@ -33,6 +36,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
+            android:visibility="gone"
             android:fontFamily="@font/robotoregular"
             android:text="@string/moderate_nuclear_family_upper_middle"
             android:textColor="#99000000" />
@@ -45,6 +49,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="21dp"
             android:text="@string/family_income"
+            android:visibility="gone"
             android:textColor="#000000"
             android:fontFamily="@font/robotoregular"
             android:textSize="12sp"
@@ -57,6 +62,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
+            android:visibility="gone"
             android:fontFamily="@font/robotoregular"
             android:text="@string/rs_4l_5_l_per_annum"
             android:textColor="#99000000" />
@@ -167,5 +173,5 @@
             android:text="@string/nagpur_maharashtra"
             android:textColor="#99000000" />
     </LinearLayout>
-
+    </ScrollView>
 </LinearLayout>

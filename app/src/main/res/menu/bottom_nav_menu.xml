@@ -5,7 +5,7 @@
     <item
         android:id="@+id/action_matches"
         android:icon="@drawable/matches"
-        android:title="Matches"
+        android:title="@string/matches"
         app:showAsAction="always"/>
 
     <item
@@ -13,7 +13,7 @@
         android:checked="false"
         android:color="@color/color_gray"
         android:icon="@drawable/search"
-        android:title="Search"
+        android:title="@string/search"
         app:showAsAction="always"/>
 
     <item
@@ -24,13 +24,13 @@
     <item
         android:id="@+id/action_inbox"
         android:icon="@drawable/inbox"
-        android:title="Inbox"
+        android:title="@string/inbox"
         app:showAsAction="always"/>
 
     <item
         android:id="@+id/action_chat"
         android:icon="@drawable/chat"
-        android:title="Chat"
+        android:title="@string/chat"
         app:showAsAction="always"/>
 
 </menu>

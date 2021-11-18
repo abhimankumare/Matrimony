@@ -1,5 +1,7 @@
 package com.example.matrimony.model
 
+import java.io.File
+
 data class BasicData(
     val educations_id: String?, val
     employed_sector: String?, val
@@ -18,5 +20,5 @@ data class BasicData(
     brother_married_no: String, val
     sister_married_no: String,
     val open_cast_marriage: String?,
-    val profile_saved: String?
+    val profile_saved: String?,
 )

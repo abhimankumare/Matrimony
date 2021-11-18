@@ -10,11 +10,14 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 import java.io.IOException
+
+import okhttp3.MultipartBody
+
+import retrofit2.http.POST
+
+import retrofit2.http.Multipart
 
 
 interface ApiInterface {
@@ -25,10 +28,12 @@ interface ApiInterface {
     fun signUp(@Body info: SignUpModel): retrofit2.Call<SignUpResponse>
 
    // @Headers({"Authorization", "Bearer "+ token})
-
     @POST("profilestore")
     fun RegisterBasicData(@Body info: BasicData): retrofit2.Call<SignUpResponse>
 
+    @Multipart
+    @POST("save_profile_image")
+    fun updateProfile(@Part image: MultipartBody.Part): retrofit2.Call<SignUpResponse>
 
    // @Headers("Content-Type:application/json")
     @POST("login")
@@ -87,6 +92,39 @@ interface ApiInterface {
                 .addInterceptor(interceptor).build()
 
             fun getRetrofitInstance(): Retrofit {
+                return Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .client(client)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build()
+            }
+        }
+    }
+
+    class RetrofitInstanceNew {
+        companion object {
+            val BASE_URL: String = "http://anterpat.com/api/v1/"
+
+            val interceptor: HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
+                this.level = HttpLoggingInterceptor.Level.BODY
+            }
+
+//            val client: OkHttpClient = OkHttpClient.Builder().apply {
+//                this.addInterceptor(interceptor)
+//            }.build()
+
+            var client: OkHttpClient = OkHttpClient.Builder()
+                .addInterceptor(object : Interceptor {
+                    @Throws(IOException::class)
+                    override fun intercept(chain: Interceptor.Chain): Response {
+                        val newRequest: Request = chain.request().newBuilder()
+                            .build()
+                        return chain.proceed(newRequest)
+                    }
+                })
+                .addInterceptor(interceptor).build()
+
+            fun getRetrofitInstanceNew(): Retrofit {
                 return Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .client(client)

@@ -27,4 +27,8 @@ class UserDetails {
     @Expose
     var profile_saved: String? = null
 
+    @SerializedName("image")
+    @Expose
+    var image: String? = null
+
 }

@@ -1,0 +1,142 @@
+[
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\nav_header_main.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\nav_header_main.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\change_password.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\change_password.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_hide_profile.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\activity_hide_profile.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_edit_register.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\activity_edit_register.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_common_web_view.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\activity_common_web_view.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_basic_data.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\activity_basic_data.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_register.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\hide_profile.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\hide_profile.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_forget_password.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\activity_forget_password.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\app_bar_main.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\app_bar_main.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\custome_new_spinner.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\custome_new_spinner.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_regularsearch.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_regularsearch.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\hamburger_menu_layout.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\hamburger_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_second.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_second.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_preference.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_preference.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_chat.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_chat.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_show_details.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\activity_show_details.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_inbox.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_inbox.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_personal_details.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_personal_details.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_text_row_chat_screen.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\layout_text_row_chat_screen.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_matrimonyid.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_matrimonyid.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\text_row_item.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\text_row_item.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_custome_dash_board_toolbar.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\layout_custome_dash_board_toolbar.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_men_details_show.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\activity_men_details_show.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_family_detais.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_family_detais.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\success_stories_adapter.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\success_stories_adapter.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\content_edit_register.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\content_edit_register.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\splash_start.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\splash_start.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_splash.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\content_main.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\content_main.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_search.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_search.xml"
+    },
+    {
+        "merged": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_first.xml",
+        "source": "D:\\projres\\freelance\\Matrimony\\app\\src\\main\\res\\layout\\fragment_first.xml"
+    }
+]

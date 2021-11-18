@@ -7,6 +7,7 @@ import android.content.DialogInterface
 import android.graphics.Bitmap
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.net.Uri
 import android.os.Build
 import android.renderscript.Allocation
 import android.renderscript.Element
@@ -22,10 +23,16 @@ import java.io.IOException
 
 
 object Utils {
+    var marstatus: String?=null
+    var currentLanguage = ""
+    var urifile: String? = null
     var contact_no: String?=null
     var email_id: String?=null
 
     var user_bio: String?=null
+
+    var user_type: String?=null
+
     var foccuDetails: String?=null
     var profile_saved: String?=null
 
@@ -33,17 +40,21 @@ object Utils {
     var incomeDetails: String?=null
     var famincomeDetails: String?=null
     var AboutFamily: String?=null
-
+    var employe_sector: String?=null
     var noofbro: String?=null
     var noofmarrbro: String?=null
     var noofsis: String?=null
     var noofmarrsis: String?=null
 
+    var educationsId: Int?=null
     var educationName: String?=null
     var Gender: String?=null
     var UserName: String?=null
     var mothertoungeName: String?=null
     var occupationName: String?=null
+
+    var horoscope: String?=null
+    var manglik: String?=null
 
     var casteName: String?=null
     const val PATTERN_YEAR = "yyyy"
@@ -125,6 +136,21 @@ object Utils {
         builder.setIcon(R.drawable.ic_baseline_exit_to_app_24)
         builder.setPositiveButton("Yes", okListener)
         builder.setNegativeButton("No", okListener)
+        builder.create()
+        builder.show()
+    }
+
+    fun showLanguage(
+        message: String,
+        okListener: DialogInterface.OnClickListener,
+        context: Context
+    ) {
+        val builder = AlertDialog.Builder(context)
+        builder.setMessage(message)
+        builder.setTitle("Language")
+        builder.setPositiveButton("English", okListener)
+        builder.setNegativeButton("हिंदी", okListener)
+        builder.setNeutralButton("मराठी", okListener)
         builder.create()
         builder.show()
     }

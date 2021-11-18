@@ -457,9 +457,38 @@
                     app:shapeAppearanceOverlay="@style/TextAppearance.Compat.Notification"
                     app:strokeColor="#000000" />
             </LinearLayout>
-
             <!--            //Family Details-->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/add_photo"
+    android:layout_margin="@dimen/margin20"
+    android:visibility="gone"
+    android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/iv_photo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin150"
+        android:src="@drawable/ic_baseline_person_pin_24" />
+
+    <Button
+        android:id="@+id/btn_add_photo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin56"
+        android:layout_marginTop="@dimen/margin10"
+        android:shadowColor="#000000"
+        android:text="Add Photo"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        app:backgroundTint="#FF8025"
+        app:cornerRadius="20dp"
+        app:elevation="2dp"
+        app:rippleColor="#FF8025"
+        app:shapeAppearanceOverlay="@style/TextAppearance.Compat.Notification"
+        app:strokeColor="#000000" />
+
+        </LinearLayout>
         </LinearLayout>
         </LinearLayout>
     </ScrollView>

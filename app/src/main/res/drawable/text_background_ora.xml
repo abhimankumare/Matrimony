@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item><shape>
+        <stroke android:width="1dip" android:color="@color/card_line" />
+
+        <corners android:radius="1sp" />
+
+        <gradient android:angle="180" android:endColor="#FFFFFF" android:startColor="#FFFFFF"  />
+    </shape>
+        <!-- Bottom right side 2dp Shadow -->
+
+        <shape android:shape="rectangle">
+            <solid android:color="@color/card_line" />
+        </shape>
+
+
+        <!-- Bottom 2dp Shadow -->
+        <shape android:shape="rectangle">
+            <solid android:color="#E4E4E4" />
+        </shape>
+
+
+    </item>
+
+
+
+</selector>

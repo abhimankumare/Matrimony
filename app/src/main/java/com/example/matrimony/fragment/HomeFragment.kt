@@ -1,14 +1,28 @@
 package com.example.matrimony.fragment
 
 
+import android.Manifest
+import android.app.Activity
+import android.app.Activity.RESULT_OK
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
+import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import com.example.matrimony.R
+import com.squareup.picasso.Picasso
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,12 +39,13 @@ class HomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var rv_data: RecyclerView
     internal lateinit var view: View
-    //private val dataList = ArrayList<DataModel>()
-    //private lateinit var homeAdapter: HomeAdapter
-
-    //var dataList: ArrayList<Content> = arrayListOf()
+    lateinit var tv_co: TextView
+    private var iv_profile: ImageView? = null
+    private val CAMERA_REQUEST = 100
+    private val STORAGE_REQUEST = 200
+    lateinit var cameraPermission: Array<String>
+    lateinit var storagePermission: Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,10 +62,14 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_home, container, false)
         (activity as AppCompatActivity).supportActionBar?.title = "Home"
+
+        tv_co = view.findViewById<TextView>(R.id.tv_co)
+
         return view
     }
 
     companion object {
+
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
@@ -69,5 +88,5 @@ class HomeFragment : Fragment() {
                 }
             }
     }
-
 }
+

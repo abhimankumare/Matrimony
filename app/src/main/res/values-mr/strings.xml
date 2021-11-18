@@ -1,0 +1,381 @@
+<resources>
+
+    <string name="app_name">अंतरपाट</string>
+
+    <string name="nav_open">उघडा</string>
+
+    <string name="nav_close">बंद</string>
+
+    <string name="terms">नियम आणि अटी</string>
+
+    <string name="help">मदत आणि समर्थन</string>
+
+
+
+    <string name="login">लॉगिन</string>
+
+    <string name="register">नोंदणी करा</string>
+
+    <string name="forgot_password">पासवर्ड विसरलात?</string>
+
+    <string name="email_id_phone_number">मोबाईल नंबर</string>
+
+    <string name="password">पासवर्ड</string>
+
+    <string name="login_register">लॉगिन/नोंदणी करा</string>
+
+    <string name="enter_password_login">पासवर्ड टाका</string>
+
+    <string name="enter_your_full_name">तुमचे पूर्ण नाव प्रविष्ट करा</string>
+
+    <string name="enter_your_birth_place">आपले जन्मस्थान प्रविष्ट करा</string>
+
+    <string name="gender">लिंग*</string>
+
+    <string name="male">पुरुष</string>
+
+    <string name="female">स्त्री</string>
+
+    <string name="enter_your_date_of_birth">तुमची जन्मतारीख टाका</string>
+
+    <string name="enter_your_birth_time">तुमची जन्मवेळ प्रविष्ट करा</string>
+
+    <string name="select_your_height">तुमची उंची निवडा</string>
+
+    <string name="select_your_country">तुमचा देश निवडा</string>
+
+    <string name="select_your_state">तुमचे राज्य निवडा</string>
+
+    <string name="select_your_city">तुमचे शहर निवडा</string>
+
+    <string name="select_your_day">तुमचा जन्मदिवस निवडा</string>
+
+    <string name="select_your_blood_group">तुमचा रक्तगट निवडा</string>
+
+    <string name="enter_your_family_diety">तुमचा कौटुंबिक देव प्रविष्ट करा</string>
+
+    <string name="comment_box">तुमच्याबद्दल लिहा</string>
+
+    <string name="enter_password">पासवर्ड टाका</string>
+
+    <string name="indicates_mandatory_fields">*अनिवार्य फील्ड सूचित करते</string>
+
+    <string name="save">जतन करा</string>
+
+    <string name="education">शिक्षण</string>
+
+    <string name="work_experience">कामाचा अनुभव</string>
+
+    <string name="select_highest_education">सर्वोच्च शिक्षण निवडा</string>
+
+    <string name="select_sector">क्षेत्र निवडा</string>
+
+    <string name="select_occupation">व्यवसाय निवडा</string>
+
+    <string name="select_income">उत्पन्न निवडा</string>
+
+    <string name="next">पुढे</string>
+
+    <string name="select_marital_status">वैवाहिक स्थिती निवडा</string>
+
+    <string name="select_mother_tongue">मातृभाषा निवडा</string>
+
+    <string name="select_religion">धर्म निवडा</string>
+
+    <string name="cast_no_bar_i_am_open_to_marry_people_of_all_castes">जात बंदी नाही (मी सर्व जातीच्या लोकांशी लग्न करण्यास तयार आहे)</string>
+
+    <string name="select_horoscope_optional">जन्मकुंडली निवडा (पर्यायी)</string>
+
+    <string name="manglik_optional">मांगलिक (पर्यायी)</string>
+
+    <string name="select_cast">जात निवडा</string>
+
+    <string name="father_s_status">वडिलांचा व्यवसाय</string>
+
+    <string name="mother_s_status">आईचा व्यवसाय</string>
+
+    <string name="brothers_sisters"><![CDATA[बंधू आणि बहिणी]]></string>
+
+    <string name="no_of_brothers">भावांची संख्या</string>
+
+    <string name="no_of_married">विवाहितांची संख्या</string>
+
+    <string name="no_of_sisters">बहिणींची संख्या</string>
+
+
+
+    <string name="min_age">मि. वय</string>
+
+    <string name="max_age">कमाल.वय</string>
+
+    <string name="min_height">मि. उंची</string>
+
+    <string name="max_height">कमाल उंची</string>
+
+    <string name="search_cast">जात</string>
+
+    <string name="search_community">समुदाय</string>
+
+    <string name="search_religion">धर्म</string>
+
+    <string name="search_state">राज्य </string>
+
+    <string name="search_city">शहर</string>
+
+    <string name="search_education">शिक्षण</string>
+
+    <string name="search_min_income">मि. उत्पन्न</string>
+
+    <string name="search_max_income">कमाल.उत्पन्न</string>
+
+    <string name="all_profiles">सर्व प्रोफाइल</string>
+
+    <string name="with_photos">फोटोंसह</string>
+
+    <string name="diet">आहार</string>
+
+    <string name="button_search">शोध</string>
+
+    <string name="hello">नमस्कार</string>
+
+    <string name="religion_mother_tongue">धर्म मातृभाषा</string>
+
+    <string name="about">बद्दल</string>
+
+    <string name="abcd1252">एबीसीडी १२५२</string>
+
+    <string name="basic_details">मूलभूत तपशील</string>
+
+    <string name="her_profile_is_managed_by_self">तिचे प्रोफाईल स्वत: द्वारे व्यवस्थापित केले जाते</string>
+
+    <string name="born_on_12_01_1991">12/01/1991 रोजी जन्म</string>
+
+    <string name="pd_community">समुदाय</string>
+
+    <string name="_96_kuli_maratha">96 कुळी मराठा</string>
+
+    <string name="diet_preference">आहार प्राधान्य</string>
+
+    <string name="non_vegetarian">मांसाहारी</string>
+
+    <string name="todo">करण्यासाठी</string>
+
+    <string name="todo1">करण्यासाठी</string>
+
+    <string name="todo2">करण्यासाठी</string>
+
+    <string name="todo3">करण्यासाठी</string>
+
+    <string name="hindu_maratha">हिंदू, मराठा</string>
+
+    <string name="pune_maharashtra">पुणे, महाराष्ट्र</string>
+
+    <string name="lives_in">मध्ये राहतात</string>
+
+    <string name="marital_status">वैवाहिक स्थिती</string>
+
+    <string name="never_married">कधीही लग्न केले नाही</string>
+
+    <string name="todo4">करण्यासाठी</string>
+
+    <string name="birth_date">जन्मतारीख</string>
+
+
+
+    <string name="contact_details">संपर्काची माहिती</string>
+
+    <string name="contact_no">संपर्क क्रमांक</string>
+
+    <string name="_91_11">+91-11*********</string>
+
+    <string name="pd_email_id">ई - मेल आयडी</string>
+
+    <string name="gmail_com">*********@जीमेल.कॉम</string>
+
+    <string name="get_contact_information_by">द्वारे संपर्क माहिती मिळवा</string>
+
+    <string name="Kundli_Astro">कुंडली आणि खगोल</string>
+
+    <string name="about_family">कुटुंब बद्दल</string>
+
+    <string name="moderate_nuclear_family_upper_middle">मध्यम, विभक्त कुटुंब, उच्च मध्यम</string>
+
+    <string name="family_income">कौटुंबिक उत्पन्न</string>
+
+    <string name="mother_occupation">आईचा व्यवसाय</string>
+
+    <string name="service_private">सेवा - खाजगी</string>
+
+    <string name="housewife">गृहिणी</string>
+
+    <string name="brother_sister">भाऊ बहिण</string>
+
+    <string name="_1_sister_of_which_1_married">1 बहिणीपैकी 1 विवाहित</string>
+
+    <string name="rs_4l_5_l_per_annum">रु. 4L - 5 L प्रति वर्ष</string>
+
+    <string name="father_occupation">वडिलांचा व्यवसाय</string>
+
+    <string name="_1_brother_of_which_1_married">1 भाऊ पैकी 1 विवाहित</string>
+
+    <string name="family_based_out_of">बाहेर आधारित कुटुंब</string>
+
+    <string name="nagpur_maharashtra">नागपूर, महाराष्ट्र</string>
+
+    <string name="abcd1252_looking_for">एबीसीडी१२५२ शोधत आहे</string>
+
+    <string name="todo8">करण्यासाठी</string>
+
+    <string name="todo9">करण्यासाठी</string>
+
+    <string name="todo10">करण्यासाठी</string>
+
+    <string name="matching_8_out_of_12_her_preference">12 पैकी 8 तिची पसंती जुळत आहे</string>
+
+    <string name="todo11">करण्यासाठी</string>
+
+    <string name="her_partner">तिचा जोडीदार</string>
+
+    <string name="your_match">तुमचा सामना</string>
+
+    <string name="age">वय</string>
+
+    <string name="todo13">करण्यासाठी</string>
+
+    <string name="_25_to_28_yrs">25 ते 28 वर्षे</string>
+
+    <string name="height">उंची</string>
+
+    <string name="religion_community">धर्म / समुदाय</string>
+
+    <string name="hindu_96_kuli_maratha">हिंदू, 96 कुळी मराठा</string>
+
+    <string name="cast">जात</string>
+
+    <string name="maratha">मराठा</string>
+
+    <string name="mother_tongue">मातृभाषा</string>
+
+    <string name="marathi">मराठी </string>
+
+    <string name="annual_income1">वार्षिक उत्पन्न</string>
+
+    <string name="inr_3l_5l">INR 3L - ते 5L कमवा</string>
+
+    <string name="educationshow">शिक्षण</string>
+
+    <string name="bpt_mpt_dm_bams_mdh_bhms_msw_bfa_bds_m_s_engineering_more"> बीपीटी, एमपीटी,डीएम, बीएएमएस ,एमडीएच, बीएचएमएस "\एन" एमएसडब्ल्यू, बीएफ, बीडीएस,एम.एस (अभियांत्रिकी)"\एन" ...अधिक</string>
+
+    <string name="country">देश</string>
+
+    <string name="india">भारत</string>
+
+    <string name="city">शहर</string>
+
+    <string name="mumbai_pune_thane_navi_mumbai">मुंबई, पुणे, ठाणे, नवी मुंबई</string>
+
+    <string name="maharastra">महाराष्ट्र</string>
+
+    <string name="state">राज्य</string>
+
+    <string name="challenged">आव्हान दिले</string>
+
+    <string name="none">काहीही नाही</string>
+
+    <string name="diet1">आहार</string>
+
+    <string name="veg_non_veg">शाकाहारी, मांसाहारी</string>
+
+    <string name="common_between_you_amp_her">तुमच्यात सामाईक आहे</string>
+
+    <string name="both_belong_to_pune">दोघेही पुण्याचे</string>
+
+    <string name="todo12">करण्यासाठी</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="hello_blank_fragment">हॅलो रिक्त तुकडा</string>
+
+    <string name="title_activity_main2">मुख्य क्रियाकलाप2</string>
+
+    <string name="tab_text_1">टॅब 1</string>
+
+    <string name="tab_text_2">टॅब २</string>
+
+    <string name="earn_inr_2l_to_4l">INR 2L ते 4L कमवा</string>
+
+    <string name="user_has_not_given_horoscope">वापरकर्त्याने कुंडली दिली नाही</string>
+
+    <string name="request_for_horoscope">कुंडलीसाठी विनंती</string>
+
+    <string name="education_career">शिक्षण_करिअर</string>
+
+    <string name="todo14">करण्यासाठी</string>
+
+    <string name="take_premium">प्रीमियम घ्या</string>
+
+    <string name="education_field">शिक्षण क्षेत्र</string>
+
+    <string name="Clg_Pass">कॉलेज_पास</string>
+
+    <string name="college_name">कॉलेजचे नाव</string>
+
+    <string name="annual_income">वार्षिक उत्पन्न</string>
+
+    <string name="own_business">स्वत: चा व्यवसाय</string>
+
+    <string name="todo15">करण्यासाठी</string>
+
+    <string name="todo16">करण्यासाठी</string>
+
+    <string name="occupation">व्यवसाय</string>
+
+    <string name="design">रचना</string>
+
+    <string name="profession">व्यवसाय</string>
+
+    <string name="architect">वास्तुविशारद</string>
+
+    <string name="b_e_b_tect">बी.ई./बी.टेक</string>
+
+    <string name="qualification">पात्रता</string>
+
+    <string name="men">करण्यासाठी</string>
+
+    <string name="men1">करण्यासाठी</string>
+
+    <string name="matches">जुळते</string>
+
+    <string name="search">शोध</string>
+
+    <string name="inbox">इनबॉक्स</string>
+
+    <string name="chat">गप्पा</string>
+    <string name="viewprofile">प्रोफ़ाइल</string>
+    <string name="favouritesav">आवडी/जतन</string>
+    <string name="profilevisit">प्रोफाइल अभ्यागत</string>
+    <string name="successstories">यशोगाथा</string>
+    <string name="changepassword">पासवर्ड बदला</string>
+    <string name="hideprofile">प्रोफाइल लपवा</string>
+    <string name="faq">प्रश्न</string>
+    <string name="privacypoli">गोपनीयता धोरण</string>
+    <string name="rateus">रेटिंग</string>
+    <string name="aboutus">आमच्याबद्दल</string>
+    <string name="logout">बाहेर पडणे</string>
+    <string name="relativeinfo">नातेवाईक माहिती</string>
+
+    <string-array name="list_items">
+
+        <item>मुख्यपृष्ठ</item>
+
+        <item>वापरकर्ता खाते</item>
+
+        <item>संदेश</item>
+
+        <item>सेटिंग्ज</item>
+
+        <item>आमच्याबद्दल</item>
+
+    </string-array>
+
+</resources>

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\Abhishek\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
+            "outputFile": "D:\\projres\\freelance\\Matrimony\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\9363\\.gradle\\caches\\transforms-2\\files-2.1\\f2ee7319eb44c0f99f0bb273dbee8473\\material-1.4.0\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
+                    "source": "C:\\Users\\intex\\.gradle\\caches\\transforms-2\\files-2.1\\b291eb3bce5477eb77c3e8da43f8a167\\material-1.4.0\\res\\values-h550dp-port-v13\\values-h550dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -1,6 +1,7 @@
 package com.example.matrimony.activity
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -36,6 +37,13 @@ class SplashActivity : AppCompatActivity() {
 
         tokenonstart = PreferenceHelper.getStringPreference(this@SplashActivity, "token").toString()
         Utils.token = tokenonstart
+        try {
+            Utils.urifile =
+                PreferenceHelper.getStringPreference(this@SplashActivity, "uriimage")
+
+        } catch (err: Exception) {
+        err.printStackTrace()
+    }
         startapp()
     }
 
