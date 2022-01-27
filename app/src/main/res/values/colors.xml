@@ -48,7 +48,7 @@
 
         <color name="colour_primary_tangerine_2">#ff6700</color>
         <color name="blacky">#000000</color>
-        <color name="card_line">#3dbbb0</color>
+        <color name="card_line">#FF8025</color>
         <color name="card_font">#172b4d</color>
         <color name="top_menu">#002953</color>
         <color name="aqua_blue">#04c4de</color>
@@ -83,9 +83,10 @@
 
         <color name="mapmyindia_demo_white">#FFFFFF</color>
         <color name="mapmyindia_demo_black">#000000</color>
-
-        <!--    <color name="grey">#d3d3d3</color>-->
+        <color name="hamburgerback">#F7F7F7</color>
         <color name="skyblue">#e5eaf7</color>
         <color name="locc">#ec672c</color>
+
+
 
 </resources>

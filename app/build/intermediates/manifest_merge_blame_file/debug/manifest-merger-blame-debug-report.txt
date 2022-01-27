@@ -1,0 +1,153 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.matrimony"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+7-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:6:5-66
+8        android:minSdkVersion="16"
+8-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:6:5-66
+9        android:targetSdkVersion="30" />
+9-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:6:5-66
+10
+11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+11-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:8:5-79
+11-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:8:22-76
+12    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+12-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:9:5-81
+12-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:9:22-78
+13    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+13-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:10:5-85
+13-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:10:22-82
+14    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+14-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:11:5-79
+14-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:11:22-76
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:12:5-67
+15-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:12:22-64
+16    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+16-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:13:5-78
+16-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:13:22-75
+17    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+17-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:14:5-72
+17-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:14:22-69
+18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+18-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:8:5-79
+18-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:8:22-76
+19    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+19-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:16:5-70
+19-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:16:22-67
+20    <uses-permission android:name="android.permission.READ_SMS" />
+20-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:17:5-67
+20-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:17:22-64
+21    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+21-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:18:5-75
+21-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:18:22-72
+22    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+22-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:19:5-77
+22-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:19:22-74
+23    <uses-permission android:name="android.permission.WRITE_SMS" />
+23-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:20:5-68
+23-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:20:22-65
+24    <uses-permission android:name="android.permission.SEND_SMS" />
+24-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:21:5-67
+24-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:21:22-64
+25    <uses-permission android:name="android.permission.CALL_PHONE" />
+25-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:22:5-69
+25-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:22:22-66
+26    <uses-permission android:name="android.permission.WAKE_LOCK" />
+26-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:23:5-68
+26-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:23:22-65
+27    <uses-permission android:name="android.permission.CAMERA" />
+27-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:24:5-65
+27-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:24:22-62
+28
+29    <application
+29-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:26:5-59:19
+30        android:name="androidx.multidex.MultiDexApplication"
+31        android:allowBackup="true"
+31-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:27:9-35
+32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+32-->[androidx.core:core:1.6.0] C:\Users\9363\.gradle\caches\transforms-2\files-2.1\abcbc87edcbba6f2b412c42ea0e44c80\core-1.6.0\AndroidManifest.xml:24:18-86
+33        android:debuggable="true"
+34        android:icon="@mipmap/ic_launcher_app"
+34-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:28:9-47
+35        android:label="@string/app_name"
+35-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:29:9-41
+36        android:roundIcon="@mipmap/ic_launcher_app_round"
+36-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:30:9-58
+37        android:supportsRtl="true"
+37-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:31:9-35
+38        android:testOnly="true"
+39        android:theme="@style/NoActionBar"
+39-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:32:9-43
+40        android:usesCleartextTraffic="true" >
+40-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:33:9-44
+41        <activity
+41-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:34:9-36:39
+42            android:name="com.example.matrimony.activity.HideProfileActivity"
+42-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:35:13-57
+43            android:exported="true" />
+43-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:36:13-36
+44        <activity android:name="com.example.matrimony.activity.BasicDataActivity" />
+44-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:37:9-64
+44-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:37:19-61
+45        <activity android:name="com.example.matrimony.activity.RegisterActivity" />
+45-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:38:9-63
+45-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:38:19-60
+46        <activity android:name="com.example.matrimony.activity.LoginActivity" />
+46-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:39:9-60
+46-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:39:19-57
+47        <activity android:name="com.example.matrimony.activity.SplashActivity" >
+47-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:40:9-46:20
+47-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:40:19-58
+48            <intent-filter>
+48-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:41:13-45:29
+49                <action android:name="android.intent.action.MAIN" />
+49-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:42:17-69
+49-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:42:25-66
+50
+51                <category android:name="android.intent.category.LAUNCHER" />
+51-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:44:17-77
+51-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:44:27-74
+52            </intent-filter>
+53        </activity>
+54        <activity
+54-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:47:9-49:52
+55            android:name="com.example.matrimony.activity.MainActivity"
+55-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:48:13-50
+56            android:screenOrientation="portrait" />
+56-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:49:13-49
+57        <activity
+57-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:50:9-52:52
+58            android:name="com.example.matrimony.activity.ShowDetails"
+58-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:51:13-49
+59            android:screenOrientation="portrait" />
+59-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:52:13-49
+60        <activity
+60-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:53:9-55:52
+61            android:name="com.example.matrimony.activity.MenDetailsShow"
+61-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:54:13-52
+62            android:screenOrientation="portrait" />
+62-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:55:13-49
+63        <activity
+63-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:56:9-58:52
+64            android:name="com.example.matrimony.activity.ChangePasswordActivity"
+64-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:57:13-60
+65            android:screenOrientation="portrait" />
+65-->D:\Abhishek\Matrimony\app\src\main\AndroidManifest.xml:58:13-49
+66
+67        <provider
+67-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\9363\.gradle\caches\transforms-2\files-2.1\ee348e605868e6323cf7341e98cb987b\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+68            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+68-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\9363\.gradle\caches\transforms-2\files-2.1\ee348e605868e6323cf7341e98cb987b\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+69            android:authorities="com.example.matrimony.lifecycle-process"
+69-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\9363\.gradle\caches\transforms-2\files-2.1\ee348e605868e6323cf7341e98cb987b\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+70            android:exported="false"
+70-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\9363\.gradle\caches\transforms-2\files-2.1\ee348e605868e6323cf7341e98cb987b\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+71            android:multiprocess="true" />
+71-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\9363\.gradle\caches\transforms-2\files-2.1\ee348e605868e6323cf7341e98cb987b\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+72    </application>
+73
+74</manifest>

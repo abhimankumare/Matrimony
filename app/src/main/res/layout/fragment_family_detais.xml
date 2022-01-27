@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/ll_familydetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/tv_aboutfamily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="26dp"
+            android:text="@string/about_family"
+            android:textColor="#000000"
+            android:fontFamily="@font/robotoregular"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_moderate_nuclear_family_upper_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/moderate_nuclear_family_upper_middle"
+            android:textColor="#99000000" />
+
+        <TextView
+            android:id="@+id/tv_family_income"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="21dp"
+            android:text="@string/family_income"
+            android:textColor="#000000"
+            android:fontFamily="@font/robotoregular"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_fam_income"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/rs_4l_5_l_per_annum"
+            android:textColor="#99000000" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="21dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/father_occupation"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_father_occupation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/service_private"
+            android:textColor="#99000000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="21dp"
+            android:text="@string/mother_occupation"
+            android:textColor="#000000"
+            android:fontFamily="@font/robotoregular"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_mother_occupation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/housewife"
+            android:textColor="#99000000" />
+
+        <TextView
+            android:id="@+id/tv_brother_sister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="21dp"
+            android:text="@string/brother_sister"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:fontFamily="@font/robotoregular"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_sis_marr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/_1_sister_of_which_1_married"
+            android:textColor="#99000000" />
+
+        <TextView
+            android:id="@+id/tv_bro_marr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/_1_brother_of_which_1_married"
+            android:textColor="#99000000" />
+
+        <TextView
+            android:id="@+id/tv_family_based_out_of"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="21dp"
+            android:text="@string/family_based_out_of"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:fontFamily="@font/robotoregular"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_nagpur_maharashtra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/robotoregular"
+            android:text="@string/nagpur_maharashtra"
+            android:textColor="#99000000" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_self"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin10"
+    android:background="@drawable/text_background_new"
+    android:orientation="vertical">
+
+<ImageView
+    android:layout_marginTop="@dimen/margin10"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:srcCompat="@drawable/ic_baseline_account_circle_24">
+
+</ImageView>
+
+    <TextView
+        android:id="@+id/tv_self"
+        android:layout_margin="@dimen/margin10"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:clickable="true"
+        android:gravity="center"
+        android:fontFamily="@font/robotoregular"
+        android:shadowColor="@color/color_gray"
+        android:text="ABCD"
+        android:textSize="@dimen/margin20">
+
+    </TextView>
+
+</LinearLayout>

@@ -1,3 +1,271 @@
 <resources>
-    <string name="app_name">Matrimony</string>
+    <string name="app_name">Anterpat</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string name="terms">Terms &amp; Condition</string>
+    <string name="help">Help &amp; Support</string>
+
+    <string name="login">login</string>
+    <string name="register">register</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="email_id_phone_number">Mobile number</string>
+    <string name="password">Password</string>
+    <string name="login_register">Login/Register</string>
+    <string name="enter_password_login">Enter password</string>
+    <string name="enter_your_full_name">Enter your full name</string>
+    <string name="gender">Gender*</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="enter_your_date_of_birth">Enter Your Date Of Birth</string>
+    <string name="select_your_height">Select Your Height</string>
+    <string name="select_your_country">Select Your Country</string>
+    <string name="select_your_state">Select Your State</string>
+    <string name="select_your_city">Select Your City</string>
+    <string name="comment_box">Write About You</string>
+    <string name="enter_password">Enter password</string>
+    <string name="indicates_mandatory_fields">*Indicates mandatory fields</string>
+    <string name="save">save</string>
+    <string name="education">Education</string>
+    <string name="work_experience">Work experience</string>
+    <string name="select_highest_education">Select Highest Education</string>
+    <string name="select_sector">Select Sector</string>
+    <string name="select_occupation">Select Occupation</string>
+    <string name="select_income">Select Income</string>
+    <string name="next">next</string>
+    <string name="select_marital_status">Select Marital Status</string>
+    <string name="select_mother_tongue">Select Mother Tongue</string>
+    <string name="select_religion">Select Religion</string>
+    <string name="cast_no_bar_i_am_open_to_marry_people_of_all_castes">Caste no bar (I am open to marry people of all castes)</string>
+    <string name="select_horoscope_optional">Select Horoscope(Optional)</string>
+    <string name="manglik_optional">Manglik (Optional)</string>
+    <string name="select_cast">Select Cast</string>
+    <string name="father_s_status">Father\'s Occupation</string>
+    <string name="mother_s_status">Mother\'s Occupation</string>
+    <string name="brothers_sisters"><![CDATA[Brothers & Sisters]]></string>
+    <string name="no_of_brothers">No. of Brothers</string>
+    <string name="no_of_married">No. of Married</string>
+    <string name="no_of_sisters">No. of Sisters</string>
+
+
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="paragraph">
+        " I am glad you are interested in my profile. Regarding my \n education, I have pursued my Bachelors in Engineering. \n Modern yet traditional, I am deeply inclined in our values, \n ethics and culture. Someone who appreciates simple \n things in life would be an ideal match. If whish to take\n things ahead, you are highly welcome."
+    </string>
+    <string name="min_age">Min. Age</string>
+    <string name="max_age">Max. Age</string>
+    <string name="min_height">Min. Height</string>
+    <string name="max_height">Max. Height</string>
+    <string name="search_cast">Cast</string>
+    <string name="search_community">Community</string>
+    <string name="search_religion">Religion</string>
+    <string name="search_state">State</string>
+    <string name="search_city">City</string>
+    <string name="search_education">Education</string>
+    <string name="search_min_income">Min. Income</string>
+    <string name="search_max_income">Max. Income</string>
+    <string name="all_profiles">All Profiles</string>
+    <string name="with_photos">With Photos</string>
+    <string name="diet">Diet</string>
+    <string name="button_search">search</string>
+    <string name="hello">hello</string>
+    <string name="religion_mother_tongue"><![CDATA[Religion & Mother Tongue]]></string>
+    <string name="about">About</string>
+    <string name="abcd1252">ABCD1252</string>
+    <string name="basic_details">Basic Details</string>
+    <string name="her_profile_is_managed_by_self">Her Profile is managed by Self</string>
+    <string name="born_on_12_01_1991">Born On 12/01/1991</string>
+    <string name="pd_community">Community</string>
+    <string name="_96_kuli_maratha">96 Kuli Maratha</string>
+    <string name="diet_preference">Diet Preference</string>
+    <string name="non_vegetarian">Non - Vegetarian</string>
+    <string name="todo">TODO</string>
+    <string name="todo1">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="todo3">TODO</string>
+    <string name="hindu_maratha">Hindu, Maratha</string>
+    <string name="pune_maharashtra">Pune, Maharashtra</string>
+    <string name="lives_in">Lives In</string>
+    <string name="marital_status">Marital Status</string>
+    <string name="never_married">Never Married</string>
+    <string name="todo4">TODO</string>
+    <string name="birth_date">Birth Date</string>
+    <string name="todo5">TODO</string>
+    <string name="todo6">TODO</string>
+    <string name="todo7">TODO</string>
+    <string name="contact_details">Contact Details</string>
+    <string name="contact_no">Contact No.</string>
+    <string name="_91_11">+91-11*********</string>
+    <string name="pd_email_id">Email ID</string>
+    <string name="gmail_com">*********@gmail.com</string>
+    <string name="get_contact_information_by">Get contact information by</string>
+    <string name="Kundli_Astro">Kundli &amp; Astro</string>
+    <string name="about_family">About Family</string>
+    <string name="moderate_nuclear_family_upper_middle">Moderate, Nuclear Family, Upper Middle</string>
+    <string name="family_income">Family Income</string>
+    <string name="mother_occupation">Mother Occupation</string>
+    <string name="service_private">Service - Private</string>
+    <string name="housewife">Housewife</string>
+    <string name="brother_sister">Brother/Sister</string>
+    <string name="_1_sister_of_which_1_married">1 Sister of which 1 Married</string>
+    <string name="rs_4l_5_l_per_annum">Rs. 4L - 5 L per Annum</string>
+    <string name="father_occupation">Father Occupation</string>
+    <string name="_1_brother_of_which_1_married">1 Brother of which 1 Married</string>
+    <string name="family_based_out_of">Family Based out of</string>
+    <string name="nagpur_maharashtra">Nagpur, Maharashtra</string>
+    <string name="abcd1252_looking_for">ABCD1252 Looking for</string>
+    <string name="todo8">TODO</string>
+    <string name="todo9">TODO</string>
+    <string name="todo10">TODO</string>
+    <string name="matching_8_out_of_12_her_preference">Matching 8 out of 12 her preference</string>
+    <string name="todo11">TODO</string>
+    <string name="her_partner">Her partner</string>
+    <string name="your_match">Your Match</string>
+    <string name="age">Age</string>
+    <string name="todo13">TODO</string>
+    <string name="_25_to_28_yrs">25 to 28 Yrs</string>
+    <string name="height">Height</string>
+    <string name="religion_community">Religion / Community</string>
+    <string name="hindu_96_kuli_maratha">Hindu, 96 kuli Maratha</string>
+    <string name="cast">Caste</string>
+    <string name="maratha">Maratha</string>
+    <string name="mother_tongue">Mother Tongue</string>
+    <string name="marathi">Marathi</string>
+    <string name="annual_income1">Annual Income</string>
+    <string name="inr_3l_5l">INR 3L - 5L</string>
+    <string name="educationshow">Education</string>
+    <string name="bpt_mpt_dm_bams_mdh_bhms_msw_bfa_bds_m_s_engineering_more">BPT, MPT, DM, BAMS, MDh, BHMS "\n" MSW, BFA, BDS, M.S.(Engineering) "\n" ...More</string>
+    <string name="country">Country</string>
+    <string name="india">India</string>
+    <string name="city">City</string>
+    <string name="mumbai_pune_thane_navi_mumbai">Mumbai, Pune, Thane, Navi Mumbai</string>
+    <string name="maharastra">Maharastra</string>
+    <string name="state">State</string>
+    <string name="challenged">Challenged</string>
+    <string name="none">None</string>
+    <string name="diet1">Diet</string>
+    <string name="veg_non_veg">Veg, Non Veg</string>
+    <string name="common_between_you_amp_her"><![CDATA[Common Between You & Her]]></string>
+    <string name="both_belong_to_pune">Both belong to Pune</string>
+    <string name="todo12">TODO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="earn_inr_2l_to_4l">Earn INR 2L to 4L</string>
+    <string name="user_has_not_given_horoscope">User has not given horoscope</string>
+    <string name="request_for_horoscope">Request For Horoscope</string>
+    <string name="education_career"><![CDATA[Education & Career]]></string>
+    <string name="todo14">TODO</string>
+    <string name="take_premium">Take Premium</string>
+    <string name="education_field">Education Field</string>
+    <string name="Clg_Pass">***********</string>
+    <string name="college_name">College Name</string>
+    <string name="annual_income">Annual Income</string>
+    <string name="own_business">Own Business</string>
+    <string name="todo15">TODO</string>
+    <string name="todo16">TODO</string>
+    <string name="occupation">Occupation</string>
+    <string name="design">Design</string>
+    <string name="profession">Profession</string>
+    <string name="architect">Architect</string>
+    <string name="b_e_b_tect">B.E/B.Tect</string>
+    <string name="qualification">Qualification</string>
+    <string name="men">TODO</string>
+    <string name="men1">TODO</string>
+    <string-array name="list_items">
+        <item>Home</item>
+        <item>User Account</item>
+        <item>Messages</item>
+        <item>Settings</item>
+        <item>About Us</item>
+    </string-array>
 </resources>

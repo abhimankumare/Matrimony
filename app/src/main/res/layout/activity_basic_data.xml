@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.BasicDataActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner_view"
+            app:elevation="@dimen/margin4"
+            app:titleTextAppearance="@style/Toolbar.TitleText"
+            app:titleTextColor="@color/white"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin10"
+            android:orientation="vertical">
+
+
+            <!--            //Carrer Details-->
+            <LinearLayout
+                android:id="@+id/ll_career_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin25"
+                android:orientation="vertical"
+                android:padding="@dimen/margin6"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/robotoregular"
+                    android:padding="@dimen/margin6"
+                    android:shadowColor="@color/color_gray"
+                    android:text="@string/education"
+                    android:textColor="@color/color_gray"
+                    android:textSize="@dimen/margin20" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/SelectSectorSpinnerLayout1"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:hint="@string/select_highest_education">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/educationTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/Work_experience"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:fontFamily="@font/robotoregular"
+                    android:padding="@dimen/margin6"
+                    android:shadowColor="@color/color_gray"
+                    android:text="@string/work_experience"
+                    android:textColor="@color/color_gray"
+                    android:textSize="@dimen/margin20" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/selectSectorSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:hint="@string/select_sector">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/selectSectorTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/SelectOccupationSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:hint="@string/select_occupation">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/SelectOccupationTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/SelectIncomeSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:hint="@string/select_income">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/SelectIncomeTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/save_car_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin50"
+                    android:layout_marginTop="@dimen/margin15"
+                    android:shadowColor="#000000"
+                    android:text="@string/next"
+                    android:textColor="#FFFFFF"
+                    app:backgroundTint="#FF8025"
+                    app:cornerRadius="20dp"
+                    app:elevation="2dp" />
+
+
+            </LinearLayout>
+            <!--            //Carrer Details-->
+
+            <!--            //Social Details-->
+            <LinearLayout
+                android:id="@+id/ll_social_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin15"
+                android:orientation="vertical"
+                android:padding="@dimen/margin10"
+                android:visibility="gone">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/FathersStatusSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:hint="@string/select_marital_status">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/maritalStatusTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/MothersStatusSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:hint="@string/select_mother_tongue">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/motherTonugeTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/SelectReligionSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:hint="@string/select_religion">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/religionTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/SelectCastSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:hint="@string/select_cast">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/castTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/materialCheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cast_no_bar_i_am_open_to_marry_people_of_all_castes"
+                    android:textColor="#000000"
+                    android:textSize="12sp">
+
+                </com.google.android.material.checkbox.MaterialCheckBox>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/SelectHoroscopeSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:hint="@string/select_horoscope_optional">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/horoscopeTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ManglikSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:hint="@string/manglik_optional">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/ManglikTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/social_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:shadowColor="#000000"
+                    android:text="@string/next"
+                    android:textColor="#FFFFFF"
+                    app:backgroundTint="#FF8025"
+                    app:cornerRadius="20dp"
+                    app:elevation="2dp"
+                    app:rippleColor="#FF8025"
+                    app:shapeAppearanceOverlay="@style/TextAppearance.Compat.Notification"
+                    app:strokeColor="#000000" />
+            </LinearLayout>
+            <!--            //Social Details-->
+            <!--            //Family Details-->
+            <LinearLayout
+                android:id="@+id/ll_family_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin15"
+                android:orientation="vertical"
+                android:padding="@dimen/margin10"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/StatusSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:hint="@string/father_s_status">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/fatherStatusTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/MoSpinnerLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:hint="@string/mother_s_status">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/motherStatusTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/text_background"
+                        android:clickable="true"
+                        android:fontFamily="@font/robotoregular"
+                        android:shadowColor="@color/color_gray" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/BrothersSisters"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:text="@string/brothers_sisters"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/margin15" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/BrothersSpinnerLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="@dimen/margin10"
+                        android:layout_marginRight="@dimen/margin4"
+                        android:layout_weight="0.5"
+                        android:hint="@string/no_of_brothers">
+
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/brotherTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/text_background"
+                            android:clickable="true"
+                            android:fontFamily="@font/robotoregular"
+                            android:shadowColor="@color/color_gray" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/No.ofMarriedSpinnerLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="@dimen/margin10"
+                        android:layout_weight="0.5"
+                        android:hint="@string/no_of_married">
+
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/brotherMarriedTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/text_background"
+                            android:clickable="true"
+                            android:fontFamily="@font/robotoregular"
+                            android:shadowColor="@color/color_gray" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/SistersSpinnerLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="@dimen/margin10"
+                        android:layout_marginRight="@dimen/margin4"
+                        android:layout_weight="0.5"
+                        android:hint="@string/no_of_sisters">
+
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/sisterTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/text_background"
+                            android:clickable="true"
+                            android:fontFamily="@font/robotoregular"
+                            android:shadowColor="@color/color_gray" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/MarriedSpinnerLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="@dimen/margin10"
+                        android:layout_weight="0.5"
+                        android:hint="@string/no_of_married">
+
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/sisterMarriedTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/text_background"
+                            android:clickable="true"
+                            android:fontFamily="@font/robotoregular"
+                            android:shadowColor="@color/color_gray" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/save_family_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin56"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:shadowColor="#000000"
+                    android:text="@string/next"
+                    android:textColor="#FFFFFF"
+                    app:backgroundTint="#FF8025"
+                    app:cornerRadius="20dp"
+                    app:elevation="2dp"
+                    app:rippleColor="#FF8025"
+                    app:shapeAppearanceOverlay="@style/TextAppearance.Compat.Notification"
+                    app:strokeColor="#000000" />
+            </LinearLayout>
+
+            <!--            //Family Details-->
+
+        </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

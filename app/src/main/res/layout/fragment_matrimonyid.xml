@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/margin45"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin15"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_white_curve"
+                android:drawableRight="@drawable/ic_baseline_search_24"
+                android:fontFamily="@font/robotoregular"
+                android:text="Enter Matrimony ID"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold">
+
+            </TextView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin15"
+                android:fontFamily="@font/robotoregular"
+                android:text="Results"
+                android:textColor="@color/black"
+                android:textSize="@dimen/margin20"
+                android:textStyle="bold">
+
+            </TextView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/sxcx" />
+
+
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="@dimen/margin150"
+                      android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.1"
+                            android:padding="@dimen/margin5"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/verifiedicon"/>
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:text="ABCD1252"
+                            android:fontFamily="@font/robotoregular"
+                            android:layout_gravity="center_vertical"
+                            android:textColor="@color/black"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:paddingStart="@dimen/margin10"
+                          android:weightSum="1"
+                          android:orientation="horizontal">
+
+
+                          <TextView
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="0.50"
+                              android:layout_gravity="center_vertical"
+                              android:padding="@dimen/margin5"
+                              android:text="25 yrs. 5'3'"
+                              android:fontFamily="@font/robotoregular"
+                              android:textColor="@color/black"
+                              android:textSize="15sp"
+                              android:textStyle="bold"/>
+
+
+                          <TextView
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="0.50"
+                              android:layout_gravity="center_vertical"
+                              android:padding="@dimen/margin5"
+                              android:fontFamily="@font/robotoregular"
+                              android:text="Pune, Maharashtra"
+                              android:textColor="@color/black"
+                              android:textSize="15sp"
+                              android:textStyle="bold"/>
+
+
+                      </LinearLayout>
+
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:paddingStart="@dimen/margin10"
+                          android:weightSum="1"
+                          android:orientation="horizontal">
+
+
+                          <TextView
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center_vertical"
+                              android:padding="@dimen/margin5"
+                              android:layout_weight="0.50"
+                              android:text="Hindu Maratha"
+                              android:fontFamily="@font/robotoregular"
+                              android:textColor="@color/black"
+                              android:textSize="15sp"
+                              android:textStyle="bold"/>
+
+
+                          <TextView
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="0.50"
+                              android:layout_gravity="center_vertical"
+                              android:padding="@dimen/margin5"
+                              android:fontFamily="@font/robotoregular"
+                              android:text="Marathi"
+                              android:textColor="@color/black"
+                              android:textSize="15sp"
+                              android:textStyle="bold"/>
+
+
+                      </LinearLayout>
+
+
+                      <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:paddingStart="@dimen/margin10"
+                          android:weightSum="1"
+                          android:orientation="horizontal">
+
+
+                          <TextView
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_gravity="center_vertical"
+                              android:padding="@dimen/margin5"
+                              android:layout_weight="0.50"
+                              android:text="No Income"
+                              android:fontFamily="@font/robotoregular"
+                              android:textColor="@color/black"
+                              android:textSize="15sp"
+                              android:textStyle="bold"/>
+
+
+                          <TextView
+                              android:layout_width="0dp"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="0.50"
+                              android:layout_gravity="center_vertical"
+                              android:padding="@dimen/margin5"
+                              android:fontFamily="@font/robotoregular"
+                              android:text="Never Married"
+                              android:textColor="@color/black"
+                              android:textSize="15sp"
+                              android:textStyle="bold"/>
+
+
+                      </LinearLayout>
+
+
+                  </LinearLayout>
+
+
+
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin65"
+                    android:layout_alignBottom="@+id/iv_photo"
+                    android:background="@drawable/ic_card_line_curve"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <LinearLayout
+                        android:layout_width="@dimen/margin0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.33"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin24"
+                            app:srcCompat="@drawable/showintrest" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:layout_marginTop="@dimen/margin5"
+                            android:fontFamily="@font/rubik_regular"
+                            android:textSize="@dimen/margin15"
+                            android:text="Show Intrest"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="@dimen/margin0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.33"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin24"
+                            app:srcCompat="@drawable/saveprofile" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:layout_marginTop="@dimen/margin5"
+                            android:fontFamily="@font/rubik_regular"
+                            android:textSize="@dimen/margin15"
+                            android:text="Save Profile"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="@dimen/margin0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.33"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/margin24"
+                            app:srcCompat="@drawable/messagematr" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:layout_marginTop="@dimen/margin5"
+                            android:fontFamily="@font/rubik_regular"
+                            android:textSize="@dimen/margin15"
+                            android:text="Message"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
