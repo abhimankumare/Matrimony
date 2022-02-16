@@ -106,103 +106,102 @@
 49-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:43:9-58
 50        android:supportsRtl="true"
 50-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:44:9-35
-51        android:testOnly="true"
-52        android:theme="@style/NoActionBar"
-52-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:45:9-43
-53        android:usesCleartextTraffic="true" >
-53-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:46:9-44
-54        <activity
-54-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:47:9-51:62
-55            android:name="com.example.matrimony.activity.EditRegisterActivity"
-55-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:48:13-58
-56            android:exported="true"
-56-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:49:13-36
-57            android:label="@string/title_activity_edit_register"
-57-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:50:13-65
-58            android:theme="@style/NoActionBar.NoActionBar" />
-58-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:51:13-59
-59        <activity
-59-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:52:9-54:39
-60            android:name="com.example.matrimony.activity.CommonWebViewActivity"
-60-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:53:13-59
-61            android:exported="true" />
-61-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:54:13-36
-62        <activity
-62-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:55:9-57:39
-63            android:name="com.example.matrimony.activity.ForgetPasswordActivity"
-63-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:56:13-60
-64            android:exported="true" />
-64-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:57:13-36
-65        <activity
-65-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:58:9-60:39
-66            android:name="com.example.matrimony.activity.HideProfileActivity"
-66-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:59:13-57
-67            android:exported="true" />
-67-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:60:13-36
-68        <activity android:name="com.example.matrimony.activity.BasicDataActivity" />
-68-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:61:9-64
-68-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:61:19-61
-69        <activity android:name="com.example.matrimony.activity.RegisterActivity" />
-69-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:62:9-63
-69-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:62:19-60
-70        <activity android:name="com.example.matrimony.activity.LoginActivity" />
-70-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:63:9-60
-70-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:63:19-57
-71        <activity android:name="com.example.matrimony.activity.SplashActivity" >
-71-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:64:9-70:20
-71-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:64:19-58
-72            <intent-filter>
-72-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:65:13-69:29
-73                <action android:name="android.intent.action.MAIN" />
-73-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:66:17-69
-73-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:66:25-66
-74
-75                <category android:name="android.intent.category.LAUNCHER" />
-75-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:68:17-77
-75-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:68:27-74
-76            </intent-filter>
-77        </activity>
-78        <activity
-78-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:71:9-73:52
-79            android:name="com.example.matrimony.activity.MainActivity"
-79-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:72:13-50
-80            android:screenOrientation="portrait" />
-80-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:73:13-49
-81        <activity
-81-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:74:9-76:52
-82            android:name="com.example.matrimony.activity.ShowDetails"
-82-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:75:13-49
-83            android:screenOrientation="portrait" />
-83-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:76:13-49
-84        <activity
-84-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:77:9-79:52
-85            android:name="com.example.matrimony.activity.MenDetailsShow"
-85-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:78:13-52
-86            android:screenOrientation="portrait" />
-86-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:79:13-49
-87        <activity
-87-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:80:9-82:52
-88            android:name="com.example.matrimony.activity.ChangePasswordActivity"
-88-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:81:13-60
-89            android:screenOrientation="portrait" />
-89-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:82:13-49
-90        <activity
-90-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:83:9-85:59
-91            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-91-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:84:13-76
-92            android:theme="@style/Base.Theme.AppCompat" />
-92-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:85:13-56
-93
-94        <provider
-94-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\intex\.gradle\caches\transforms-2\files-2.1\871f526282a5200f3c15ce3ccb5d1608\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-95            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-95-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\intex\.gradle\caches\transforms-2\files-2.1\871f526282a5200f3c15ce3ccb5d1608\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-96            android:authorities="com.example.matrimony.lifecycle-process"
-96-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\intex\.gradle\caches\transforms-2\files-2.1\871f526282a5200f3c15ce3ccb5d1608\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-97            android:exported="false"
-97-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\intex\.gradle\caches\transforms-2\files-2.1\871f526282a5200f3c15ce3ccb5d1608\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-98            android:multiprocess="true" />
-98-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\intex\.gradle\caches\transforms-2\files-2.1\871f526282a5200f3c15ce3ccb5d1608\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-99    </application>
-100
-101</manifest>
+51        android:theme="@style/NoActionBar"
+51-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:45:9-43
+52        android:usesCleartextTraffic="true" >
+52-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:46:9-44
+53        <activity
+53-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:47:9-51:62
+54            android:name="com.example.matrimony.activity.EditRegisterActivity"
+54-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:48:13-58
+55            android:exported="true"
+55-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:49:13-36
+56            android:label="@string/title_activity_edit_register"
+56-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:50:13-65
+57            android:theme="@style/NoActionBar.NoActionBar" />
+57-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:51:13-59
+58        <activity
+58-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:52:9-54:39
+59            android:name="com.example.matrimony.activity.CommonWebViewActivity"
+59-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:53:13-59
+60            android:exported="true" />
+60-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:54:13-36
+61        <activity
+61-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:55:9-57:39
+62            android:name="com.example.matrimony.activity.ForgetPasswordActivity"
+62-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:56:13-60
+63            android:exported="true" />
+63-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:57:13-36
+64        <activity
+64-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:58:9-60:39
+65            android:name="com.example.matrimony.activity.HideProfileActivity"
+65-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:59:13-57
+66            android:exported="true" />
+66-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:60:13-36
+67        <activity android:name="com.example.matrimony.activity.BasicDataActivity" />
+67-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:61:9-64
+67-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:61:19-61
+68        <activity android:name="com.example.matrimony.activity.RegisterActivity" />
+68-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:62:9-63
+68-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:62:19-60
+69        <activity android:name="com.example.matrimony.activity.LoginActivity" />
+69-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:63:9-60
+69-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:63:19-57
+70        <activity android:name="com.example.matrimony.activity.SplashActivity" >
+70-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:64:9-70:20
+70-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:64:19-58
+71            <intent-filter>
+71-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:65:13-69:29
+72                <action android:name="android.intent.action.MAIN" />
+72-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:66:17-69
+72-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:66:25-66
+73
+74                <category android:name="android.intent.category.LAUNCHER" />
+74-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:68:17-77
+74-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:68:27-74
+75            </intent-filter>
+76        </activity>
+77        <activity
+77-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:71:9-73:52
+78            android:name="com.example.matrimony.activity.MainActivity"
+78-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:72:13-50
+79            android:screenOrientation="portrait" />
+79-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:73:13-49
+80        <activity
+80-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:74:9-76:52
+81            android:name="com.example.matrimony.activity.ShowDetails"
+81-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:75:13-49
+82            android:screenOrientation="portrait" />
+82-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:76:13-49
+83        <activity
+83-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:77:9-79:52
+84            android:name="com.example.matrimony.activity.MenDetailsShow"
+84-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:78:13-52
+85            android:screenOrientation="portrait" />
+85-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:79:13-49
+86        <activity
+86-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:80:9-82:52
+87            android:name="com.example.matrimony.activity.ChangePasswordActivity"
+87-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:81:13-60
+88            android:screenOrientation="portrait" />
+88-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:82:13-49
+89        <activity
+89-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:83:9-85:59
+90            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+90-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:84:13-76
+91            android:theme="@style/Base.Theme.AppCompat" />
+91-->D:\projres\freelance\Matrimony\app\src\main\AndroidManifest.xml:85:13-56
+92
+93        <provider
+93-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\intex\.gradle\caches\transforms-2\files-2.1\871f526282a5200f3c15ce3ccb5d1608\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+94            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+94-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\intex\.gradle\caches\transforms-2\files-2.1\871f526282a5200f3c15ce3ccb5d1608\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+95            android:authorities="com.example.matrimony.lifecycle-process"
+95-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\intex\.gradle\caches\transforms-2\files-2.1\871f526282a5200f3c15ce3ccb5d1608\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+96            android:exported="false"
+96-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\intex\.gradle\caches\transforms-2\files-2.1\871f526282a5200f3c15ce3ccb5d1608\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+97            android:multiprocess="true" />
+97-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\intex\.gradle\caches\transforms-2\files-2.1\871f526282a5200f3c15ce3ccb5d1608\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+98    </application>
+99
+100</manifest>

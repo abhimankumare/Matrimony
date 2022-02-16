@@ -9,6 +9,35 @@
         <entry key="..\:/Abhishek/Matrimony/app/src/main/res/layout/activity_show_details.xml" value="0.1" />
         <entry key="..\:/Abhishek/Matrimony/app/src/main/res/layout/fragment_personal_details.xml" value="0.13451086956521738" />
         <entry key="..\:/Abhishek/Matrimony/app/src/main/res/menu/activity_main_drawer.xml" value="0.1796875" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.2203125" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/drawable/ic_baseline_arrow_drop_down_circle_24.xml" value="0.2203125" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/drawable/ic_baseline_person_pin_24.xml" value="0.2203125" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/drawable/pro_icon.xml" value="0.2203125" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/drawable/rounded_corner_view.xml" value="0.2203125" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/drawable/text_background.xml" value="0.2203125" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/drawable/text_background_new.xml" value="0.2203125" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/drawable/text_background_ora.xml" value="0.2203125" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/activity_basic_data.xml" value="0.17074275362318841" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/activity_common_web_view.xml" value="0.16077898550724637" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/activity_edit_register.xml" value="0.15172101449275363" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/activity_forget_password.xml" value="0.17074275362318841" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/activity_hide_profile.xml" value="0.15217391304347827" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/activity_main.xml" value="0.15534420289855072" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/activity_show_details.xml" value="0.15217391304347827" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/app_bar_main.xml" value="0.15534420289855072" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/change_password.xml" value="0.1" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/custome_new_spinner.xml" value="0.20416666666666666" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/fragment_family_detais.xml" value="0.18115942028985507" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/fragment_home.xml" value="0.1743659420289855" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/fragment_matrimonyid.xml" value="0.1539855072463768" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/fragment_personal_details.xml" value="0.22" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/layout/nav_header_main.xml" value="0.15217391304347827" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/menu/activity_main_drawer.xml" value="0.20416666666666666" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/menu/main.xml" value="0.20416666666666666" />
+        <entry key="..\:/projres/freelance/Matrimony/app/src/main/res/menu/menuedit.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
